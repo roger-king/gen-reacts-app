@@ -24,7 +24,9 @@
   "homepage": "https://github.com/roger-king/reactjs-modern-seed#readme",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "config": "^1.25.1",
     "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
@@ -32,7 +34,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
   },
-    "devDependencies": {
+  "devDependencies": {
     "babel-cli": "6.8.0",
     "babel-core": "6.8.0",
     "babel-loader": "6.2.4",
