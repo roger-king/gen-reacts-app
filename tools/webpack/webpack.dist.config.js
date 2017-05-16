@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const common  = require('./webpack.config');
+const common = require('./../../webpack.config');
 
 /**
  * Add the uglify plugin for production builds

@@ -22,17 +22,16 @@ let resolveToComponents = function resolveToComponents() {
 
     return path.join(root, 'app/components', glob); // app/components/{glob}
 };
-
 let paths = {
     js: resolveToComponents('**/*!(.spec.js).js'), // exclude spec files
     styl: resolveToApp('**/*.scss'), // stylesheets
     html: [resolveToApp('**/*.html'), path.join(root, 'index.html')],
-    entry: path.join(__dirname, root, 'index.js'),
+    entry: path.join(__dirname, root, 'index.tsx'),
     output: root,
     blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**')
 };
 
-gulp.task('serve', function () {
+gulp.task('serve', function() {
     let config = require('./tools/webpack/webpack.dev.config');
 
     config.entry.app = [
@@ -44,12 +43,11 @@ gulp.task('serve', function () {
     ];
 
     let compiler = webpack(config);
-
     serve({
         port: process.env.PORT || 8000,
         open: false,
-        server: {baseDir: root},
-        ghostMode: false,
+        server: { baseDir: root },
+        https: false,
         middleware: [historyApiFallback(), webpackDevMiddelware(compiler, {
             stats: {
                 colors: colorsSupported,
