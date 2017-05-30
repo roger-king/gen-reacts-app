@@ -1,11 +1,14 @@
 import * as React from 'react';
 import {Route} from 'react-router';
 import {App} from './app';
-import {Home, Login} from "./containers";
+import {
+    Home, 
+    Todo
+} from "./containers";
 
 export default (
     <App>
-        <Route exact={true} path="/" component={Login}/>
-        <Route exact={true} path="/home" component={Home}/>
+        <Route exact={true} path="/todo" component={Todo}/>
+        <Route exact={true} path="/" component={Home}/>
     </App>
 );

@@ -1,1 +1,1 @@
-export {LoginComponent} from './login/login.component';
+export {TodoListComponent as TodoList} from './todo/todoList.component';
