@@ -17,11 +17,10 @@ export class TodosStore {
 
     }
 
-    @action
+    @action.bound
     create(title: string){
         const id: number = this.todos.length + 1;
         this.todos.push(new Todo(this, id, title, false));
-        console.log('New Todos', this.todos);
     }
 
     @action
