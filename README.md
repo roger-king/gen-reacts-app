@@ -1,3 +1,4 @@
+![Seed Logo](public/images/envoy-logo-bg.png)
 # ReactJS Project Seed
 
 ## About:
