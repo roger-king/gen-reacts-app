@@ -1,4 +1,4 @@
-![Seed Logo](public/images/react_modern_seed.png)
+<img src='public/images/react_modern_seed.png' alt='modern_seed_image' align='center'/>
 # ReactJS Project Seed
 
 ## About:
