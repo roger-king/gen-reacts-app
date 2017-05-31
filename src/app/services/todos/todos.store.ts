@@ -5,27 +5,23 @@ import {TodoModel as Todo} from './todo.model';
 
 useStrict(true);
 export class TodosStore {
-    @observable todos = [];
+    @observable public todos: Array<Todo> = [];
 
     constructor(){
         const parent = this;
         let service = new TodosService();
         let remoteTodos = service.getTodos();
         _.forEach(remoteTodos, function(value, key){
-            parent.todos.push(new Todo(this, value.id, value.title, false));
+            let todo: Todo = new Todo(value.id, value.title, false);
+            parent.todos.push(todo);
         })
 
     }
 
-    @action.bound
+    @action
     create(title: string){
         const id: number = this.todos.length + 1;
-        this.todos.push(new Todo(this, id, title, false));
-    }
-
-    @action
-    toggle(){
-
+        this.todos.push(new Todo(id, title, false));
     }
     
     totalTodos(){

@@ -7,13 +7,11 @@ interface ITodo {
 }
 
 export class TodoModel{
-    store
     id: number;
     @observable title: string;
     @observable completed: boolean;
 
-    constructor(store, id, title, completed){
-        this.store = store;
+    constructor(id, title, completed){
         this.id = id;
         this.title = title;
         this.completed = completed;
@@ -24,7 +22,6 @@ export class TodoModel{
     }
 
     destroy(){
-        this.store.todos.remove(this);
     }
 
     setTitle(title: string){
@@ -39,7 +36,7 @@ export class TodoModel{
         }
     }
 
-    static fromJson(store, object: ITodo){
-        return new TodoModel(store, object.id, object.title, object.completed);
+    static fromJson(object: ITodo){
+        return new TodoModel(object.id, object.title, object.completed);
     }
 }
