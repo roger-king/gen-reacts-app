@@ -2,14 +2,13 @@ import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import * as _ from 'lodash';
 import { TodoItem } from './todoItem.component';
-import { TodosStore } from './../../services/stores';
 import {
     FormGroup,
     FormControl,
     ControlLabel
 } from 'react-bootstrap';
 
-@inject('todos')
+@inject('todo_store')
 @observer
 export class TodoListComponent extends React.Component<any, any>{
     constructor() {
@@ -23,11 +22,11 @@ export class TodoListComponent extends React.Component<any, any>{
     }
 
     componentWillMount() {
-        console.log(this.props.todos.todos.length);
+        console.log(this.props.todo_store.todos.length);
     }
 
     componentWillReact() {
-        console.log('React', this.props.todos.todos);
+        //console.log('React', this.props.todos.todos);
     }
 
     // TODO: Generic Handle Change for all changes.
@@ -36,13 +35,14 @@ export class TodoListComponent extends React.Component<any, any>{
     }
 
     create() {
-        new TodosStore().create(this.state.newTodo);
-        console.log('New Todos', new TodosStore().todos);
+        this.props.todo_store.create(this.state.newTodo);
+        this.state.newTodo = '';
+        console.log('new todo', );
     }
 
     render() {
-        const { todos } = this.props;
-        if (todos.todos.length === 0)
+        const { todo_store } = this.props;
+        if (todo_store.todos.length === 0)
             return (
                 <h1>0 to do.</h1>
             )
@@ -50,7 +50,7 @@ export class TodoListComponent extends React.Component<any, any>{
             return (
                 <div>
                     <ul>
-                        {todos.todos.map(todo => (
+                        {todo_store.todos.map(todo => (
                             <TodoItem key={todo.id} id={todo.id} title={todo.title} completed={todo.completed} />
                         ))}
                     </ul>
