@@ -79,6 +79,9 @@ I use gulp to kick start and speed up our development process by having "magic" 
     npm run prod:compile
 ```
 
+# Resources:
+- [Mobx](https://mobx.js.org/intro/overview.html)
+
 # TODO:
 - [x] Example unit test with Jest
 - [ ] Proper tslint.json
