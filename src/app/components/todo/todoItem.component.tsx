@@ -9,17 +9,17 @@ interface ITodo {
     completed: boolean;
 }
 
-export class TodoItem extends React.Component<ITodo, any>{
-    constructor(){
+export class TodoItem extends React.Component<ITodo, any> {
+    constructor() {
         super();
     }
 
-    render(){
+    render() {
         const {title, completed} = this.props;
         return(
             <li>
                <Checkbox checked={completed}/> <h3>  {title} </h3>
-            </li> 
-        )
+            </li>
+        );
     }
 }

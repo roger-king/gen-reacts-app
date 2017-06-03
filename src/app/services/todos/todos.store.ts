@@ -7,24 +7,24 @@ useStrict(true);
 export class TodosStore {
     @observable public todos: Array<Todo> = [];
 
-    constructor(){
+    constructor() {
         const parent = this;
         let service = new TodosService();
         let remoteTodos = service.getTodos();
         _.forEach(remoteTodos, function(value, key){
             let todo: Todo = new Todo(value.id, value.title, false);
             parent.todos.push(todo);
-        })
+        });
 
     }
 
     @action
-    create(title: string){
+    create(title: string) {
         const id: number = this.todos.length + 1;
         this.todos.push(new Todo(id, title, false));
     }
-    
-    totalTodos(){
+
+    totalTodos() {
         return this.todos.length;
     }
 

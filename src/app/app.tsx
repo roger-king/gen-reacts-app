@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Grid} from 'react-bootstrap';
 import DevTools, {configureDevtool} from 'mobx-react-devtools';
-//import {Auth} from "../../actions/auth/index";
+// import {Auth} from "../../actions/auth/index";
 import './app.scss';
 
 export class App extends React.Component<any, any> {
@@ -10,17 +10,8 @@ export class App extends React.Component<any, any> {
 
         this.state = {
             redirected: false
-        }
+        };
     }
-
-    /*    componentDidMount(){
-     let auth = new Auth();
-     if(auth.isExpired() === false && this.state.redirected === false){
-     //TODO: use react router for redirecting;
-     this.state.redirected = true;
-     window.location.href = '/login';
-     }
-     }*/
 
     render() {
         return (

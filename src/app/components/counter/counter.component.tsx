@@ -3,19 +3,19 @@ import {inject, observer} from 'mobx-react';
 
 @inject('counter_store')
 @observer
-export class CounterComponent extends React.Component<any, any>{
-    constructor(){
+export class CounterComponent extends React.Component<any, any> {
+    constructor() {
         super();
     }
 
-    render(){
+    render() {
         const {counter_store} = this.props;
         return(
-            <div> 
+            <div>
                 <button onClick={counter_store.increase.bind(counter_store)}>up</button>
                 <h2> {counter_store.count}</h2>
                 <button onClick={counter_store.decrease.bind(counter_store)}>down</button>
             </div>
-        )
+        );
     }
 }

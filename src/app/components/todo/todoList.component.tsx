@@ -10,7 +10,7 @@ import {
 
 @inject('todo_store')
 @observer
-export class TodoListComponent extends React.Component<any, any>{
+export class TodoListComponent extends React.Component<any, any> {
     constructor() {
         super();
 
@@ -18,7 +18,7 @@ export class TodoListComponent extends React.Component<any, any>{
         this.setNewTodo = this.setNewTodo.bind(this);
         this.state = {
             newTodo: ''
-        }
+        };
     }
 
     componentWillMount() {
@@ -26,7 +26,7 @@ export class TodoListComponent extends React.Component<any, any>{
     }
 
     componentWillReact() {
-        //console.log('React', this.props.todos.todos);
+        // console.log('React', this.props.todos.todos);
     }
 
     // TODO: Generic Handle Change for all changes.
@@ -45,7 +45,7 @@ export class TodoListComponent extends React.Component<any, any>{
         if (todo_store.todos.length === 0)
             return (
                 <h1>0 to do.</h1>
-            )
+            );
         else
             return (
                 <div>
@@ -64,6 +64,6 @@ export class TodoListComponent extends React.Component<any, any>{
                     </FormGroup>
                     <button onClick={this.create}> create</button>
                 </div>
-            )
+            );
     }
 }

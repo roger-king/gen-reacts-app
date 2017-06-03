@@ -4,7 +4,7 @@
     "description": "reactjs-modern-seed",
     "main": "index.js",
     "scripts": {
-        "start:dev": "npm-run-all --parallel test:watch dev",
+        "start:dev": "npm-run-all --parallel lint test:watch dev",
         "dev": "gulp serve",
         "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
         "lint:watch": "npm run lint --watch",

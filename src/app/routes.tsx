@@ -1,11 +1,7 @@
 import * as React from 'react';
 import {Route} from 'react-router';
 import {App} from './app';
-import {
-    Home, 
-    Todo,
-    Counter
-} from "./containers";
+import {Home, Todo, Counter} from './containers';
 
 export default (
     <App>

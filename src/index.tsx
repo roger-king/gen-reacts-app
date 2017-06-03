@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import {Router} from 'react-router';
 import {createBrowserHistory} from 'history';
 import {Provider} from 'mobx-react';
@@ -19,7 +19,8 @@ const stores = {
     routing: routingStore,
     todo_store: new TodosStore(),
     counter_store: new CounterStore()
-}
+};
+
 const history = syncHistoryWithStore(browserHistory, routingStore);
 
 ReactDOM.render(
@@ -28,5 +29,5 @@ ReactDOM.render(
             {routes}
         </Router>
     </Provider>,
-    document.getElementById("root")
+    document.getElementById('root')
 );
