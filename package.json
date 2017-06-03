@@ -60,6 +60,7 @@
         "mobx-react-devtools": "^4.2.13",
         "mocha": "^3.4.2",
         "node-sass": "^4.5.2",
+        "npm-run-all": "^4.0.2",
         "react-addons-test-utils": "^15.5.1",
         "sass-loader": "^6.0.3",
         "source-map-loader": "^0.2.1",
