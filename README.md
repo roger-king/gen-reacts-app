@@ -71,8 +71,10 @@ I use gulp to kick start and speed up our development process by having "magic" 
     // I like to clone my projects into a "web" folder. Assuming API is in the same project folder.
     git clone https://github.com/roger-king/reactjs-modern-seed.git web
     cd web
-    yarn install // be sure yarn is installed.
-    npm run dev
+
+    // Be sure you are using npm version 5.0.1^
+    npm install
+    npm run start:dev
 ```
 
 #### Create Production Build:
