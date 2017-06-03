@@ -3,7 +3,7 @@ const gulp = require('gulp'),
     path = require('path'),
     rename = require('gulp-rename'),
     serve = require('browser-sync'),
-    eslint = require('gulp-eslint'),
+    tslint = require('gulp-tslint'),
     webpackDevMiddelware = require('webpack-dev-middleware'),
     webpachHotMiddelware = require('webpack-hot-middleware'),
     colorsSupported = require('supports-color'),
@@ -59,6 +59,17 @@ gulp.task('serve', function() {
     });
 });
 
-gulp.task('watch', ['serve']);
+gulp.task('lint', function(){
+    gulp.src('src/**/*.ts{,x}')
+        .pipe(tslint({
+            tslint: require('tslint'),
+            configuration: './tslint.json'
+        }))
+        .pipe(tslint.report({
+            summarizeFailureOutput: true,
+        }))
+})
+
+gulp.task('watch', ['serve', 'lint']);
 
 gulp.task('default', ['serve']);
