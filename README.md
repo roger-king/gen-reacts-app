@@ -14,7 +14,6 @@ This is a bare bones setup with a todo application example.
 4. TypeScript - SuperSet Javascript language
 5. Gulp - task runner
 6. Webpack - Javascript bundler
-6. Yarn - library management.
 7. Bootstrap - base CSS framework.
 
 ## Project Structure:
@@ -42,11 +41,13 @@ This is a bare bones setup with a todo application example.
 |   |   └── webpack.dev.config.js - Development webpack bundling config.
 |   |   └── webpack.dist.config.js - Production webpack bundling config.
 └── .babelrc
-└── .eslintrc - linting config.
+└── karma.conf.js - karma runner config.
+└── mocha.opts - mocha options.
+└── tslint.json - linting config.
 └── gulpfile.js - gulp task runner file
 └── webpack.config.js - base webpack bundler.
 └── tsconfig.json - typescript config.
-└── yarn.lock - package management.
+└── package-lock.json - package management.
 └── package.json
 ```
 
