@@ -88,6 +88,6 @@ I use gulp to kick start and speed up our development process by having "magic" 
 - [Mobx](https://mobx.js.org/intro/overview.html)
 
 # TODO:
-- [x] Example unit test with Jest
-- [ ] Proper tslint.json
-- [ ] Complete automation.
+- [ ] Example unit test of react components
+- [ ] Dynamic react routing.
+- [ ] Complete automation (leverage plop)
