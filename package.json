@@ -10,7 +10,8 @@
         "lint": "gulp lint",
         "lint:watch": "gulp lint",
         "test": "karma start --single-run",
-        "test:watch": "karma start"
+        "test:watch": "karma start",
+        "generate": "plop"
     },
     "keywords": [
         "reactjs",
@@ -75,6 +76,7 @@
         "node-sass": "^4.5.2",
         "npm-run-all": "^4.0.2",
         "phantomjs-prebuilt": "^2.1.14",
+        "plop": "^1.8.0",
         "react-addons-test-utils": "^15.5.1",
         "react-tap-event-plugin": "^2.0.1",
         "react-test-renderer": "^15.5.4",
