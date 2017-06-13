@@ -4,7 +4,7 @@ import {mount, render} from 'enzyme';
 import * as TestUtils from 'react-addons-test-utils';
 import * as ReactTestUtils from 'react-dom/test-utils';
 import {expect, assert} from 'chai';
-import { {{pascalCase name}}Component as {{pascalCase name}} } from './{{pascalCase name}}.component';
+import { {{pascalCase name}}Component as {{pascalCase name}} } from './{{lowerCase name}}.component';
 import {CounterStore} from './../../services/stores';
 
 const store = {
