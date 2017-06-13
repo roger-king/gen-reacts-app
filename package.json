@@ -9,7 +9,7 @@
         "dev": "gulp serve",
         "lint": "gulp lint",
         "lint:watch": "gulp lint",
-        "test": "mocha --opts mocha.opts",
+        "test": "karma start --single-run",
         "test:watch": "karma start"
     },
     "keywords": [
