@@ -93,7 +93,12 @@ module.exports = function(config) {
          */
         webpack: {
             module: webpackConfig.module,
-            resolve: webpackConfig.resolve
+            resolve: webpackConfig.resolve,
+            externals: {
+                'react/addons': true, // important!!
+                'react/lib/ExecutionEnvironment': true,
+                'react/lib/ReactContext': true
+            }
         }
     });
 };
