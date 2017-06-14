@@ -11,18 +11,18 @@ const store = {
     counter: new CounterStore()
 };
 
-describe("<Counter/>", function () {
+describe('<Counter/>', function () {
     let wrapper;
 
     beforeEach(function () {
-        wrapper = mount(<Counter counter_store={store.counter}/>)
+        wrapper = mount(<Counter counter_store={store.counter}/>);
     });
 
-    it("should render correctly", () => {
-        assert(wrapper.type, "div");
+    it('should render correctly', () => {
+        assert(wrapper.type, 'div');
     });
 
-    it("should increase count from 0 to 1", () => {
+    it('should increase count from 0 to 1', () => {
         expect(wrapper.find('.increase-btn').length)
             .to
             .equal(1);
@@ -34,7 +34,7 @@ describe("<Counter/>", function () {
             .equal(1);
     });
 
-    it("should decrease count from 1 to 0", () => {
+    it('should decrease count from 1 to 0', () => {
         expect(wrapper.find('.decrease-btn').length)
             .to
             .equal(1);
@@ -45,4 +45,4 @@ describe("<Counter/>", function () {
             .to
             .equal(0);
     });
-})
+});
