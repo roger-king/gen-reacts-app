@@ -25,7 +25,7 @@ module.exports = function(config) {
         colors: true,
 
         // List of files/patterns to exclude from loaded files
-        exclude: [],
+        exclude: ["tools/templates/**/*"],
 
         /*
          * The files array determines which files are included in the browser
