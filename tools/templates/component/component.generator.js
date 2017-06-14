@@ -9,14 +9,18 @@ module.exports = (plop) => {
         actions: [{
                 type: "add",
                 path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
-                templateFile: "tools/templates/component/component.template.tsx"
+                templateFile: "tools/templates/component/component.tsx.tpl"
             },
             {
                 type: "add",
                 path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
-                templateFile: "tools/templates/component/component.spec.template.tsx"
+                templateFile: "tools/templates/component/component.spec.tsx.tpl"
+            },
+            {
+                type: "add",
+                path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.scss",
+                templateFile: "tools/templates/component/component.scss.tpl"
             }
         ]
-
     })
 }
