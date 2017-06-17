@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Grid} from 'react-bootstrap';
 import DevTools, {configureDevtool} from 'mobx-react-devtools';
-// import {Auth} from "../../actions/auth/index";
+import 'antd/dist/antd.css';
 import './app.scss';
 
 export class App extends React.Component<any, any> {
@@ -16,9 +15,7 @@ export class App extends React.Component<any, any> {
     render() {
         return (
             <div className="app-container">
-                <Grid>
-                    {this.props.children}
-                </Grid>
+                {this.props.children}
                 <DevTools/>
             </div>
         );

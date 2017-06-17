@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {inject, observer} from 'mobx-react';
+import { Button } from 'antd';
 
 @inject('counter_store')
 @observer
@@ -12,9 +13,9 @@ export class CounterComponent extends React.Component<any, any> {
         const {counter_store} = this.props;
         return(
             <div>
-                <button className="increase-btn" onClick={counter_store.increase.bind(counter_store)}>up</button>
+                <Button className="increase-btn" onClick={counter_store.increase.bind(counter_store)}>up</Button>
                 <h2> {counter_store.count}</h2>
-                <button className="decrease-btn" onClick={counter_store.decrease.bind(counter_store)}>down</button>
+                <Button className="decrease-btn" onClick={counter_store.decrease.bind(counter_store)}>down</Button>
             </div>
         );
     }

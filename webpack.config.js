@@ -3,8 +3,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    context: path.resolve(__dirname, './src'),
     entry: {
-        app: "./srcindex.tsx"
+        app: "./index.tsx"
     },
     output: {},
     plugins: [
