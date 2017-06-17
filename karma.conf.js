@@ -1,4 +1,5 @@
 const webpackConfig = require('./webpack.config');
+const path = require('path');
 
 module.exports = function(config) {
     config.set({
@@ -33,9 +34,8 @@ module.exports = function(config) {
          * determines the order in which files are included in the browser.
          * http://karma-runner.github.io/0.13/config/files.html
          */
-        files: [
-            "src/**/*.spec.tsx",
-            "src/**/*.spec.ts"
+        files: [{ pattern: 'src/**/*.spec.tsx', watched: false },
+            { pattern: 'src/**/*.spec.ts', watched: false }
         ],
 
         /*
@@ -65,8 +65,8 @@ module.exports = function(config) {
          * npm module to be npm installed and added to the "plugins" field.
          */
         preprocessors: {
-            "src/**/*spec.tsx": ["webpack"], // Using karma-webpack npm module
-            "src/**/*.spec.ts": ["webpack"]
+            "src/**/*.spec.tsx": ["webpack", "sourcemap"], // Using karma-webpack npm module
+            "src/**/*.spec.ts": ["webpack", "sourcemap"]
         },
 
         /*
@@ -74,7 +74,7 @@ module.exports = function(config) {
          * use the karma-mocha-reporter, you must npm install the module and
          * include it in the list of plugins.
          */
-        reporters: ["mocha"],
+        reporters: ["mocha", "coverage"],
 
         /*
          * If true, Karma will start and capture all configured browsers, run
@@ -92,13 +92,36 @@ module.exports = function(config) {
          * purposes, you can specify that here.
          */
         webpack: {
-            module: webpackConfig.module,
+            output: {
+                filename: "[name].bundle.js",
+                publicPath: "/",
+                path: path.resolve(__dirname, "./public/coverage")
+            },
+            devtool: "inline-source-map",
+            module: {
+                loaders: [
+                    { test: /\.tsx?$/, exclude: [/tools\/templates/], loader: "awesome-typescript-loader" },
+                    {
+                        test: /\.tsx?$/,
+                        exclude: /(test|node_modules|bower_components)\//,
+                        loader: 'istanbul-instrumenter-loader',
+                        enforce: "post"
+                    }
+                ]
+            },
             resolve: webpackConfig.resolve,
             externals: {
                 'react/addons': true, // important!!
                 'react/lib/ExecutionEnvironment': true,
                 'react/lib/ReactContext': true
             }
+        },
+        webpackServer: {
+            noInfo: true //please don't spam the console when running in karma!
+        },
+        coverageReporter: {
+            type: 'html', //produces a html document after code is run
+            dir: 'public/coverage/' //path to created html doc
         }
     });
 };
