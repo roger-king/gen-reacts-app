@@ -5,7 +5,7 @@ const common = require('./../../webpack.config');
 common.output = {
     filename: '[name].bundle.js',
     publicPath: '',
-    path: path.resolve(__dirname, './dist')
+    path: path.resolve(__dirname, './../../public/dist')
 }
 
 /**
