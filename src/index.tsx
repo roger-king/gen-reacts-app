@@ -7,7 +7,6 @@ import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 
 // Import Application Stores
 import {
-    TodosStore,
     CounterStore
 } from './app/services/stores';
 // Import Application Route
@@ -17,7 +16,6 @@ const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();
 const stores = {
     routing: routingStore,
-    todo_store: new TodosStore(),
     counter_store: new CounterStore()
 };
 
