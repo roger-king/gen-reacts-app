@@ -20,7 +20,7 @@ module.exports = function(config) {
          * karma-***-launcher.
          * http://karma-runner.github.io/0.13/config/browsers.html
          */
-        browsers: ["PhantomJS"],
+        browsers: ["Chrome"],
 
         // Enable or disable colors in the output (reporters and logs)
         colors: true,
