@@ -5,7 +5,7 @@
  * 
  */
 
-import './{{pascalCase name}}.scss';
+import './{{camelCase name}}.scss';
 import * as React from 'react';
 import {inject, observer} from 'mobx-react';
 
