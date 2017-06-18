@@ -10,11 +10,11 @@ This is a bare bones setup with a todo application example.
 ## Core Libraries used:
 1. React.js - view library
 2. Mobx - state management
-3. Jest - test library
+3. Karma/Mocha/Chai - test framework/runner
 4. TypeScript - SuperSet Javascript language
 5. Gulp - task runner
 6. Webpack - Javascript bundler
-7. Bootstrap - base CSS framework.
+7. Ant Design - base CSS framework.
 
 ## Project Structure:
 ```
@@ -81,13 +81,11 @@ I use gulp to kick start and speed up our development process by having "magic" 
 #### Create Production Build:
 ```
     cd web
-    npm run prod:compile
+    npm run build:dist
 ```
 
 # Resources:
 - [Mobx](https://mobx.js.org/intro/overview.html)
 
 # TODO:
-- [ ] Example unit test of react components
 - [ ] Dynamic react routing.
-- [ ] Complete automation (leverage plop)
