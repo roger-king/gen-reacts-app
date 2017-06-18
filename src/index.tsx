@@ -6,17 +6,15 @@ import {Provider} from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 
 // Import Application Stores
-import {
-    CounterStore
-} from './app/services/stores';
+//import { } from './app/services/stores';
+
 // Import Application Route
 import routes from './app/routes';
 
 const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();
 const stores = {
-    routing: routingStore,
-    counter_store: new CounterStore()
+    routing: routingStore
 };
 
 const history = syncHistoryWithStore(browserHistory, routingStore);

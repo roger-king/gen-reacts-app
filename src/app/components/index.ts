@@ -1,1 +1,1 @@
-export {CounterComponent as Counter} from './counter/counter.component';
+// Globaly imports of all components
