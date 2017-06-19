@@ -6,14 +6,14 @@ import * as ReactTestUtils from 'react-dom/test-utils';
 import {expect, assert} from 'chai';
 import { {{pascalCase name}}Component as {{pascalCase name}} } from './{{lowerCase name}}.component';
 
-describe("<{{pascalCase name}}/>", function () {
+describe('<{{pascalCase name}}/>', function () {
     let wrapper;
 
     beforeEach(function () {
         wrapper = mount(<{{pascalCase name}}/>)
     });
 
-    it("should render correctly", () => {
-        assert(wrapper.type, "div");
+    it('should render correctly', () => {
+        assert(wrapper.type, 'div');
     });
 })

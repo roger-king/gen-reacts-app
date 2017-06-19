@@ -18,7 +18,7 @@ module.exports = (plop) => {
             },
             {
                 type: "add",
-                path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.scss d",
+                path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.scss",
                 templateFile: "tools/templates/container/container.scss.tpl"
             }
         ]

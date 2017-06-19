@@ -8,17 +8,17 @@ import { {{pascalCase name}}Component as {{pascalCase name}} } from './{{lowerCa
 import { {{pascalCase name}} } from './../../services/stores';
 
 const store = {
-    {{snakeCase name}}: new {{pascalCase name}}()
+    {{snakeCase name}}: new {{pascalCase name}}();
 }
 
-describe("<{{pascalCase name}}/>", function () {
+describe('<{{pascalCase name}}/>', function () {
     let wrapper;
 
     beforeEach(function () {
-        wrapper = mount(<{{pascalCase name}} {{snakeCase name}}={ store.{{snakeCase name}} }/>)
+        wrapper = mount(<{{pascalCase name}} {{snakeCase name}}={ store.{{snakeCase name}} }/>);
     });
 
-    it("should render correctly", () => {
-        assert(wrapper.type, "div");
+    it('should render correctly', () => {
+        assert(wrapper.type, 'div');
     });
 })
