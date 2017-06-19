@@ -8,8 +8,7 @@
 import './{{camelCase name}}.scss';
 import * as React from 'react';
 
-
-export class {{pascalCase name}}Component extends React.Component<any, any> {
+export class {{pascalCase name}}Component extends React.Component<any, any> { 
     constructor() {
         super();
     }
