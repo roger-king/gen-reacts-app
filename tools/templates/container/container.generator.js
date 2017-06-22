@@ -41,6 +41,12 @@ module.exports = (plop) => {
             {
                 type: "modify",
                 path: "src/app/routes.tsx",
+                pattern: "// Import Application Containers",
+                template: "import { {{pascalCase name}} } from './containers';"
+            },
+            {
+                type: "modify",
+                path: "src/app/routes.tsx",
                 pattern: "<App>",
                 template: "<App>\n     <Route exact={true} path=\"/{{route}}\" component={ {{pascalCase name}} }/>"
             }

@@ -49,12 +49,12 @@ module.exports = (plop) => {
                     type: "modify",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
                     pattern: ".component';",
-                    template: ".component';\nimport { {{pascalCase name}} } from './../../services/stores';\nconst store = {\n {{snakeCase name}}: new {{pascalCase name}}()\n};\n"
+                    template: ".component';\nimport { {{pascalCase name}}Store } from './../../services/stores';\nconst store = {\n {{snakeCase name}}: new {{pascalCase name}}()\n};\n"
                 },
                 {
                     type: "modify",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
-                    pattern: /mount(.*)/g,
+                    pattern: /mount\((.*)\)/g,
                     template: "mount(<{{pascalCase name}} {{snakeCase name}}_store={ store.{{camelCase name}} }/>);"
                 }
                 ])
@@ -65,7 +65,7 @@ module.exports = (plop) => {
                     type: "modify",
                     path: "src/app/components/index.ts",
                     pattern: "// Global imports of all components (do not remove - will break automation!)",
-                    template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.component';"
+                    template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}}Component } from './{{camelCase name}}/{{camelCase name}}.component';"
                 }
             ]);
             

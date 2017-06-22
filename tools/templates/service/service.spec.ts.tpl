@@ -1,4 +1,4 @@
-import { {{pascalCase name}} } from './{{pascalCase name}}.store';
+import { {{pascalCase name}}Store } from './{{camelCase name}}.store';
 import { expect } from 'chai';
 
 describe('{{pascalCase name}}', function(){

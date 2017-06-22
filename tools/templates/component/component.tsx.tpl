@@ -4,7 +4,7 @@
  * @test {{pascalCase name}}.component.spec
  */
 
-import './{{camelCase name}}.scss';
+import './{{camelCase name}}.component.scss';
 import * as React from 'react';
 
 export class {{pascalCase name}}Component extends React.Component<any, any> { 
