@@ -2,7 +2,6 @@
  * @component {{pascalCase name}}
  * @stylesheet {{pascalCase name}}.scss
  * @test {{pascalCase name}}.component.spec
- * 
  */
 
 import './{{camelCase name}}.scss';
@@ -12,7 +11,7 @@ export class {{pascalCase name}}Component extends React.Component<any, any> {
     constructor() {
         super();
     }
-
+    
     render() {
         return(
             <div>

@@ -49,7 +49,7 @@ module.exports = (plop) => {
                     type: "modify",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
                     pattern: ".component';",
-                    template: ".component';\nimport { {{pascalCase name}} } from './../../services/stores';\nconst store = {\n {{snakeCase name}}: new {{pascalCase name}}()\n}\n"
+                    template: ".component';\nimport { {{pascalCase name}} } from './../../services/stores';\nconst store = {\n {{snakeCase name}}: new {{pascalCase name}}()\n};\n"
                 },
                 {
                     type: "modify",

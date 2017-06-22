@@ -16,4 +16,4 @@ describe('<{{pascalCase name}}/>', function () {
     it('should render correctly', () => {
         assert(wrapper.type, 'div');
     });
-})
+});
