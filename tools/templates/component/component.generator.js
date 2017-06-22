@@ -22,17 +22,19 @@ module.exports = (plop) => {
                     templateFile: "tools/templates/component/component.tsx.tpl"
                 }, {
                     type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
-                    templateFile: "tools/templates/component/component.spec.tsx.tpl"
-                }, {
-                    type: "add",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.scss",
                     templateFile: "tools/templates/component/component.scss.tpl"
+                },
+                {
+                    type: "add",
+                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
+                    templateFile: "tools/templates/component/component.spec.tsx.tpl"
                 }
             ];
             
             if (data.withStore) {
-                actions = actions.concat([{
+                actions = actions.concat([
+                {
                     type: "modify",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
                     pattern: "export class ",
@@ -42,19 +44,31 @@ module.exports = (plop) => {
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
                     pattern: "import * as React from 'react';",
                     template: "import * as React from 'react';\nimport {inject, observer} from 'mobx-react';"
-                },{
+                },
+                {
                     type: "modify",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
                     pattern: ".component';",
-                    template: ".component';\nimport { {{pascalCase name}} } from './../../services/stores';\nconst store = {\n {{snakeCase name}}: new {{pascalCase name}}()\n};"
-                },{
+                    template: ".component';\nimport { {{pascalCase name}} } from './../../services/stores';\nconst store = {\n {{snakeCase name}}: new {{pascalCase name}}()\n}\n"
+                },
+                {
                     type: "modify",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
-                    pattern: /moun\w+/g,
-                    template: "mount(<{{pascalCase name}} {{snakeCase name}}={ store.{{snakeCase name}} }/>);"
-                }])
+                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
+                    pattern: /mount(.*)/g,
+                    template: "mount(<{{pascalCase name}} {{snakeCase name}}_store={ store.{{camelCase name}} }/>);"
+                }
+                ])
             }
 
+            actions = actions.concat([
+                {
+                    type: "modify",
+                    path: "src/app/components/index.ts",
+                    pattern: "// Global imports of all components (do not remove - will break automation!)",
+                    template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.component';"
+                }
+            ]);
+            
             return actions;
         }
     })

@@ -4,12 +4,8 @@ import {Router} from 'react-router';
 import {createBrowserHistory} from 'history';
 import {Provider} from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
-
-// Import Application Stores
-// import { } from './app/services/stores';
-
-// Import Application Route
 import routes from './app/routes';
+// Import Application Stores
 
 const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();

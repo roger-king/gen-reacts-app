@@ -4,18 +4,13 @@ import {mount, render} from 'enzyme';
 import * as TestUtils from 'react-addons-test-utils';
 import * as ReactTestUtils from 'react-dom/test-utils';
 import {expect, assert} from 'chai';
-import { {{pascalCase name}}Component as {{pascalCase name}} } from './{{lowerCase name}}.component';
-import { {{pascalCase name}} } from './../../services/stores';
+import { HeaderComponent as Header } from './header.component';
 
-const store = {
-    {{snakeCase name}}: new {{pascalCase name}}();
-}
-
-describe('<{{pascalCase name}}/>', function () {
+describe('<Header/>', function () {
     let wrapper;
 
     beforeEach(function () {
-        wrapper = mount(<{{pascalCase name}} {{snakeCase name}}={ store.{{snakeCase name}} }/>);
+        wrapper = mount(<Header/>)
     });
 
     it('should render correctly', () => {
