@@ -29,8 +29,8 @@ module.exports = (plop) => {
             {
                 type: "modify",
                 path: "src/app/containers/index.ts",
-                pattern: "// Global imports of all containers (do not remove - will  break automation!)",
-                template: "// Global imports of all containers (do not remove - will  break automation!)\nexport { {{pascalCase name}}Container as {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.container';"
+                pattern: "// Global imports of all containers (do not remove - will break automation!)",
+                template: "// Global imports of all containers (do not remove - will break automation!)\nexport { {{pascalCase name}}Container as {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.container';"
             },
             {
                 type: "modify",
@@ -42,7 +42,7 @@ module.exports = (plop) => {
                 type: "modify",
                 path: "src/app/routes.tsx",
                 pattern: "<App>",
-                template: "<App>\n     <Route exact={true} path=\"/{{route}}\" component={ {{camelCase name}} }/>"
+                template: "<App>\n     <Route exact={true} path=\"/{{route}}\" component={ {{pascalCase name}} }/>"
             }
         ]
     })

@@ -30,14 +30,14 @@ module.exports = (plop) => {
                 type: "modify",
                 path: "src/app/services/index.ts",
                 pattern: "// Global imports of services (do not remove - will break automation!)",
-                template: "// Global imports of services (do not remove - will break automation!)\nimport {" +
+                template: "// Global imports of services (do not remove - will break automation!)\nexport {" +
                         " {{pascalCase name}}Service } from './{{camelCase name}}/{{camelCase name}}.serv" +
                         "ice';"
             }, {
                 type: "modify",
                 path: "src/app/services/stores.ts",
                 pattern: "// Global imports of all stores (do not remove - will break automation!)",
-                template: "// Global imports of all stores (do not remove - will break automation!)\nimport" +
+                template: "// Global imports of all stores (do not remove - will break automation!)\nexport" +
                         " { {{pascalCase name}}Store } from './{{camelCase name}}/{{camelCase name}}.stor" +
                         "e';"
             },{
@@ -54,7 +54,7 @@ module.exports = (plop) => {
                 type: "modify",
                 path: "src/index.tsx",
                 pattern: "routing: routingStore",
-                template: "routing: routingStore,\n {{snakeCase name}}_store: new {{pascalCase name}}()"
+                template: "routing: routingStore,\n    {{snakeCase name}}_store: new {{pascalCase name}}Store()"
             }
         ]
     })
