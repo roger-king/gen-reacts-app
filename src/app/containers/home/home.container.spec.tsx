@@ -19,5 +19,5 @@ describe('<Home/>', function () {
 
     it('Should display welcome text', () => {
         expect(wrapper.text()).to.equal('React.js modern-seed Home');
-    })
+    });
 });
