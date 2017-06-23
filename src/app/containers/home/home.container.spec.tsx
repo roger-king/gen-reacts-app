@@ -4,16 +4,20 @@ import {mount, render} from 'enzyme';
 import * as TestUtils from 'react-addons-test-utils';
 import * as ReactTestUtils from 'react-dom/test-utils';
 import {expect, assert} from 'chai';
-import { HeaderComponent as Header } from './header.component';
+import { HomeContainer as Home } from './home.container';
 
-describe('<Header/>', function () {
+describe('<Home/>', function () {
     let wrapper;
 
     beforeEach(function () {
-        wrapper = mount(<Header/>)
+        wrapper = mount(<Home/>);
     });
 
     it('should render correctly', () => {
         assert(wrapper.type, 'div');
     });
-})
+
+    it('Should display welcome text', () => {
+        expect(wrapper.text()).to.equal('React.js modern-seed Home');
+    })
+});
