@@ -1,6 +1,6 @@
 import * as React from 'react';
 import DevTools, {configureDevtool} from 'mobx-react-devtools';
-import {UIView} from 'ui-router-react';
+import {UIView} from '@uirouter/react';
 import {states, plugins} from './router.config';
 import 'antd/dist/antd.css';
 import './app.scss';
