@@ -33,8 +33,7 @@
         "mobx-utils": "^2.0.2",
         "moment": "^2.18.1",
         "react": "^15.6.0",
-        "react-dom": "^15.6.0",
-        "ui-router-react": "^0.5.0"
+        "react-dom": "^15.6.0"
     },
     "devDependencies": {
         "@types/chai": "^3.5.2",
