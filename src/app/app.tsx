@@ -1,5 +1,7 @@
 import * as React from 'react';
 import DevTools, {configureDevtool} from 'mobx-react-devtools';
+import {UIView} from 'ui-router-react';
+import {states, plugins} from './router.config';
 import 'antd/dist/antd.css';
 import './app.scss';
 
@@ -15,8 +17,7 @@ export class App extends React.Component<any, any> {
     render() {
         return (
             <div className="app-container">
-                {this.props.children}
-                <DevTools/>
+                <UIView/>
             </div>
         );
     }

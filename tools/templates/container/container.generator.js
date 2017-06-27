@@ -27,28 +27,39 @@ module.exports = (plop) => {
                 templateFile: "tools/templates/container/container.scss.tpl"
             },
             {
-                type: "modify",
-                path: "src/app/containers/index.ts",
-                pattern: "// Global imports of all containers (do not remove - will break automation!)",
-                template: "// Global imports of all containers (do not remove - will break automation!)\nexport { {{pascalCase name}}Container as {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.container';"
+                type: "add",
+                path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.state.ts",
+                templateFile: "tools/templates/container/container.state.ts.tpl"
             },
             {
                 type: "modify",
-                path: "src/app/routes.tsx",
+                path: "src/app/containers/index.ts",
+                pattern: "// Global imports of all containers (do not remove - will break automation!)",
+                template: "// Global imports of all containers (do not remove - will break automation!)\nexport { {{pascalCase name}}State as {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.state';"
+            },
+            {
+                type: "modify",
+                path: "src/app/router.config.ts",
                 pattern: "} from './containers';",
                 template: ", {{pascalCase name}} } from './containers';"
             },
             {
                 type: "modify",
-                path: "src/app/routes.tsx",
+                path: "src/app/router.config.ts",
                 pattern: "// Import Application Containers",
                 template: "import { {{pascalCase name}} } from './containers';"
             },
             {
                 type: "modify",
-                path: "src/app/routes.tsx",
-                pattern: "<App>",
-                template: "<App>\n     <Route exact={true} path=\"/{{route}}\" component={ {{pascalCase name}} }/>"
+                path: "src/app/router.config.ts",
+                pattern: "states = [ ",
+                template: "states = [ {{pascalCase name}}, "
+            },
+            {
+                type: "modify",
+                path: "src/app/router.config.ts",
+                pattern: "export const states = [];",
+                template: "export const states = [ {{pascalCase name}} ];"
             }
         ]
     })

@@ -1,25 +1,19 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Router} from 'react-router';
+import {UIRouter, UIView} from '@uirouter/react';
 import {createBrowserHistory} from 'history';
 import {Provider} from 'mobx-react';
-import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
-import routes from './app/routes';
+import {App} from './app/app';
+import {states, plugins} from './app/router.config';
 // Import Application Stores
 
-const browserHistory = createBrowserHistory();
-const routingStore = new RouterStore();
-const stores = {
-    routing: routingStore
-};
-
-const history = syncHistoryWithStore(browserHistory, routingStore);
+const stores = {};
 
 ReactDOM.render(
     <Provider {...stores}>
-        <Router history={history}>
-            {routes}
-        </Router>
+        <UIRouter plugins={plugins} states={states}>
+           <App/>
+        </UIRouter>
     </Provider>,
     document.getElementById('root')
 );
