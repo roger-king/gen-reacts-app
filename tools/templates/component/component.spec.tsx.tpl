@@ -10,7 +10,7 @@ describe('<{{pascalCase name}}/>', function () {
     let wrapper;
 
     beforeEach(function () {
-        wrapper = mount(<{{pascalCase name}}/>)
+        wrapper = mount(<{{pascalCase name}}/>);
     });
 
     it('should render correctly', () => {
