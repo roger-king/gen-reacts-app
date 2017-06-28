@@ -10,7 +10,7 @@ module.exports = (plop) => {
         }, {
             type: "input",
             name: "nested",
-            message: "Is this a nested component? (if yes - provide parent component name; if no - type \'no\' "
+            message: "Is this a nested component? (if yes - provide parent component name; if no - type \'no\')"
         }, {
             type: "confirm",
             name: "withStore",
@@ -62,7 +62,9 @@ module.exports = (plop) => {
 
             if (data.nested != "no") {
                 actions.forEach((action) => {
-                    action.path = "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx"
+                    let arr = action.path.split("/");
+                    arr.splice(3, 0, data.nested);
+                    action.path = arr.join("/");
                 })
             } else {
                 actions = actions.concat([{
