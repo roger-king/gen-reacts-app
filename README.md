@@ -1,6 +1,8 @@
-![Seed Logo](public/images/react_modern_seed.png)
+<div align="center">
+    <img width="200" height="200" src="public/images/react_modern_seed.png"/>
 
-# ReactJS Project Seed
+    <h1> ReactJS Project Seed </h1>
+</div>
 
 ## About:
 A react.js frontend web seed.
