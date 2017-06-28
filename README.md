@@ -1,7 +1,6 @@
 <div align="center">
     <img width="200" height="200" src="public/images/react_modern_seed.png"/>
-
-    <h1> ReactJS Project Seed </h1>
+    <h1>ReactJS Project Seed</h1>
 </div>
 
 ## About:
