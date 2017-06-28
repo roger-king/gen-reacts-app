@@ -44,7 +44,8 @@
 
 <div align="center">
     <h2>Project Structure</h2>
-    ```
+</div>
+```
 .
 └── config
 |   └── default.json - development configuration
@@ -77,6 +78,8 @@
 └── package-lock.json - package management.
 └── package.json
 ```
+
+<div align="center">
     <p>
         React.js is a very opinated framework. It has many modules/libraries that can overwhelm the user and cause your codebase to become messy.
         I try to avoid that here by sticking to core react.js and mobx libraries.
