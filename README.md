@@ -1,24 +1,50 @@
 <div align="center">
     <img width="200" height="200" src="public/images/react_modern_seed.png"/>
     <h1>ReactJS Project Seed</h1>
+    <p>
+        React.js modern seed is a frontend full suite solution. It aims to provide you a streamline process from development to production!
+    </p>
 </div>
+<div align="center">
+    <h2>Prerequistes</h2>
+    <ul>
+        <li>npm v5.0^</li>
+    </ul>
+    <h2>Getting Started</h2>
+    ```
+        // Install node_modules
+        npm install
 
-## About:
-A react.js frontend web seed.
+        // Init Project space.
+        npm run generate:init
 
-This is a bare bones setup with a todo application example.
+        // Remove .git
+        rm -rf .git
 
-## Core Libraries used:
-1. React.js - view library
-2. Mobx - state management
-3. Karma/Mocha/Chai - test framework/runner
-4. TypeScript - SuperSet Javascript language
-5. Gulp - task runner
-6. Webpack - Javascript bundler
-7. Ant Design - base CSS framework.
+        // Run in development mode
+        npm run start:dev
+    ```
+</div>
+<div align="center">
+    <h2>Concepts</h2>
+    <p>
+        I provide a full toolbox of technologies for you to use.
+    </p>
+</div>
+|Name|Description|
+|:--:|:----------|
+|ant design|css react framework|
+|tslint|linting tool for typescript|
+|karma|test runner for mocha (test framework)|
+|mocha/chai/enzyme|test framework to do our testing of our components and services|
+|plop|templated automation to get rid of the react boilerplates|
+|webpack|bundling and compiling of our typescript|
+|mobx|state management|
+|typescript|superset language for strict typing of our javascript|
 
-## Project Structure:
-```
+<div align="center">
+    <h2>Project Structure</h2>
+    ```
 .
 └── config
 |   └── default.json - development configuration
@@ -51,10 +77,11 @@ This is a bare bones setup with a todo application example.
 └── package-lock.json - package management.
 └── package.json
 ```
-
-React.js is a very opinated framework. It has many modules/libraries that can overwhelm the user and cause your codebase to become messy.
-
-I try to avoid that here by sticking to core react.js and mobx libraries.
+    <p>
+        React.js is a very opinated framework. It has many modules/libraries that can overwhelm the user and cause your codebase to become messy.
+        I try to avoid that here by sticking to core react.js and mobx libraries.
+    </p>
+</div>
 
 ### Workflow:
 I try to keep the methodology of reactjs, which is reusable components.
