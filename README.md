@@ -1,50 +1,67 @@
+[![npm][npm]][npm-url]
+
 <div align="center">
     <img width="200" height="200" src="public/images/react_modern_seed.png"/>
-    <h1>ReactJS Project Seed</h1>
+    <h1>react.js lunchbox</h1>
     <p>
-        React.js modern seed is a frontend full suite solution. It aims to provide you a streamline process from development to production!
+        React.js lunchbox is a frontend full suite solution. It aims to provide you a streamline process from development to production!
     </p>
 </div>
+<h2 align="center">Introduction</h2>
+<p>
+React.js lunchbox is my approach to tackling a react.js application. The main goal of this project is to bring a structure to a very open platform for developing a react.js application. I use many modern day (to date) tools to help streamline develop processes.
+</p>
+<ul>
+    <li> Strict typing </li>
+    <li> Automation with templates to remove the need for rewriting react boilerplate </li>
+    <li> Frontend unit testing </li>
+    <li> Linting! </li>
+    <li> Modular bundling </li>
+</ul>
+
 <div align="center">
-    <h2>Prerequistes</h2>
-    <ul>
-        <li>npm v5.0^</li>
-    </ul>
     <h2>Getting Started</h2>
-    ```
-        // Install node_modules
-        npm install
-
-        // Init Project space.
-        npm run generate:init
-
-        // Remove .git
-        rm -rf .git
-
-        // Run in development mode
-        npm run start:dev
-    ```
 </div>
-<div align="center">
-    <h2>Concepts</h2>
-    <p>
-        I provide a full toolbox of technologies for you to use.
-    </p>
-</div>
+
+```
+// Install node_modules
+npm install
+
+// Init Project space.
+npm run generate:init
+
+// Remove .git
+rm -rf .git
+
+// Run in development mode
+npm run start:dev
+
+```
+    
+<h2 align="center">Concepts</h2>
+
+<p>
+    I provide a full toolbox of technologies for you to use. This would hopefully help you develop faster and better code.
+</p>
+
 |Name|Description|
-|:--:|:----------|
-|ant design|css react framework|
-|tslint|linting tool for typescript|
-|karma|test runner for mocha (test framework)|
-|mocha/chai/enzyme|test framework to do our testing of our components and services|
-|plop|templated automation to get rid of the react boilerplates|
-|webpack|bundling and compiling of our typescript|
-|mobx|state management|
-|typescript|superset language for strict typing of our javascript|
+|:--:| :----------:|
+|typescript| superset language for strict typing of our javascript|
+|webpack| bundling and compiling of our typescript|
+|mobx| state management|
+|ui-router| router|
+|ant design| css react framework|
+|tslint| linting tool for typescript|
+|karma| test runner for mocha (test framework)|
+|mocha/chai/enzyme| test framework to do our testing of our components and services|
+|plop| templated automation to get rid of the react boilerplates|
 
-<div align="center">
-    <h2>Project Structure</h2>
-</div>
+<h2 align="center">Project Structure</h2>
+<p>
+    React.js is a very opinated framework. It has many modules/libraries that can overwhelm the user and cause your codebase to become messy.
+    I try to avoid that here by sticking to core react.js and mobx libraries.
+</p>
+
 ```
 .
 └── config
@@ -79,13 +96,6 @@
 └── package.json
 ```
 
-<div align="center">
-    <p>
-        React.js is a very opinated framework. It has many modules/libraries that can overwhelm the user and cause your codebase to become messy.
-        I try to avoid that here by sticking to core react.js and mobx libraries.
-    </p>
-</div>
-
 ### Workflow:
 I try to keep the methodology of reactjs, which is reusable components.
 
@@ -96,27 +106,29 @@ Pages or views are kept inside `src/app/containers/<container>`. Containers are 
 ### Workflow Bonuses:
 I use gulp to kick start and speed up our development process by having "magic" keyboards or commands that would help us do things like generate components and containers (templated).
 
-## How To:
+<h2 align="center"> Commands </h2>
+<p>
+    I use npm's scripts to make for faster development and workflow.
+    Here is a list of commands you can run:
+</p>
 
-#### Run Development:
-```
-    // I like to clone my projects into a "web" folder. Assuming API is in the same project folder.
-    git clone https://github.com/roger-king/reactjs-modern-seed.git web
-    cd web
+|Command|Action|
+|:-----:|:----:|
+|start:dev| Start development server|
+|start:test| Start testing in watch mode|
+|build:dist| Create dist for production. This will run linting in parallel to consistent formatting|
+|generate| List all automated templates to create from|
+|generate:init| Initiates the project (should only be ran once at the start of the project)|
+|generate:component| Create a shared component|
+|generate:container| Create a new page or containter|
+|generate:service| Create a new service/state store|
 
-    // Be sure you are using npm version 5.0.1^
-    npm install
-    npm run start:dev
-```
-
-#### Create Production Build:
-```
-    cd web
-    npm run build:dist
-```
 
 # Resources:
 - [Mobx](https://mobx.js.org/intro/overview.html)
+- [UIRouter](https://ui-router.github.io/react/)
+- [Webpack](https://webpack.github.io/docs/)
+- [Ant Design](https://ant.design/docs/react/introduce)
 
-# TODO:
-- [ ] Dynamic react routing.
+[npm]: https://img.shields.io/npm/v/npm.svg
+[npm-url]: https://nodejs.org/en/download/
