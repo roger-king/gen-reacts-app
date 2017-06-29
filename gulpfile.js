@@ -4,6 +4,7 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
     serve = require('browser-sync'),
     tslint = require('gulp-tslint'),
+    typedoc = require('gulp-typedoc'),
     webpackDevMiddelware = require('webpack-dev-middleware'),
     webpachHotMiddelware = require('webpack-hot-middleware'),
     colorsSupported = require('supports-color'),
@@ -26,6 +27,25 @@ let paths = {
     entry: path.join(__dirname, root, 'index.tsx'),
     output: root
 };
+
+// Typedoc Configuration!
+gulp.task('docs', function(){
+    return gulp
+        .src(["src/**/*.tsx", "src/**/*.ts"])
+        .pipe(typedoc({
+            config: "./tsconfig.json",
+            jsx: "react",
+            module: "commonjs",
+            target: "es5",
+            out: "public/docs/",
+            name: "ReactJS Lunchbox",
+            json: "public/docs/to/docs.json",
+
+			// TypeDoc options (see typedoc docs)
+			ignoreCompilerErrors: false,
+			version: true,
+        }));
+});
 
 // use webpack.config.js to build modules
 gulp.task('build:dist', function(cb) {

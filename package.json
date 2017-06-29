@@ -17,7 +17,8 @@
         "generate:container": "plop container",
         "generate:service": "plop service",
         "dist": "gulp build:dist",
-        "build:dist": "npm-run-all --parallel lint test dist"
+        "build:dist": "npm-run-all --parallel lint test dist",
+        "docs": "gulp docs"
     },
     "keywords": [
         "reactjs",
@@ -64,6 +65,7 @@
         "gulp-inject-string": "^1.1.0",
         "gulp-rename": "^1.2.2",
         "gulp-tslint": "^8.1.1",
+        "gulp-typedoc": "^2.0.2",
         "gulp-typescript": "^3.1.6",
         "gulp-util": "^3.0.8",
         "html-webpack-plugin": "^2.28.0",
@@ -96,6 +98,7 @@
         "supports-color": "^3.2.3",
         "ts-node": "^3.0.6",
         "tslint": "^5.4.3",
+        "typedoc": "^0.7.1",
         "typescript": "^2.4.0",
         "webpack": "^2.5.1",
         "webpack-dev-middleware": "^1.10.2",

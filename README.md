@@ -78,7 +78,7 @@ npm run start:dev
 |   |   └── app.constants.ts - a single file for global application constants (i.e api url)
 |   |   └── app.scss - Sass file for global application styling.
 |   |   └── app.tsx - Main application tsx file (contains Authentication module)
-|   |   └── routes.tsx - A single file to contain all routes.
+|   |   └── router.config.ts - A single file to contain all routes.
 |   └── index.html - base html file
 |   └── index.tsx - the entry point for the application (wrapper to call). Here we set the provider, base entry element, stores, and routing history.
 └── tools

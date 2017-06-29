@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {UIRouter, UIView} from '@uirouter/react';
 import {createBrowserHistory} from 'history';
 import {Provider} from 'mobx-react';
 import {App} from './app/app';
@@ -11,9 +10,7 @@ const stores = {};
 
 ReactDOM.render(
     <Provider {...stores}>
-        <UIRouter plugins={plugins} states={states}>
-           <App/>
-        </UIRouter>
+        <App/>
     </Provider>,
     document.getElementById('root')
 );
