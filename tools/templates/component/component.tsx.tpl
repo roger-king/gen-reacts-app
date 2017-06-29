@@ -1,7 +1,6 @@
 /**
- * @component {{pascalCase name}}
- * @stylesheet {{pascalCase name}}.scss
- * @test {{pascalCase name}}.component.spec
+ * {{pascalCase name}}Component
+ * 
  */
 
 import './{{camelCase name}}.component.scss';

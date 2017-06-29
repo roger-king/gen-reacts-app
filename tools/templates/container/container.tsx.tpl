@@ -1,3 +1,7 @@
+/**
+* {{pascalCase name}}Container
+*/
+
 import './{{camelCase name}}.container.scss';
 import * as React from 'react';
 
