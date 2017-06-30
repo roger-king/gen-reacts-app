@@ -55,7 +55,7 @@ module.exports = (plop) => {
                         type: "modify",
                         path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
                         pattern: /mount\((.*)\)/g,
-                        template: "mount(<{{pascalCase name}} {{snakeCase name}}_store={ store.{{camelCase name}} }/>);"
+                        template: "mount(<{{pascalCase name}} {{snakeCase name}}_store={ store.{{camelCase name}} }/>)"
                     }
                 ])
             }

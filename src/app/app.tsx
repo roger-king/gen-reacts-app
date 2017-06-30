@@ -9,7 +9,6 @@ import './app.scss';
  * Main application container.
  * This wraps around the entire application
  * You can set things like app-wide css grid here.
- * 
  * @preferred
  */
 export class App extends React.Component<{}, {}> {
