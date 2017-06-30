@@ -1,6 +1,6 @@
 /**
-* {{pascalCase name}}Service
-*/
+ * {{pascalCase name}}Service
+ */
 
 export class {{pascalCase name}}Service {
     

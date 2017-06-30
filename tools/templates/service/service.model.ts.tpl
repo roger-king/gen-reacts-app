@@ -5,8 +5,8 @@ interface I{{pascalCase name}} {
 
 
 /**
-* {{pascalCase name}}Model
-*/
+ * {{pascalCase name}}Model
+ */
 
 export class {{pascalCase name}}Model implements I{{pascalCase name}} {
 
