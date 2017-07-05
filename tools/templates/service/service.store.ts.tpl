@@ -21,6 +21,6 @@ export class {{pascalCase name}}Store {
 
     toJson() {
         // TODO: This is an example and can be renamed.
-        //return this.{{camelCase name}}.map({{camelCase name}} => {{camelCase name}}.toJson);
+        // return this.{{camelCase name}}.map({{camelCase name}} => {{camelCase name}}.toJson);
     }
 }
