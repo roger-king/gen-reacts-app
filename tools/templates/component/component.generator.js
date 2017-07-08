@@ -10,7 +10,7 @@ module.exports = (plop) => {
         }, {
             type: "input",
             name: "nested",
-            message: "Is this a nested component? (if yes - provide parent component name; if no - type \'no\')"
+            message: "Is this a nested component? (if yes - provide parent component name; if no - type \'n\')"
         }, {
             type: "confirm",
             name: "withStore",
