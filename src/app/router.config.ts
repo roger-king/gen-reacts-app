@@ -13,5 +13,4 @@ export const config = (router: UIRouterReact) => {
   router.urlRouter.otherwise('/');
 
   // router.transitionService.onBefore(reqAuthHook.criteria, reqAuthHook.callback, {priority: 10});
-
 };
