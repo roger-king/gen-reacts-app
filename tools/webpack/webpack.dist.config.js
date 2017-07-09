@@ -12,17 +12,10 @@ common.output = {
  * Add the uglify plugin for production builds
  */
 common.plugins.push(new webpack.optimize.UglifyJsPlugin({
-    mangle: true
-}));
-
-/**
- * Swap React for react-lite in production
- */
-/*common.resolve = {
-    alias: {
-        'react': 'react-lite',
-        'react-dom': 'react-lite'
+    mangle: true,
+    compressor: {
+        warnings: false
     }
-};*/
+}));
 
 module.exports = common;
