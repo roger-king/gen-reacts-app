@@ -9,13 +9,17 @@
         "outDir": "./dist/",
         "module": "commonjs",
         "target": "es5",
-        "sourceMap": true,
+        "moduleResolution": "node",
         "inlineSourceMap": false,
         "inlineSources": false,
         "experimentalDecorators": true,
-        "jsx": "react",
+        "lib": ["es2015", "dom"],
         "allowSyntheticDefaultImports": true,
-        "moduleResolution": "node"
+        "suppressImplicitAnyIndexErrors": true,
+        "forceConsistentCasingInFileNames": true,
+        "sourceMap": true,
+        "declaration": false,
+        "jsx": "react"
     },
     "exclude": [
         "node_modules",
