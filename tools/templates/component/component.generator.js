@@ -60,7 +60,7 @@ module.exports = (plop) => {
                 ])
             }
 
-            if (data.nested != "no") {
+            if (data.nested != "n") {
                 actions.forEach((action) => {
                     let arr = action.path.split("/");
                     arr.splice(3, 0, data.nested);
