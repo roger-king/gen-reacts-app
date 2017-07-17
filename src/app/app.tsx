@@ -1,7 +1,6 @@
 import * as React from 'react';
-import DevTools, {configureDevtool} from 'mobx-react-devtools';
-import {UIRouter, UIView} from '@uirouter/react';
-import {states, plugins} from './router.config';
+import DevTools, { configureDevtool } from 'mobx-react-devtools';
+import { UIView } from '@uirouter/react';
 import 'antd/dist/antd.css';
 import './app.scss';
 
@@ -18,11 +17,9 @@ export class App extends React.Component<{}, {}> {
 
     render() {
         return (
-            <UIRouter plugins={plugins} states={states}>
-                <div className="app-container">
-                    <UIView/>
-                </div>
-            </UIRouter>
+            <div className="app-container">
+                <UIView />
+            </div>
         );
     }
 }

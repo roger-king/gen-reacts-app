@@ -1,8 +1,8 @@
-import * as React from 'react';
 import { pushStateLocationPlugin, UIRouterReact } from '@uirouter/react';
+import { AppState } from './app.state';
 // Import Application Containers
 
-// Register application state.
+export const states = [AppState];
 
 export const plugins = [
   pushStateLocationPlugin
