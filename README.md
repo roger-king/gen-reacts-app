@@ -71,7 +71,7 @@ npm run start:dev
 |   └── app - application code.
 |   |   └── components - Commonly used modules throughout your application.
 |   |   |   └── index.ts - A single entry point for exporting your components for easy importing.
-|   |   └── containers - Entry points for each route. Containers are built by your different components.
+|   |   └── containers - Entry points for each route. Containers are built from your components and access your mobx stores.
 |   |   |   └── index.ts - A single entry point for exporting your containers for easy importing.
 |   |   └── services - Service layer of the application containing reusable services and stores (mobx).
 |   |   |   └── index.ts - A single entry point for exporting your services for easy importing.
