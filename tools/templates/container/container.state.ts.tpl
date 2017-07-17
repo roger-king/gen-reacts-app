@@ -7,6 +7,7 @@ import { ReactStateDeclaration } from '@uirouter/react';
  */
 
 export const {{pascalCase name}}State: ReactStateDeclaration = {
+    parent: 'app',
     name: '{{camelCase name}}',
     url: '{{route}}',
     component: {{pascalCase name}}

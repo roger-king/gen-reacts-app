@@ -59,14 +59,8 @@ module.exports = (plop) => {
                 {
                     type: "modify",
                     path: "src/app/router.config.ts",
-                    pattern: "states = [",
-                    template: "states = [ {{pascalCase name}}, "
-                },
-                {
-                    type: "modify",
-                    path: "src/app/router.config.ts",
-                    pattern: "// Register application state.",
-                    template: "export const states = [{{pascalCase name}} ];"
+                    pattern: "AppState",
+                    template: "{{pascalCase name}}, AppState"
                 }
             ];
 
