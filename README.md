@@ -130,5 +130,7 @@ I use gulp to kick start and speed up our development process by having "magic" 
 - [Webpack](https://webpack.github.io/docs/)
 - [Ant Design](https://ant.design/docs/react/introduce)
 
+- [Smart vs Dumb Container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+
 [npm]: https://img.shields.io/npm/v/npm.svg
 [npm-url]: https://nodejs.org/en/download/
