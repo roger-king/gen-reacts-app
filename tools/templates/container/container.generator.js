@@ -17,7 +17,7 @@ module.exports = (plop) => {
                 message: "What is the route path?"
             }
         ],
-        actions: function() {
+        actions: function(data) {
             var actions = [{
                     type: "add",
                     path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.tsx",
@@ -59,8 +59,8 @@ module.exports = (plop) => {
                 {
                     type: "modify",
                     path: "src/app/router.config.ts",
-                    pattern: "AppState",
-                    template: "{{pascalCase name}}, AppState"
+                    pattern: "[AppState",
+                    template: "[{{pascalCase name}}, AppState"
                 }
             ];
 
