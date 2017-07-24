@@ -1,11 +1,11 @@
-import { pushStateLocationPlugin, UIRouterReact } from '@uirouter/react';
-import { AppState } from './app.state';
-// Import Application Containers
+import { servicesPlugin, hashLocationPlugin, UIRouterReact } from '@uirouter/react';
+import { containers } from './containers';
 
-export const states = [AppState];
+export const states = [].concat(containers);
 
 export const plugins = [
-  pushStateLocationPlugin
+  hashLocationPlugin,
+  servicesPlugin
 ];
 
 export const config = (router: UIRouterReact) => {
