@@ -1,7 +1,7 @@
 import * as React from 'react';
 import DevTools, { configureDevtool } from 'mobx-react-devtools';
-import { UIRouter, UIView } from '@uirouter/react';
-import { states, plugins, config } from './router.config';
+// import { states, plugins, config } from './router.config';
+import Routes from './app.routes';
 import './app.scss';
 
 /**
@@ -17,11 +17,10 @@ export class App extends React.Component<{}, {}> {
 
     render() {
         return (
-            <UIRouter states={states} config={config} plugins={plugins}>
-                <div className="app-container">
-                    <UIView render={(Comp, props) => <Comp {...props} />} />
-                </div>
-            </UIRouter>
+            <div className="app-container">
+                {Routes}
+                <DevTools />
+            </div>
         );
     }
 }

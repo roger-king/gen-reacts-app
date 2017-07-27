@@ -1,4 +1,4 @@
-import { servicesPlugin, hashLocationPlugin, UIRouterReact } from '@uirouter/react';
+/* import { servicesPlugin, hashLocationPlugin, UIRouterReact } from '@uirouter/react';
 import { containers } from './containers';
 
 export const states = [].concat(containers);
@@ -13,4 +13,4 @@ export const config = (router: UIRouterReact) => {
   router.urlRouter.otherwise('/');
 
   // router.transitionService.onBefore(reqAuthHook.criteria, reqAuthHook.callback, {priority: 10});
-};
+}; */
