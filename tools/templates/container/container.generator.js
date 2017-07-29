@@ -7,14 +7,14 @@ module.exports = (plop) => {
                 message: "What is the name of your container?"
             },
             {
-                type: "confirm",
-                name: "withStore",
-                message: "Create store with container?"
-            },
-            {
                 type: "input",
                 name: "route",
                 message: "What is the route path?"
+            },
+            {
+                type: "confirm",
+                name: "withStore",
+                message: "Create store with container?"
             }
         ],
         actions: function(data) {
@@ -34,28 +34,37 @@ module.exports = (plop) => {
                     templateFile: "tools/templates/container/container.scss.tpl"
                 },
                 {
-                    type: "add",
-                    path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.state.ts",
-                    templateFile: "tools/templates/container/container.state.ts.tpl"
-                },
-                {
                     type: "modify",
                     path: "src/app/containers/index.ts",
                     pattern: "// Global imports of all containers (do not remove - will break automation!)",
-                    template: "// Global imports of all containers (do not remove - will break automation!)\nimport { {{pascalCase name}}State } from './{{camelCase name}}/{{camelCase name}}.state';"
-                }, {
-                    type: "modify",
-                    path: "src/app/containers/index.ts",
-                    pattern: "State];",
-                    template: "State, {{pascalCase name}}State];"
+                    template: "// Global imports of all containers (do not remove - will break automation!)\nexport { {{pascalCase name}}Container as {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.container';"
                 },
                 {
                     type: "modify",
-                    path: "src/app/containers/index.ts",
-                    pattern: "export const containers = [];",
-                    template: "export const containers = [{{pascalCase name}}State];"
+                    path: "src/app/app.routes.tsx",
+                    pattern: " } from './containers';",
+                    template: ", {{pascalCase name}} } from './containers';"
+                },
+                {
+                    type: "modify",
+                    path: "src/app/app.routes.tsx",
+                    pattern: "// Import Application Routes",
+                    template: "import { {{pascalCase name}} } from './containers';"
                 }
             ];
+
+            var routeObject = {
+                type: "modify",
+                path: "src/app/app.routes.tsx",
+                pattern: "<main>",
+                template: "<main>\n    <Route path=\"{{route}}\" component={ {{pascalCase name}} }/>"
+            };
+
+            if (data.route === "/") {
+                routeObject.template = "<main>\n        <Route exact path=\"{{route}}\" component={ {{pascalCase name}} }/>"
+            }
+
+            actions = actions.concat([routeObject]);
 
             if (data.withStore) {
                 actions = actions.concat([{
