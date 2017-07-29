@@ -59,13 +59,8 @@ module.exports = (plop) => {
                 }, {
                     type: "modify",
                     path: "src/index.tsx",
-                    pattern: "const stores = {",
-                    template: "const stores = { \n{{snakeCase name}}_store: new {{pascalCase name}}Store(), "
-                }, {
-                    type: "modify",
-                    path: "src/index.tsx",
-                    pattern: "const stores = {};",
-                    template: "const stores = { \n{{snakeCase name}}_store: new {{pascalCase name}}Store()\n};"
+                    pattern: "routing: routingStore",
+                    template: "routing: routingStore,\n    {{snakeCase name}}_store: new {{pascalCase name}}Store()"
                 }]);
             }
 
