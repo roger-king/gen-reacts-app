@@ -117,17 +117,19 @@ I use gulp to kick start and speed up our development process by having "magic" 
 |start:dev| Start development server|
 |start:test| Start testing in watch mode|
 |build:dist| Create dist for production. This will run linting in parallel to consistent formatting|
-|generate| List all automated templates to create from|
-|generate:init| Initiates the project (should only be ran once at the start of the project)|
-|generate:component| Create a shared component|
-|generate:container| Create a new page or containter|
-|generate:service| Create a new service/state store|
+|gen| List all automated templates to create from|
+|gen:init| Initiates the project (should only be ran once at the start of the project)|
+|gen:component| Create a shared component|
+|gen:container| Create a new page or containter|
+|gen:service| Create a new service/state store|
 
 
 # Resources:
 - [Mobx](https://mobx.js.org/intro/overview.html)
+- [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
 - [UIRouter](https://ui-router.github.io/react/)
 - [Webpack](https://webpack.github.io/docs/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 - [Ant Design](https://ant.design/docs/react/introduce)
 
 - [Smart vs Dumb Container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)

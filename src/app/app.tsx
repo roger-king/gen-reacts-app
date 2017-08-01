@@ -1,6 +1,6 @@
 import * as React from 'react';
 import DevTools, { configureDevtool } from 'mobx-react-devtools';
-import Routes from './app.routes';
+import Routes from './app.router';
 import './app.scss';
 
 /**
