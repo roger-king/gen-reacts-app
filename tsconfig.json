@@ -21,6 +21,9 @@
         "declaration": false,
         "jsx": "react"
     },
+    "awesomeTypescriptLoaderOptions": {
+        "useCache": true
+    },
     "exclude": [
         "node_modules",
         "build",
