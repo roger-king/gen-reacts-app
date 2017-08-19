@@ -313,3 +313,5 @@ sftp-config.json
 ### Yeoman template
 node_modules/
 bower_components/
+
+.awcache
