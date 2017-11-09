@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --port 8001 --history-api-fallback",
-        "start:dev": "webpack-dev-server --open --config ./build/webpack.dev.config.js",
+        "start:dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --port 8000",
         "start:test": "npm-run-all --parallel lint:watch test",
         "test": "karma start --single-run",
         "test:watch": "karma start",
@@ -14,7 +14,7 @@
         "gen:component": "plop component",
         "gen:container": "plop container",
         "gen:service": "plop service",
-        "build": "webpack --config ./build/webpack.prod.config.js"
+        "build": "webpack --config ./build/webpack.prod.conf.js"
     },
     "keywords": [
         "reactjs",

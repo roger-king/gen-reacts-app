@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const baseWebpackConfig = require('./webpack.config.js');
+const baseWebpackConfig = require('./webpack.base.conf.js');
 
 const webpackConfig = merge(baseWebpackConfig, {
     output: {
@@ -15,6 +15,10 @@ const webpackConfig = merge(baseWebpackConfig, {
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'development',
+            DEBUG: true
+        }),
         new webpack.NoEmitOnErrorsPlugin(),
         new FriendlyErrorsPlugin()
     ]

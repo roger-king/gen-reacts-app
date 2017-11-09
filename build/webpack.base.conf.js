@@ -19,8 +19,12 @@ module.exports = {
             hash: true
         }),
         new webpack.EnvironmentPlugin({
-            NODE_ENV: 'development',
-            DEBUG: true
+            NODE_ENV: process.env.NODE_ENV === 'production'
+                ? 'production'
+                : 'development',
+            DEBUG: process.env.NODE_ENV === 'production'
+                ? false
+                : true
         }),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
