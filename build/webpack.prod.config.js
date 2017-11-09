@@ -1,21 +1,21 @@
 const webpack = require('webpack');
 const path = require('path');
-const common = require('./webpack.config');
+const config = require('./webpack.config');
 
-common.output = {
+config.output = {
     filename: '[name].bundle.js',
     publicPath: '',
-    path: path.resolve(__dirname, './../../dist')
+    path: path.resolve(__dirname, './../dist')
 }
 
 /**
  * Add the uglify plugin for production builds
  */
-common.plugins.push(new webpack.optimize.UglifyJsPlugin({
+config.plugins.push(new webpack.optimize.UglifyJsPlugin({
     mangle: true,
     compressor: {
         warnings: false
     }
 }));
 
-module.exports = common;
+module.exports = config;

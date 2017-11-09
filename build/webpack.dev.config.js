@@ -1,15 +1,22 @@
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const path = require('path');
-const config = require('./webpack.config.js');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const baseWebpackConfig = require('./webpack.config.js');
 
-config.output = {
-    filename: "[name].bundle.js",
-    publicPath: "/",
-    path: path.resolve(__dirname, "src")
-};
+const webpackConfig = merge(baseWebpackConfig, {
+    output: {
+        filename: "[name].bundle.js",
+        publicPath: "/",
+        path: path.resolve(__dirname, "src")
+    },
 
-config.plugins = config.plugins.concat([
-    new webpack.HotModuleReplacementPlugin()
-]);
+    devtool: "#cheap-module-eval-source-map",
 
-module.exports = config;
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+        new FriendlyErrorsPlugin()
+    ]
+})
+module.exports = webpackConfig;
