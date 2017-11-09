@@ -1,4 +1,4 @@
-import './home.container.scss';
+import './home.container.css';
 import * as React from 'react';
 
 /**

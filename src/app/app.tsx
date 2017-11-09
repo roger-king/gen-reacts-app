@@ -1,7 +1,7 @@
 import * as React from 'react';
-import DevTools, { configureDevtool } from 'mobx-react-devtools';
+//import DevTools, { configureDevtool } from 'mobx-react-devtools';
 import { Routes } from './app.router';
-import './app.scss';
+import './app.css';
 
 /**
  * Main application container.
@@ -18,7 +18,6 @@ export class App extends React.Component<{}, {}> {
         return (
             <div className="app-container">
                 <Routes />
-                <DevTools />
             </div>
         );
     }

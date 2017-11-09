@@ -44,7 +44,26 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            config: {
+                                path: './build/postcss.config.js'
+                            }
+                        }
+                    }
+                ]
             },
 
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
