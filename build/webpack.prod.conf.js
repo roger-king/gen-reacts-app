@@ -42,7 +42,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'),
       filename: config.build.index,
-      title: "React-Typescript",
+      title:  config.build.projectTitle,
       appMountId: 'root',
       inject: false,
       hash: true,

@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
-const utils = require('./utils');
 const config = require('./../config');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -14,7 +13,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: require('html-webpack-template'),
-            title: "React-Typescript",
+            title: config.build.projectTitle,
             appMountId: 'root',
             inject: false,
             hash: true
