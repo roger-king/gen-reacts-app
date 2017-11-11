@@ -21,22 +21,22 @@ module.exports = (plop) => {
             var actions = [{
                 type: "add",
                 path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.tsx",
-                templateFile: "tools/templates/container/container.tsx.tpl"
+                templateFile: "build/templates/container/container.tsx.tpl"
             },
             {
                 type: "add",
                 path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.spec.tsx",
-                templateFile: "tools/templates/container/container.spec.tsx.tpl"
+                templateFile: "build/templates/container/container.spec.tsx.tpl"
             },
             {
                 type: "add",
-                path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.scss",
-                templateFile: "tools/templates/container/container.scss.tpl"
+                path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.css",
+                templateFile: "build/templates/container/container.css.tpl"
             },
             {
                 type: "add",
                 path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.route.ts",
-                templateFile: "tools/templates/container/container.route.ts.tpl"
+                templateFile: "build/templates/container/container.route.ts.tpl"
             },
             {
                 type: "modify",

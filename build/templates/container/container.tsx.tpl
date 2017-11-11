@@ -1,4 +1,4 @@
-import './{{camelCase name}}.container.scss';
+import './{{camelCase name}}.container.css';
 import * as React from 'react';
 
 /**

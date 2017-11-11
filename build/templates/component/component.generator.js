@@ -16,16 +16,16 @@ module.exports = (plop) => {
             var actions = [{
                     type: "add",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
-                    templateFile: "tools/templates/component/component.tsx.tpl"
+                    templateFile: "build/templates/component/component.tsx.tpl"
                 }, {
                     type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.scss",
-                    templateFile: "tools/templates/component/component.scss.tpl"
+                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.css",
+                    templateFile: "build/templates/component/component.css.tpl"
                 },
                 {
                     type: "add",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
-                    templateFile: "tools/templates/component/component.spec.tsx.tpl"
+                    templateFile: "build/templates/component/component.spec.tsx.tpl"
                 }
             ];
 
@@ -40,7 +40,7 @@ module.exports = (plop) => {
                     type: "modify",
                     path: "src/app/components/index.ts",
                     pattern: "// Global imports of all components (do not remove - will break automation!)",
-                    template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}}Component } from './{{camelCase name}}/{{camelCase name}}.component';"
+                    template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.component';"
                 }]);
             }
 

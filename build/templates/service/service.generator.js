@@ -17,15 +17,15 @@ module.exports = (plop) => {
             var actions = [{
                 type: "add",
                 path: "src/app/services/{{camelCase name}}/{{camelCase name}}.service.ts",
-                templateFile: "tools/templates/service/service.ts.tpl"
+                templateFile: "build/templates/service/service.ts.tpl"
             }, {
                 type: "add",
                 path: "src/app/services/{{camelCase name}}/{{camelCase name}}.spec.ts",
-                templateFile: "tools/templates/service/service.spec.ts.tpl"
+                templateFile: "build/templates/service/service.spec.ts.tpl"
             }, {
                 type: "add",
                 path: "src/app/services/{{camelCase name}}/{{camelCase name}}.model.ts",
-                templateFile: "tools/templates/service/service.model.ts.tpl"
+                templateFile: "build/templates/service/service.model.ts.tpl"
             }, {
                 type: "modify",
                 path: "src/app/services/index.ts",
@@ -38,7 +38,7 @@ module.exports = (plop) => {
                 actions = actions.concat([{
                     type: "add",
                     path: "src/app/services/{{camelCase name}}/{{camelCase name}}.store.ts",
-                    templateFile: "tools/templates/service/service.store.ts.tpl"
+                    templateFile: "build/templates/service/service.store.ts.tpl"
                 }, {
                     type: "modify",
                     path: "src/app/services/stores.ts",

@@ -3,6 +3,7 @@ const config = require('./../config');
 const utils = require('./utils');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, './../src'),
@@ -18,6 +19,10 @@ module.exports = {
       },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
+            // extract css into its own file
+    new ExtractTextPlugin({
+        filename: utils.assetsPath('css/[name].[contenthash].css')
+      }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             minChunks: function (module) {
@@ -49,11 +54,9 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'style-loader',
-                    },
-                    {
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [                    {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
@@ -66,8 +69,8 @@ module.exports = {
                                 path: './build/postcss.config.js'
                             }
                         }
-                    }
-                ]
+                    }]
+                })
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
