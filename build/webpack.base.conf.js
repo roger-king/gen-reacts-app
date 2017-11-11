@@ -4,20 +4,20 @@ const utils = require('./utils');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+console.log(process.env.NODE_ENV);
 module.exports = {
     context: path.resolve(__dirname, './../src'),
     entry: {
         app: "./index.tsx"
     },
-    output: {},
+    output: {
+        path: config.build.assetsRoot,
+        filename: '[name].js',
+        publicPath: process.env.NODE_ENV === 'production'
+          ? config.build.assetsPublicPath
+          : config.dev.assetsPublicPath
+      },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: require('html-webpack-template'),
-            title: "React-Typescript",
-            appMountId: 'root',
-            inject: false,
-            hash: true
-        }),
         new webpack.EnvironmentPlugin({
             NODE_ENV: process.env.NODE_ENV === 'production'
                 ? 'production'

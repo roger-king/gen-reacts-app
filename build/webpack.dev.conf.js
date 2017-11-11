@@ -5,16 +5,17 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf.js');
 
 const webpackConfig = merge(baseWebpackConfig, {
-    output: {
-        filename: "[name].bundle.js",
-        publicPath: "/",
-        path: path.resolve(__dirname, "src")
-    },
-
     devtool: "#cheap-module-eval-source-map",
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template: require('html-webpack-template'),
+            title: "React-Typescript",
+            appMountId: 'root',
+            inject: false,
+            hash: true
+        }),
         new webpack.EnvironmentPlugin({
             NODE_ENV: 'development',
             DEBUG: true
