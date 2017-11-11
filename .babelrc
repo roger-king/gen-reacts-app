@@ -1,6 +1,4 @@
 {
-    "plugins": [
-        ["import", { "libraryName": "antd", "style": true }]
-    ],
+    "plugins": [],
     "presets": ["react", "es2015"]
 }
