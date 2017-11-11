@@ -4,7 +4,6 @@ const utils = require('./utils');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-console.log(process.env.NODE_ENV);
 module.exports = {
     context: path.resolve(__dirname, './../src'),
     entry: {
@@ -18,23 +17,20 @@ module.exports = {
           : config.dev.assetsPublicPath
       },
     plugins: [
-        new webpack.EnvironmentPlugin({
-            NODE_ENV: process.env.NODE_ENV === 'production'
-                ? 'production'
-                : 'development',
-            DEBUG: process.env.NODE_ENV === 'production'
-                ? false
-                : true
-        }),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            minChunks: function(module, count) {
-                return module.resource && module.resource.indexOf(
-                        path.resolve(__dirname, 'src')) ===
-                    -1;
+            minChunks: function (module) {
+              // any required modules inside node_modules are extracted to vendor
+              return (
+                module.resource &&
+                /\.js$/.test(module.resource) &&
+                module.resource.indexOf(
+                  path.join(__dirname, '../node_modules')
+                ) === 0
+              )
             }
-        })
+          })
     ],
 
     resolve: {
