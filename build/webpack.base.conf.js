@@ -48,7 +48,7 @@ module.exports = {
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
                 test: /\.tsx?$/,
-                exclude: [/build\/templates/],
+                exclude: [/build\/templates/, /\spec.(ts|tsx)$/],
                 loader: "awesome-typescript-loader"
             },
             {

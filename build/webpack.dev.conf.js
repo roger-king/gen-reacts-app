@@ -12,9 +12,6 @@ const webpackConfig = merge(baseWebpackConfig, {
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.WatchIgnorePlugin([
-            path.resolve(__dirname, './src/**/*.spec.tsx'),
-        ]),
         new HtmlWebpackPlugin({
             template: require('html-webpack-template'),
             title: "React-Typescript",
@@ -33,11 +30,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     devServer: {
         port: 8000,
         host: 'localhost',
-        historyApiFallback: true,
-        watchOptions: {
-            aggregateTimeout: 300,
-            poll: 1000
-        }
+        historyApiFallback: true
     }
 })
 module.exports = webpackConfig;
