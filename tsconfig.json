@@ -28,6 +28,8 @@
         "node_modules",
         "build",
         "typings/main",
-        "typings/main.d.ts"
+        "typings/main.d.ts",
+         "src/**/*.spec.tsx",
+         "src/**/*.spec.ts"
     ]
 }
