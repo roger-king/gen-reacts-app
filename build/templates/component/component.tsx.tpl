@@ -6,7 +6,7 @@ import * as React from 'react';
  */
 
 export const {{pascalCase name}}: React.SFC<any> = (props) => {
-    render(
+    return(
         <div>
         </div>
     )
