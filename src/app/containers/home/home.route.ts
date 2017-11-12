@@ -1,4 +1,4 @@
-import { HomeContainer as Home } from './home.container';
+import Home from './home.container';
 
 export const HomeRoute = {
     exact: true,

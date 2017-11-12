@@ -2,15 +2,13 @@ import { ActionTypes} from './../action.types';
 import { TypeKeys } from './../type.keys';
 import {Counter} from './counter';
 
-const INITIAL_STATE = new Counter();
-
-export default function (s: State, action: ActionTypes) {
+export default function (INITIAL_STATE = Counter, action: ActionTypes) {
     switch (action.type) {
         case TypeKeys.INC:
-          return { counter: s.counter + action.IncrementAction.by };
+          return { counter: INITIAL_STATE.value + action.by };
         case TypeKeys.DEC:
-          return { counter: s.counter - action.by };
+          return { counter: INITIAL_STATE.value - action.by };
         default:
-          return s;
+          return INITIAL_STATE;
       }
 }
