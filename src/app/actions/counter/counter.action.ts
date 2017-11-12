@@ -6,6 +6,11 @@ export interface IncrementAction {
 }
 
 export interface DecrementAction {
-    type: TypeKeys.INC
+    type: TypeKeys.DEC
     by: number
 }
+
+export const incrementCounter = (by: number): IncrementAction => ({
+    type: TypeKeys.INC,
+    by
+})
