@@ -24,8 +24,8 @@ module.exports = (plop) => {
                 },
                 {
                     type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.spec.tsx",
-                    templateFile: "build/templates/component/component.spec.tsx.tpl"
+                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.test.tsx",
+                    templateFile: "build/templates/component/component.test.tsx.tpl"
                 }
             ];
 

@@ -8,6 +8,7 @@ import * as React from 'react';
 export const {{pascalCase name}}: React.SFC<any> = (props) => {
     return(
         <div>
+            {{pascalCase name}} Component
         </div>
     )
 }

@@ -5,9 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start:dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --inline --progress",
-        "start:test": "npm-run-all --parallel lint:watch test",
-        "test": "karma start --single-run",
-        "test:watch": "karma start",
+        "test": "jest",
         "gen": "plop",
         "gen:init": "plop init",
         "gen:component": "plop component",
@@ -16,18 +14,20 @@
         "build": "webpack --config ./build/webpack.prod.conf.js"
     },
     "keywords": [
+        "react",
         "reactjs",
         "mobx"
     ],
     "jest": {
         "moduleFileExtensions": [
             "ts",
+            "tsx",
             "js"
         ],
         "transform": {
-            "\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+            "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
-        "testRegex": "/src/.*\\.tests.(ts|js)$"
+        "testRegex": "/src/.*\\.test.(ts|tsx|js)$"
     },
     "author": "rking",
     "license": "ISC",
@@ -49,7 +49,9 @@
         "@types/react-dom": "^16.0.2",
         "@types/react-router": "^4.0.16",
         "@types/react-router-dom": "^4.2.0",
+        "@types/react-test-renderer": "^16.0.0",
         "awesome-typescript-loader": "^3.3.0",
+        "babel-jest": "^21.2.0",
         "copy-webpack-plugin": "^4.2.0",
         "css-loader": "^0.28.7",
         "extract-text-webpack-plugin": "^3.0.2",
@@ -61,6 +63,7 @@
         "plop": "^1.9.0",
         "postcss-import": "^11.0.0",
         "postcss-loader": "^2.0.8",
+        "react-test-renderer": "^16.1.0",
         "source-map-loader": "^0.2.3",
         "style-loader": "^0.19.0",
         "supports-color": "^5.0.0",

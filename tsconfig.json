@@ -29,7 +29,7 @@
         "build",
         "typings/main",
         "typings/main.d.ts",
-         "src/**/*.spec.tsx",
-         "src/**/*.spec.ts"
+         "src/**/*.test.tsx",
+         "src/**/*.test.ts"
     ]
 }
