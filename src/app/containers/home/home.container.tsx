@@ -6,11 +6,12 @@ import * as React from 'react';
  */
 
 export class HomeContainer extends React.Component<any, any> {
-    render() {
+    public render() {
         return(
             <div>
                 <h1 className="home-text"> Home Container</h1>
             </div>
         );
     }
+
 }

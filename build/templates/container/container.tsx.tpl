@@ -6,7 +6,7 @@ import * as React from 'react';
  */
 
 export class {{pascalCase name}}Container extends React.Component<any, any> {
-    render() {
+    public render() {
         return(
             <div>
                 <h1> {{pascalCase name}} Container</h1>
