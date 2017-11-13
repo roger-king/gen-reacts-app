@@ -10,7 +10,7 @@ import { incrementCounter, decrementCounter } from './../../actions/counter/coun
 
 class HomeContainer extends React.Component<any, any> {
     public render() {
-        console.log(this.props);
+        console.log('Counter', this.props.counter);
         return (
             <div>
                 <h1 className="home-text"> Home Container</h1>

@@ -1,3 +1,3 @@
-export enum Counter {
-    value = 0
-}
+export const Counter = {
+    value: 0
+};

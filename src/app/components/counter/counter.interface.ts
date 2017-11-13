@@ -1,5 +1,5 @@
 export default interface ICounterProps {
     readonly counter: number;
-    increment: () => void;
-    decrement: () => void;
+    increment: (by: number) => any;
+    decrement: (by: number) => any;
 }
