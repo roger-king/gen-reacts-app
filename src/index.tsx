@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import configureStore  from './app/app.store';
-// import { syncHistoryWithStore } = require('react-router-redux');
 import { App } from './app/app';
+
 const store = configureStore();
 
 ReactDOM.render(

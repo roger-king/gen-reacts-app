@@ -14,7 +14,9 @@ class HomeContainer extends React.Component<any, any> {
         return (
             <div>
                 <h1 className="home-text"> Home Container</h1>
-                <Counter counter={this.props.counter} increment={this.props.incrementCounter} decrement={this.props.decrementCounter} />
+                <Counter counter={this.props.counter.value}
+                    increment={this.props.incrementCounter}
+                    decrement={this.props.decrementCounter} />
             </div>
         );
     }
