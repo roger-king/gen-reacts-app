@@ -1,9 +1,8 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
-// import formReducer from 'redux-form';
-import test from './test/test.reducer';
+import {reducer as formReducer} from 'redux-form';
 
 export default combineReducers({
-    test,
+    form: formReducer,
     routing: routerReducer
 });
