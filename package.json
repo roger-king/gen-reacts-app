@@ -10,7 +10,7 @@
         "gen:init": "plop init",
         "gen:component": "plop component",
         "gen:container": "plop container",
-        "gen:service": "plop service",
+        "gen:state": "plop state",
         "build": "webpack --config ./build/webpack.prod.conf.js"
     },
     "keywords": [

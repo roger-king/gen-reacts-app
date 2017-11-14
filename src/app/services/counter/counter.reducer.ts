@@ -9,10 +9,6 @@ const INITIAL_STATE: Counter = {
 export default function (state: Counter = INITIAL_STATE, action: ActionTypes) {
 
     switch (action.type) {
-        case TypeKeys.INC:
-          return { value: state.value + action.by};
-        case TypeKeys.DEC:
-          return { value: state.value - action.by};
         default:
           return state;
       }
