@@ -4,4 +4,5 @@
  */
 
 // Global imports of all components (do not remove - will break automation!)
+export { Login } from './login/login.component';
 export { Counter } from './counter/counter.component';

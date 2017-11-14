@@ -7,6 +7,11 @@ import thunk from 'redux-thunk';
 const DEFAULT_STATE = {
     counter: {
         value: 0
+    },
+    user: {
+        username: '',
+        password: '',
+        isLoggedIn: false
     }
 };
 

@@ -2,7 +2,7 @@ import { ActionTypes} from './../actionTypes';
 import { TypeKeys } from './../typeKeys';
 import {Counter} from './counter';
 
-const INITIAL_STATE: Counter = {
+export const INITIAL_STATE: Counter = {
   value: 0
 };
 
