@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import appReducers from './actions/reducers';
+import appReducers from './services/reducers';
 import thunk from 'redux-thunk';
 
 // Configure Initial Application State

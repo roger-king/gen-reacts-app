@@ -2,7 +2,7 @@ import './home.container.css';
 import * as React from 'react';
 import { Counter } from './../../components';
 import { connect } from 'react-redux';
-import { incrementCounter, decrementCounter } from './../../actions/counter/counter.action';
+import { incrementCounter, decrementCounter } from './../../services/counter/counter.action';
 
 /**
  * HomeContainer

@@ -1,4 +1,4 @@
-import {TypeKeys} from './../type.keys';
+import {TypeKeys} from './../typeKeys';
 
 /*
     Create your actions here.

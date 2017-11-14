@@ -1,21 +1,23 @@
-import {TypeKeys} from './../type.keys';
+import {TypeKeys} from './../typeKeys';
 
 export interface IncrementAction {
-    type: TypeKeys.INC;
+    type: TypeKeys.INCREMENT;
     by: number;
 }
 
 export interface DecrementAction {
-    type: TypeKeys.DEC;
+    type: TypeKeys.DECREMENT;
     by: number;
 }
 
 export const incrementCounter = (by: number): IncrementAction => ({
-    type: TypeKeys.INC,
+    type: TypeKeys.INCREMENT,
     by
 });
 
 export const decrementCounter = (by: number): DecrementAction => ({
-    type: TypeKeys.DEC,
+    type: TypeKeys.DECREMENT,
     by
 });
+
+export default [incrementCounter, decrementCounter];

@@ -1,3 +1,5 @@
 export enum TypeKeys {
+    INCREMENT = 'INCREMENT',
+    DECREMENT = 'DECREMENT',
     OTHER_ACTION = '__OTHER__ACTIONS'
 }

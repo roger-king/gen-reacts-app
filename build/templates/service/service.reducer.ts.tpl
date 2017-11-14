@@ -1,5 +1,5 @@
-import { ActionTypes} from './../action.types';
-import { TypeKeys } from './../type.keys';
+import { ActionTypes} from './../actionTypes';
+import { TypeKeys } from './../typeKeys';
 import { {{pascalCase name}} } from './{{camelCase name}}';
 
 const INITIAL_STATE: {{pascalCase name}} = {

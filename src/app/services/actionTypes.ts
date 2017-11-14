@@ -1,6 +1,9 @@
-import {TypeKeys} from './type.keys';
+import {TypeKeys} from './typeKeys';
+import { IncrementAction, DecrementAction } from 'services/counter/counter.action';
 
 export type ActionTypes =
+    | IncrementAction
+    | DecrementAction
     | OtherAction;
 
 interface OtherAction {

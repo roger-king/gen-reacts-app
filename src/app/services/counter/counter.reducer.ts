@@ -1,5 +1,5 @@
-import { ActionTypes} from './../action.types';
-import { TypeKeys } from './../type.keys';
+import { ActionTypes} from './../actionTypes';
+import { TypeKeys } from './../typeKeys';
 import {Counter} from './counter';
 
 const INITIAL_STATE: Counter = {

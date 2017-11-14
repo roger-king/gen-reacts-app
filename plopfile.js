@@ -4,6 +4,7 @@ var service = require('./build/templates/service/service.generator');
 
 
 module.exports = (plop) => {
+    plop.setPrompt('recursive', require('inquirer-recursive'));
     plop.setGenerator('init', {
         description: "Initial run command to start project",
         prompts: [{
