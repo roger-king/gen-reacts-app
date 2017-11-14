@@ -1,5 +1,3 @@
-const service = require('./../service/service.generator');
-
 module.exports = (plop) => {
     plop.setGenerator("component", {
         description: "Create new shared component.",

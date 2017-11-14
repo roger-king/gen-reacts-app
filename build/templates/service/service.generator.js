@@ -1,68 +1,42 @@
 module.exports = (plop) => {
-    console.log('Getting called.')
     plop.setGenerator("service", {
-        description: "Create a new service.",
-        prompts: [{
+        description: "Create new service management",
+        prompts: [
+            {
                 type: "input",
                 name: "name",
-                message: "What would you like to call your service?"
-            },
-            {
-                type: "confirm",
-                name: "createStore",
-                message: "Would like to create a store with your service?"
-            }
-        ],
+                message: "Please provide the name of the new service."
+            }],
         actions: function(data) {
-            var actions = [{
-                type: "add",
-                path: "src/app/services/{{camelCase name}}/{{camelCase name}}.service.ts",
-                templateFile: "build/templates/service/service.ts.tpl"
-            }, {
-                type: "add",
-                path: "src/app/services/{{camelCase name}}/{{camelCase name}}.spec.ts",
-                templateFile: "build/templates/service/service.spec.ts.tpl"
-            }, {
-                type: "add",
-                path: "src/app/services/{{camelCase name}}/{{camelCase name}}.model.ts",
-                templateFile: "build/templates/service/service.model.ts.tpl"
-            }, {
-                type: "modify",
-                path: "src/app/services/index.ts",
-                pattern: "// Global imports of services (do not remove - will break automation!)",
-                template: "// Global imports of services (do not remove - will break automation!)\nexport {" +
-                    " {{pascalCase name}}Service } from './{{camelCase name}}/{{camelCase name}}.serv" +
-                    "ice';"
-            }]
-            if (data.createStore) {
-                actions = actions.concat([{
-                    type: "add",
-                    path: "src/app/services/{{camelCase name}}/{{camelCase name}}.store.ts",
-                    templateFile: "build/templates/service/service.store.ts.tpl"
-                }, {
-                    type: "modify",
-                    path: "src/app/services/stores.ts",
-                    pattern: "// Global imports of all stores (do not remove - will break automation!)",
-                    template: "// Global imports of all stores (do not remove - will break automation!)\nexport" +
-                        " { {{pascalCase name}}Store } from './{{camelCase name}}/{{camelCase name}}.stor" +
-                        "e';"
-                }, {
-                    type: "modify",
-                    path: "src/index.tsx",
-                    pattern: " } from '.\/app\/services\/stores';",
-                    template: ", {{pascalCase name}}Store } from './app/services/stores';"
-                }, {
-                    type: "modify",
-                    path: "src/index.tsx",
-                    pattern: "// Import Application Stores",
-                    template: "import { {{pascalCase name}}Store } from './app/services/stores';"
-                }, {
-                    type: "modify",
-                    path: "src/index.tsx",
-                    pattern: "routing: routingStore",
-                    template: "routing: routingStore,\n    {{snakeCase name}}_store: new {{pascalCase name}}Store()"
-                }]);
-            }
+            var actions =[
+                {
+                    type: 'add',
+                    path: 'src/app/service/{{camelCase name}}/{{camelCase name}}.action.ts',
+                    templateFile: 'build/templates/service/service.action.ts.tpl'
+                },
+                {
+                    type: 'add',
+                    path: 'src/app/service/{{camelCase name}}/{{camelCase name}}.ts',
+                    templateFile: 'build/templates/service/service.ts.tpl'
+                },
+                {
+                    type: 'add',
+                    path: 'src/app/service/{{camelCase name}}/{{camelCase name}}.reducer.ts',
+                    templateFile: 'build/templates/service/service.reducer.ts.tpl'
+                },
+                {
+                    type: 'modify',
+                    path: 'src/app/service/reducers.ts',
+                    pattern: 'import formReducer from \'redux-form\';',
+                    template: 'import formReducer from \'redux-form\';\nimport {{camelCase name}} from \'./{{camelCase name}}/{{camelCase name}}.reducer\';'
+                },
+                {
+                    type: 'modify',
+                    path: 'src/app/service/reducers.ts',
+                    pattern: 'export default combineReducers({',
+                    template: 'export default combineReducers({\n    {{camelCase name}},'
+                }
+            ];
 
             return actions;
         }
