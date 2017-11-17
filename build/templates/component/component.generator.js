@@ -4,18 +4,26 @@ module.exports = (plop) => {
         prompts: [{
             type: "input",
             name: "name",
-            message: "What is the your component name?"
-        }, {
-            type: "input",
+            message: "Component name"
+        },
+        {
+            type: "confirm",
+            name: "stateless",
+            message: "Stateless component?"
+        },
+        {
+            type: "confirm",
             name: "nested",
-            message: "Is this a nested component? (if yes - provide parent component name; if no - type \'n\')"
+            message: "Nested component?"
         }],
         actions: function(data) {
+            var component = {
+                type: "add",
+                path: "src/app/components/{{camelCase name}}/{{camelCase name}}.stateless.component.tsx",
+                templateFile: "build/templates/component/component.tsx.tpl"
+            };
+
             var actions = [{
-                    type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
-                    templateFile: "build/templates/component/component.tsx.tpl"
-                }, {
                     type: "add",
                     path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.css",
                     templateFile: "build/templates/component/component.css.tpl"
@@ -27,7 +35,7 @@ module.exports = (plop) => {
                 }
             ];
 
-            if (data.nested != "n") {
+            if (data.nested) {
                 actions.forEach((action) => {
                     let arr = action.path.split("/");
                     arr.splice(3, 0, data.nested);
@@ -41,6 +49,16 @@ module.exports = (plop) => {
                     template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.component';"
                 }]);
             }
+
+            if (!data.stateless) {
+                component = {
+                    type: "add",
+                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.stateful.component.tsx",
+                    templateFile: "build/templates/component/component.tsx.tpl"
+                };
+            }
+
+            actions = actions.concat[component];
 
             return actions;
         }
