@@ -5,9 +5,6 @@ import thunk from 'redux-thunk';
 // Configure Initial Application State
 
 const DEFAULT_STATE = {
-    counter: {
-        value: 0
-    },
     user: {
         username: '',
         password: '',

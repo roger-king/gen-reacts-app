@@ -13,6 +13,7 @@ const users: any = ['roger', 'george', 'joe'];
 export default function (state: User = INITIAL_STATE, action: ActionTypes) {
     switch (action.type) {
         case TypeKeys.LOGIN:
+            console.log('Testing', action);
             if (users.includes(action.username)) {
                 return {username: action.username, password: action.password, isLoggedIn: true};
             }

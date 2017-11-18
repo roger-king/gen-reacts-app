@@ -1,8 +1,6 @@
 import './home.container.css';
 import * as React from 'react';
-import { Counter } from './../../components';
 import { connect } from 'react-redux';
-import { incrementCounter, decrementCounter } from './../../services/counter/counter.action';
 
 /**
  * HomeContainer
@@ -13,26 +11,20 @@ class HomeContainer extends React.Component<any, any> {
         console.log('Counter', this.props.counter);
         return (
             <div>
-                <h1 className="home-text"> Home Container</h1>
-                <Counter counter={this.props.counter.value}
-                    increment={this.props.incrementCounter}
-                    decrement={this.props.decrementCounter} />
+                <h2> React.js Typescript Redux Project seed</h2>
             </div>
         );
     }
 
 }
 
-function mapStateToProps({counter}) {
+function mapStateToProps({}) {
     return {
-        counter
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        incrementCounter: (by: number) => dispatch(incrementCounter(by)),
-        decrementCounter: (by: number) => dispatch(decrementCounter(by))
     };
 }
 

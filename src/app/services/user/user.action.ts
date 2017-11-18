@@ -13,8 +13,6 @@ export interface LoginAction {
     password: string;
 }
 
-export const Login = (username: string, password: string): LoginAction => ({
-    type: TypeKeys.LOGIN,
-    username,
-    password
-});
+export const Login = (username: string, password: string): any => {
+    const users: any = ['Tom'];
+};

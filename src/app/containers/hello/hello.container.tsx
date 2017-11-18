@@ -15,8 +15,6 @@ export class HelloContainer extends React.Component<any, any> {
             <div>
                 <h1> Hello Container</h1>
                 <Login login={this.props.login}
-                    username={this.props.user.username}
-                    password={this.props.user.password}
                     isLoggedIn={this.props.user.isLoggedIn}/>
             </div>
         );
