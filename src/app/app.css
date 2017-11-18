@@ -27,3 +27,13 @@ body {
 .centered {
     margin: 0 auto;
 }
+
+/* Global Fonts */
+.title {
+    font-family: 'Fira Mono', monospace;
+    font-size: 4em;
+}
+
+.body {
+    font-family: 'Arimo', sans-serif;
+}

@@ -15,6 +15,9 @@ const webpackConfig = merge(baseWebpackConfig, {
             template: require('html-webpack-template'),
             title: config.build.projectTitle,
             appMountId: 'root',
+            links: [
+                'https://fonts.googleapis.com/css?family=Arimo|Fira+Mono'
+            ],
             inject: false,
             hash: true
         }),

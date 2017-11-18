@@ -8,10 +8,9 @@ import { connect } from 'react-redux';
 
 class HomeContainer extends React.Component<any, any> {
     public render() {
-        console.log('Counter', this.props.counter);
         return (
-            <div>
-                <h2> React.js Typescript Redux Project seed</h2>
+            <div className="home-container" >
+                <span className="title"> React.js Typescript Redux Project seed</span>
             </div>
         );
     }
