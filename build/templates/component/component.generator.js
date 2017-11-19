@@ -9,18 +9,20 @@ module.exports = (plop) => {
         {
             type: "confirm",
             name: "stateless",
+            default: true,
             message: "Stateless component?"
         },
         {
             type: "confirm",
             name: "nested",
+            default: false,
             message: "Nested component?"
         }],
         actions: function(data) {
             var component = {
                 type: "add",
-                path: "src/app/components/{{camelCase name}}/{{camelCase name}}.stateless.component.tsx",
-                templateFile: "build/templates/component/component.tsx.tpl"
+                path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
+                templateFile: "build/templates/component/component.stateless.tsx.tpl"
             };
 
             var actions = [{
@@ -51,14 +53,14 @@ module.exports = (plop) => {
             }
 
             if (!data.stateless) {
-                component = {
+                component = [{
                     type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.stateful.component.tsx",
-                    templateFile: "build/templates/component/component.tsx.tpl"
-                };
+                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
+                    templateFile: "build/templates/component/component.stateful.tsx.tpl"
+                }];
             }
 
-            actions = actions.concat[component];
+            actions = actions.concat(component);
 
             return actions;
         }

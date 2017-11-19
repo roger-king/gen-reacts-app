@@ -4,4 +4,5 @@
  */
 
 // Global imports of all components (do not remove - will break automation!)
+export { Titletron } from './titletron/titletron.component';
 export { Login  } from './login/login.component';

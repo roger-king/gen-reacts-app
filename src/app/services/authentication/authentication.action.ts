@@ -37,5 +37,3 @@ export const Login = (username: string, password: string): any => {
         }
     };
 };
-
-export default [Login];

@@ -30,7 +30,7 @@ class LoginComponent extends React.Component<ILoginProps, ILoginState> {
 
     public render() {
         return (
-            <div>
+            <div className="login-container">
                 <input type="text" placeholder="username" name="username" onChange={this.handleOnChange} />
                 <input type="password" placeholder="password" name="password" onChange={this.handleOnChange} />
                 <button onClick={this.doLogin}> login </button>

@@ -1,3 +1,2 @@
-import Authentication from './authentication/authentication.action';
-
-export default [].concat(Authentication);
+export { Login } from './authentication/authentication.action';
+export { UserGet, UserSet } from './user/user.action';

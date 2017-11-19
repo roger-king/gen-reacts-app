@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   build: {
-    projectTitle: "React-Typescript-Seed",
+    projectTitle: "React-Typescript-Boilerplate",
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
