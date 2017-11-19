@@ -6,9 +6,10 @@ import thunk from 'redux-thunk';
 
 const DEFAULT_STATE = {
     user: {
-        username: '',
-        password: '',
-        isLoggedIn: false
+        username: ''
+    },
+    authentication: {
+        loggedIn: false
     }
 };
 

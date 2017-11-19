@@ -1,6 +1,7 @@
 import './home.container.css';
 import * as React from 'react';
 import { connect } from 'react-redux';
+import {Login} from './../../components';
 
 /**
  * HomeContainer
@@ -10,21 +11,11 @@ class HomeContainer extends React.Component<any, any> {
     public render() {
         return (
             <div className="home-container" >
-                <span className="title"> React.js Typescript Redux Project seed</span>
+                <Login/>
             </div>
         );
     }
 
 }
 
-function mapStateToProps({}) {
-    return {
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps) (HomeContainer);
+export default HomeContainer;

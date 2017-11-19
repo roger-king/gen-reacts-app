@@ -1,6 +1,8 @@
 export interface ILoginProps {
     login: (username: string, password: string) => any;
-    isLoggedIn: boolean;
+    authentication: {
+        loggedIn: boolean;
+    };
 }
 
 export interface ILoginState {

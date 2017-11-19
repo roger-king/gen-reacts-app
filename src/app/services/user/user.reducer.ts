@@ -3,21 +3,18 @@ import { TypeKeys } from './../typeKeys';
 import { User } from './user';
 
 const INITIAL_STATE: User = {
-    username: '',
-    password: '',
-    isLoggedIn: false
+    username: ''
 };
 
 const users: any = ['roger', 'george', 'joe'];
 
 export default function (state: User = INITIAL_STATE, action: ActionTypes) {
     switch (action.type) {
-        case TypeKeys.LOGIN:
-            console.log('Testing', action);
-            if (users.includes(action.username)) {
-                return {username: action.username, password: action.password, isLoggedIn: true};
-            }
-            return {username: '', password: '', isLoggedIn: false};
+        case TypeKeys.USER_GET:
+            return {username: action.username};
+        case TypeKeys.USER_SET:
+            state.username = action.username;
+            return { username: state.username };
         default:
           return state;
       }

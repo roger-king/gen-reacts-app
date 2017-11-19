@@ -7,12 +7,27 @@ import {TypeKeys} from './../typeKeys';
         - returns an object of the interface.
 */
 
-export interface LoginAction {
-    type: TypeKeys.LOGIN;
+export interface UserGetAction {
+    type: TypeKeys.USER_GET;
     username: string;
-    password: string;
 }
 
-export const Login = (username: string, password: string): any => {
-    const users: any = ['Tom'];
+export interface UserSetAction {
+    type: TypeKeys.USER_SET;
+    username: string
+}
+
+export const UserGet = (): UserGetAction => {
+    let username = 'Tom';
+    return {
+        type: TypeKeys.USER_GET,
+        username
+    };
+};
+
+export const UserSet = (username: string): UserSetAction => {
+    return {
+        type: TypeKeys.USER_SET,
+        username: username
+    };
 };

@@ -10,5 +10,5 @@ export const {{pascalCase name}}: React.SFC<any> = (props) => {
         <div>
             {{pascalCase name}} Component
         </div>
-    )
-}
+    );
+};
