@@ -16,7 +16,7 @@ const webpackConfig = merge(baseWebpackConfig, {
             title: config.build.projectTitle,
             appMountId: 'root',
             links: [
-                'https://fonts.googleapis.com/css?family=Arimo|Fira+Mono'
+                'https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round'
             ],
             inject: false,
             hash: true

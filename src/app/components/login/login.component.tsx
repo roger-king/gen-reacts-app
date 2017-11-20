@@ -31,9 +31,9 @@ class LoginComponent extends React.Component<ILoginProps, ILoginState> {
     public render() {
         return (
             <div className="login-container">
-                <input type="text" placeholder="username" name="username" onChange={this.handleOnChange} />
-                <input type="password" placeholder="password" name="password" onChange={this.handleOnChange} />
-                <button onClick={this.doLogin}> login </button>
+                <input className="arcing-input" type="text" placeholder="username" name="username" onChange={this.handleOnChange} />
+                <input className="arcing-input" type="password" placeholder="password" name="password" onChange={this.handleOnChange} />
+                <button className="arcing-btn" onClick={this.doLogin}> login </button>
                 <h1> {String(this.props.authentication.loggedIn)} </h1>
             </div>
         );
