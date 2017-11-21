@@ -4,6 +4,15 @@
     background-color: #007acc;
     width: 80%;
     height: 500px;
-    lost-align: center;
     color: white;
+
+}
+
+.react-logo{
+    display: block;
+    height: 200px;
+}
+
+.title {
+    display: block;
 }

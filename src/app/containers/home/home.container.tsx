@@ -10,12 +10,10 @@ import {Login, Titletron} from './../../components';
 class HomeContainer extends React.Component<any, any> {
     public render() {
         return (
-            <div className="home-container">
+            <section>
                 <Titletron/>
-                <div className="login-wrapper">
-                    <Login/>
-                </div>
-            </div>
+                <Login/>
+            </section>
         );
     }
 

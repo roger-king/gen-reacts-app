@@ -1,13 +1,8 @@
-.home-container{
-    position: fixed;
-    lost-align: center;
-    width: 100%;
-    height: 500px;
-    margin-top: 50px;
+section{
+    height: 100%;
+    margin: 0 auto;
 }
 
-.login-wrapper{
-    position: relative;
-    width: 90%;
-    height: 300px;
+div {
+    lost-row: 1/3;
 }
