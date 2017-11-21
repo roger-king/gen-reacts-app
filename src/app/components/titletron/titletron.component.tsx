@@ -9,7 +9,7 @@ import {Icon} from './../';
 export const Titletron: React.SFC<any> = (props) => {
     return(
         <div className="titletron-container">
-            <Icon img="react.svg"/>
+            <Icon img="react.svg" height={50} width={50}/>
             <span className="title"> Typescript Boilerplate</span>
         </div>
     );
