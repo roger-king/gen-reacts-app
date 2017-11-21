@@ -1,41 +1,76 @@
+var appModuleExists = require('./../../utils').appModuleExists;
+
 module.exports = (plop) => {
     plop.setGenerator("component", {
         description: "Create new shared component.",
-        prompts: [{
-            type: "input",
-            name: "name",
-            message: "Component name"
-        },
-        {
-            type: "confirm",
-            name: "stateless",
-            default: true,
-            message: "Stateless component?"
-        },
-        {
-            type: "confirm",
-            name: "nested",
-            default: false,
-            message: "Nested component?"
-        }],
-        actions: function(data) {
-            var component = {
-                type: "add",
-                path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
-                templateFile: "build/templates/component/component.stateless.tsx.tpl"
-            };
+        prompts: [
+            {
+                type: "list",
+                name: "type",
+                default: 'Stateless',
+                message: "Select the type of component?",
+                choices: () => ['Stateless', 'React.PureComponent', 'React.Component']
+            },
+            {
+                type: "input",
+                name: "name",
+                message: "Component name",
+                validate: (value) => {
+                    if ((/.+/).test(value)) {
+                        return appModuleExists(value) ? 'A component or container with this name already exists' : true;
+                    }
+
+                    return 'The name is required';
+                }
+            },
+            {
+                type: "confirm",
+                name: "nested",
+                default: false,
+                message: "Nested component?"
+            }],
+        actions: function (data) {
 
             var actions = [{
-                    type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.css",
-                    templateFile: "build/templates/component/component.css.tpl"
-                },
-                {
-                    type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.test.tsx",
-                    templateFile: "build/templates/component/component.test.tsx.tpl"
-                }
+                type: "add",
+                path: "./../../src/app/components/{{camelCase name}}/{{camelCase name}}.component.css",
+                templateFile: "component/component.css.tpl"
+            },
+            {
+                type: "add",
+                path: "./../../src/app/components/{{camelCase name}}/{{camelCase name}}.component.test.tsx",
+                templateFile: "component/component.test.tsx.tpl"
+            }
             ];
+
+            switch (data.type) {
+                case 'Stateless':
+                    var component = {
+                        type: "add",
+                        path: "./../../src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
+                        templateFile: "component/component.stateless.tsx.tpl"
+                    };
+                    actions = actions.concat(component);
+                    break;
+                case 'React.PureComponent':
+                    var component = {
+                        type: "add",
+                        path: "./../../src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
+                        templateFile: "component/component.pure.tsx.tpl"
+                    };
+                    actions = actions.concat(component);
+                    break;
+                case 'React.Component':
+                    var component = {
+                        type: "add",
+                        path: "./../../src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
+                        templateFile: "component/component.stateful.tsx.tpl"
+                    };
+                    actions = actions.concat(component);
+                    break;
+                default:
+                    break;
+            }
 
             if (data.nested) {
                 actions.forEach((action) => {
@@ -46,21 +81,11 @@ module.exports = (plop) => {
             } else {
                 actions = actions.concat([{
                     type: "modify",
-                    path: "src/app/components/index.ts",
+                    path: "./../../src/app/components/index.ts",
                     pattern: "// Global imports of all components (do not remove - will break automation!)",
                     template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.component';"
                 }]);
             }
-
-            if (!data.stateless) {
-                component = [{
-                    type: "add",
-                    path: "src/app/components/{{camelCase name}}/{{camelCase name}}.component.tsx",
-                    templateFile: "build/templates/component/component.stateful.tsx.tpl"
-                }];
-            }
-
-            actions = actions.concat(component);
 
             return actions;
         }

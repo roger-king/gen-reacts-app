@@ -7,12 +7,12 @@ let tree;
 beforeEach(function () {
     tree = renderer.create(
         <Login/>
-    )
+    );
 });
 
 describe('<Login/>', function () {
     test('renders properly', () => {
         let component = tree.toJSON();
-        expect(component.children[0]).toBe("Login Component");
-    })
+        expect(component.children[0]).toBe('Login Component');
+    });
 });

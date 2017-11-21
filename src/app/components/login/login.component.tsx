@@ -8,7 +8,7 @@ import { Login as LoginService} from './../../services/authentication/authentica
  * Login Component
  */
 
-class LoginComponent extends React.Component<ILoginProps, ILoginState> {
+class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
     constructor() {
         super();
 

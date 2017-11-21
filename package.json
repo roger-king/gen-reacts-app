@@ -6,11 +6,11 @@
     "scripts": {
         "start:dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --inline --progress",
         "test": "jest",
-        "gen": "plop",
-        "gen:init": "plop init",
-        "gen:component": "plop component",
-        "gen:container": "plop container",
-        "gen:service": "plop service",
+        "gen": "plop --plopfile build/generators/plopfile.js",
+        "gen:init": "plop --plopfile build/generators/plopfile.js init",
+        "gen:component": "plop --plopfile build/generators/plopfile.js component",
+        "gen:container": "plop --plopfile build/generators/plopfile.js container",
+        "gen:service": "plop --plopfile build/generators/plopfile.js service",
         "build": "webpack --config ./build/webpack.prod.conf.js"
     },
     "keywords": [
@@ -18,6 +18,10 @@
         "reactjs",
         "mobx"
     ],
+    "babel": {
+        "plugins": [],
+        "presets": ["react", "es2015"]
+    },
     "jest": {
         "moduleFileExtensions": [
             "ts",

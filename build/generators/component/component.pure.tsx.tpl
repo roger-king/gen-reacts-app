@@ -4,8 +4,8 @@ import * as React from 'react';
 /**
  * {{pascalCase name}} Component
  */
- 
-export class {{pascalCase name}} extends React.Component <any, any> {
+
+export class {{pascalCase name}} extends React.PureComponent <any, any> {
     constructor() {
         super();
 

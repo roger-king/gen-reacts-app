@@ -1,6 +1,6 @@
-var component = require('./build/templates/component/component.generator');
-var container = require('./build/templates/container/container.generator');
-var service = require('./build/templates/service/service.generator');
+var component = require('./component/component.generator');
+var container = require('./container/container.generator');
+var service = require('./service/service.generator');
 
 
 module.exports = (plop) => {
