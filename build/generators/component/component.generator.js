@@ -22,12 +22,6 @@ module.exports = (plop) => {
 
                     return 'The name is required';
                 }
-            },
-            {
-                type: "confirm",
-                name: "nested",
-                default: false,
-                message: "Nested component?"
             }],
         actions: function (data) {
 
@@ -71,8 +65,9 @@ module.exports = (plop) => {
                 default:
                     break;
             }
-
-            if (data.nested) {
+            
+            // TODO: FIX Nested automation.
+/*             if (data.nested) {
                 actions.forEach((action) => {
                     let arr = action.path.split("/");
                     arr.splice(3, 0, data.nested);
@@ -85,7 +80,14 @@ module.exports = (plop) => {
                     pattern: "// Global imports of all components (do not remove - will break automation!)",
                     template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.component';"
                 }]);
-            }
+            } */
+
+            actions = actions.concat([{
+                type: "modify",
+                path: "./../../src/app/components/index.ts",
+                pattern: "// Global imports of all components (do not remove - will break automation!)",
+                template: "// Global imports of all components (do not remove - will break automation!)\nexport { {{pascalCase name}} } from './{{camelCase name}}/{{camelCase name}}.component';"
+            }]);
 
             return actions;
         }

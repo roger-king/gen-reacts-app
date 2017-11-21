@@ -25,8 +25,8 @@ module.exports = (plop) => {
             },
             {
                 type: "add",
-                path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.spec.tsx",
-                templateFile: "build/templates/container/container.spec.tsx.tpl"
+                path: "src/app/containers/{{camelCase name}}/{{camelCase name}}.container.test.tsx",
+                templateFile: "build/templates/container/container.test.tsx.tpl"
             },
             {
                 type: "add",
