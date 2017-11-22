@@ -4,17 +4,17 @@ module.exports = (plop) => {
         prompts: [{
             type: "input",
             name: "name",
-            message: "What is the name of your container?"
+            message: "Container name"
         },
         {
             type: "input",
             name: "route",
-            message: "What is the route path?"
+            message: "Route path"
         },
         {
             type: "confirm",
             name: "withStore",
-            message: "Create store with container?"
+            message: "Link to store?"
         }
         ],
         actions: function (data) {
