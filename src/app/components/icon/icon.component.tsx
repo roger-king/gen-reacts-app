@@ -8,8 +8,6 @@ import { IIconProps } from './icon.interface';
 export const Icon: React.SFC<IIconProps> = (props: IIconProps) => {
     const img_path = 'static/images/' + props.img;
     return(
-        <div>
-            <img height={props.height} width={props.width} src={img_path}/>
-        </div>
+        <img className="icon-container" height={props.height} width={props.width} src={img_path}/>
     );
 };

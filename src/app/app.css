@@ -1,3 +1,5 @@
+@lost flexbox flex;
+
 html,
 body {
     margin: 0 auto;
@@ -28,10 +30,12 @@ body {
 .title {
     font-family: 'Varela Round', sans-serif;
     font-size: 4em;
+    display: block;
 }
 
-.body {
+.body-font {
     font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
 }
 
 /* Global Inputs */

@@ -1,16 +1,23 @@
 import './titletron.component.css';
 import * as React from 'react';
-import {Icon} from './../';
+import { Icon } from './../';
 
 /**
  * Titletron Component
  */
 
 export const Titletron: React.SFC<any> = (props) => {
-    return(
-        <div className="titletron-container">
-            <Icon img="react.svg" height={50} width={50}/>
-            <span className="title"> Typescript Boilerplate</span>
-        </div>
+    return (
+        <section className="titletron-container">
+            <div className="icons-wrapper">
+                <Icon img="webpack.svg" height={40} width={40} />
+                <Icon img="redux.svg" height={40} width={40} />
+                <Icon img="react-router.svg" height={40} width={40} />
+            </div>
+            <div className="titletron-wrapper">
+                <Icon img="react-1.svg" height={100} width={100} />
+                <span className="title titletron-title"> Typescript Kit</span>
+            </div>
+        </section>
     );
 };
