@@ -2,6 +2,7 @@
 
 module.exports = {
   "plugins": [
-    require('lost')
+    require('lost'),
+    require('autoprefixer')
   ]
 }
