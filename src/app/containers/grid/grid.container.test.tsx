@@ -1,18 +1,18 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Titletron } from './titletron.component';
+import { Grid } from './grid.container';
 
 let tree;
 
 beforeEach(function () {
     tree = renderer.create(
-        <Titletron/>
+        <Grid/>
     );
 });
 
-describe('<Titletron/>', function () {
+describe('<Grid/>', function () {
     test('renders properly', () => {
         let component = tree.toJSON();
-        expect(component.children[0]).toBe('Titletron Component');
+        expect(component.children[0]).toBe('Grid Container');
     });
 });

@@ -16,10 +16,12 @@
 }
 
 .features-content-wrapper{
-    lost-row: 1/2;
+    lost-utility: clearfix;
+    lost-row: 1/1;
 }
 .feature-row{
     width: 100%;
+    lost-utility: clearfix;
 }
 
 .feature-row div{
