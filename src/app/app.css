@@ -17,9 +17,9 @@ body {
     display: block;
 }
 
-.body-font {
+.content-font {
     font-family: 'Open Sans', sans-serif;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 /* Global Inputs */
