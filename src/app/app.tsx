@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import DevTools, { configureDevtool } from 'mobx-react-devtools';
 import { Routes } from './app.router';
 import './app.css';
 
@@ -16,9 +15,7 @@ export class App extends React.Component<{}, {}> {
 
     render() {
         return (
-            <div className="app-container">
-                <Routes />
-            </div>
+            <Routes />
         );
     }
 }

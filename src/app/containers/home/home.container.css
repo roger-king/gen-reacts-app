@@ -15,13 +15,13 @@
     line-height: 25px;
 }
 
-.features-content-wrapper{
-    lost-utility: clearfix;
+.features{
     lost-row: 1/1;
+}
+.features-content-wrapper{
 }
 .feature-row{
     width: 100%;
-    lost-utility: clearfix;
 }
 
 .feature-row div{
