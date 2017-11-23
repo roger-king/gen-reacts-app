@@ -3,6 +3,9 @@ const config = require('./../config');
 const utils = require('./utils');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const Lost = require('lost');
+const CSSNext = require('postcss-cssnext');
+const PostCSSImport= require('postcss-import');
 
 module.exports = {
     context: path.resolve(__dirname, './../src'),
@@ -62,7 +65,18 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'postcss-loader'
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: loader => [
+                                Lost(),
+                                PostCSSImport(),
+                                CSSNext({
+                                    browsers: ['last 2 versions', '> 5%'],
+                                }),
+
+                            ]
+                        }
                     }]
                 })
             },
