@@ -13,6 +13,7 @@ export const Titletron: React.SFC<any> = (props) => {
                 <Icon img="webpack.svg" height={40} width={40} />
                 <Icon img="redux.svg" height={40} width={40} />
                 <Icon img="react-router.svg" height={40} width={40} />
+                <Icon img="postcss.svg" height={40} width={40} />
             </div>
             <div className="titletron-wrapper">
                 <Icon img="react-1.svg" height={100} width={100} />
