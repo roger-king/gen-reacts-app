@@ -15,17 +15,16 @@
     line-height: 25px;
 }
 
-.features{
-    lost-row: 1/1;
-}
 .features-content-wrapper{
+    lost-flex-container: row;
 }
 .feature-row{
-    width: 100%;
-}
+    lost-utility: clearfix;
+    lost-flex-container: row;
 
-.feature-row div{
-    lost-column: 1/2;
+    div {
+        lost-column: 1/2;
+    }
 }
 
 .intro {

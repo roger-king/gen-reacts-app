@@ -7,4 +7,5 @@
 
 .grid-one{
     lost-utility: clearfix;
+    lost-flex-container: row;
 }
