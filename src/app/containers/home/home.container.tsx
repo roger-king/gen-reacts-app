@@ -13,7 +13,7 @@ class HomeContainer extends React.Component<any, any> {
             <div id="home-page">
                 <Titletron />
 
-                <section className="page-content">
+                <section className="page-content content-font">
                     <div className="intro">
                         <b>React-Typescript-Kit</b> is my approach to tackling a react.js application.
                         The main goal of this project is to bring a structure to a very open platform
