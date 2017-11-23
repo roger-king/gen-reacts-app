@@ -6,6 +6,10 @@ import * as React from 'react';
  */
 
 export class {{pascalCase name}}Container extends React.Component<any, any> {
+    constructor(props) {
+        super(props)
+    }
+
     public render() {
         return(
             <div>
