@@ -62,12 +62,7 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'postcss-loader',
-                        options: {
-                            config: {
-                                path: './build/postcss.config.js'
-                            }
-                        }
+                        loader: 'postcss-loader'
                     }]
                 })
             },
