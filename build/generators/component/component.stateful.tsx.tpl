@@ -6,8 +6,8 @@ import * as React from 'react';
  */
  
 export class {{pascalCase name}} extends React.Component <any, any> {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {};
 
