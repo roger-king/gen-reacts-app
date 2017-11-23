@@ -2,6 +2,7 @@ import './home.container.css';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Login, Titletron } from './../../components';
+import { Icon } from './../../components/icon/icon.component';
 
 /**
  * HomeContainer
@@ -24,17 +25,27 @@ class HomeContainer extends React.Component<any, any> {
                         <span className="title"> Features</span>
 
                         <div className="features-content-wrapper">
-                            <div className="feature-row">
-                                <div>
-                                    redux
+                            <div className="feature-column">
+                                <div className="feature-item">
+                                    <Icon img="redux.svg" height={40} width={40} /> <b>State management</b>
                                 </div>
                                 <div>
-                                    plop
+                                    <Icon img="jest.svg" height={40} width={40} /> <b>Unit Testing & Code Coverage</b>
+                                </div>
+                                <div>
+                                    <Icon img="webpack.svg" height={40} width={40} /> <b>Build</b>
                                 </div>
                             </div>
-                            <div className="feature-row">
-                            </div>
-                            <div className="feature-row">
+                            <div className="feature-column">
+                                <div className="feature-item">
+                                    <Icon img="react-router.svg" height={40} width={40} /> <b>Routing</b>
+                                </div>
+                                <div>
+                                    <Icon img="postcss.svg" height={40} width={40} /> <b>Next Gen CSS</b>
+                                </div>
+                                <div>
+                                    <Icon img="webpack.svg" height={40} width={40} /> <b>Automation</b>
+                                </div>
                             </div>
                         </div>
                     </div>

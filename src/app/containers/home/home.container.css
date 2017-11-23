@@ -16,14 +16,15 @@
 }
 
 .features-content-wrapper{
-    lost-flex-container: row;
-}
-.feature-row{
     lost-utility: clearfix;
     lost-flex-container: row;
-
-    div {
-        lost-column: 1/2;
+}
+.feature-column{
+    lost-utility: clearfix;
+    lost-flex-container: column;
+    lost-column: 1/2;
+    .feature-item{
+        lost-column: 1/3;
     }
 }
 
