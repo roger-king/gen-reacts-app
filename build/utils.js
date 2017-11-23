@@ -23,3 +23,7 @@ exports.assetsPath = function (_path) {
 exports.appModuleExists = (comp) => {
   return appModule.indexOf(comp) >= 0;
 }
+
+/**
+ * Loaders
+ */
