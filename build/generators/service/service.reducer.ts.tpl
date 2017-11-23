@@ -2,7 +2,7 @@ import { ActionTypes} from './../actionTypes';
 import { TypeKeys } from './../typeKeys';
 import { {{pascalCase name}} } from './{{camelCase name}}';
 
-const INITIAL_STATE: {{pascalCase name}} = {
+export const INITIAL_STATE: {{pascalCase name}} = {
 
 };
 

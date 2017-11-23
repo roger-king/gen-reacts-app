@@ -38,6 +38,18 @@ module.exports = (plop) => {
                     path: '../../src/app/services/reducers.ts',
                     pattern: 'export default combineReducers({',
                     template: 'export default combineReducers({\n    {{camelCase name}},'
+                },
+                {
+                    type: 'modify',
+                    path: '../../src/app/services/states.ts',
+                    pattern: '// Import INITIAL_STATE of our services',
+                    template: '// Import INITIAL_STATE of our services\n\nimport { INITIAL_STATE as {{pascalCase name}}State} from \'./{{pascalCase name}}/{{pascalCase name}}.reducer\';'
+                },
+                {
+                    type: 'modify',
+                    path: '../../src/app/services/states.ts',
+                    pattern: 'export default {',
+                    template: 'export default {\n    {{camelCase name}}: {{pascalCase name}}State,\n'
                 }
             ];
 
