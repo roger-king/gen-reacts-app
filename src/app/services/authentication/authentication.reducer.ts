@@ -2,7 +2,7 @@ import { ActionTypes} from './../actionTypes';
 import { TypeKeys } from './../typeKeys';
 import { Authentication } from './authentication';
 
-const INITIAL_STATE: Authentication = {
+export const INITIAL_STATE: Authentication = {
     loggedIn: false
 };
 

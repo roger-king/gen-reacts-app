@@ -2,7 +2,7 @@ import { ActionTypes} from './../actionTypes';
 import { TypeKeys } from './../typeKeys';
 import { User } from './user';
 
-const INITIAL_STATE: User = {
+export const INITIAL_STATE: User = {
     username: ''
 };
 

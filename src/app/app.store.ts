@@ -2,16 +2,8 @@ import { createStore, applyMiddleware } from 'redux';
 import appReducers from './services/reducers';
 import thunk from 'redux-thunk';
 
-// Configure Initial Application State
-
-const DEFAULT_STATE = {
-    user: {
-        username: ''
-    },
-    authentication: {
-        loggedIn: false
-    }
-};
+// Import application stores
+import DEFAULT_STATE from './services/states';
 
 export default function configureStore() {
     let store = createStore(appReducers, DEFAULT_STATE, applyMiddleware(thunk));
