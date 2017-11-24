@@ -3,31 +3,41 @@
 }
 
 .page-content{
+    lost-flex-container: column;
     lost-align: center;
-    lost-flex-container: row;
     height: 100%;
     background-color: #ffffff;
     margin-top: 50px;
 }
 
 .page-content div{
-    padding: 40px;
-    line-height: 25px;
+    max-width: 800px;
+    line-height: 30px;
+}
+
+.features {
+    margin-top: 100px;
+    width: 100%;
+    lost-flex-container: column;
+    lost-align:center;
 }
 
 .features-content-wrapper{
+    width: inherit;
+    margin-top: 50px;
     lost-utility: clearfix;
     lost-flex-container: row;
 }
+
 .feature-column{
-    lost-utility: clearfix;
-    lost-flex-container: column;
     lost-column: 1/2;
-    .feature-item{
-        lost-column: 1/3;
-    }
 }
 
-.intro {
-    line-height: 25px;
+.feature-item{
+    lost-row: 1/3;
+    lost-flex-container: row;
+}
+
+.feature-item-header{
+    lost-align: center;
 }

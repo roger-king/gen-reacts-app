@@ -27,29 +27,70 @@ class HomeContainer extends React.Component<any, any> {
                         <div className="features-content-wrapper">
                             <div className="feature-column">
                                 <div className="feature-item">
-                                    <Icon img="redux.svg" height={40} width={40} /> <b>State management</b>
+                                    <div className="feature-item-header">
+                                        <Icon img="tree.svg" height={40} width={40} /> <b>State management</b>
+                                    </div>
+                                    <div className="feature-item-content">
+                                        Use Redux to take control of your application’s state and keep state mutations manageable.
+                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
+                                        you to see, play back, and change your action history!
+                                    </div>
                                 </div>
-                                <div>
-                                    <Icon img="jest.svg" height={40} width={40} /> <b>Unit Testing & Code Coverage</b>
+                                <div className="feature-item">
+                                    <div className="feature-item-header">
+                                        <Icon img="lab.svg" height={40} width={40} /> <b>Unit Testing & Code Coverage</b>
+                                    </div>
+                                    <div className="feature-item-content">
+                                        Use Redux to take control of your application’s state and keep state mutations manageable.
+                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
+                                        you to see, play back, and change your action history!
+                                    </div>
                                 </div>
-                                <div>
-                                    <Icon img="webpack.svg" height={40} width={40} /> <b>Build</b>
+                                <div className="feature-item">
+                                    <div className="feature-item-header">
+                                        <Icon img="wrench.svg" height={40} width={40} /> <b>Build</b>
+                                    </div>
+                                    <div className="feature-item-content">
+                                        Use Redux to take control of your application’s state and keep state mutations manageable.
+                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
+                                        you to see, play back, and change your action history!
+                                    </div>
                                 </div>
                             </div>
                             <div className="feature-column">
                                 <div className="feature-item">
-                                    <Icon img="react-router.svg" height={40} width={40} /> <b>Routing</b>
+                                    <div className="feature-item-header">
+                                        <Icon img="map.svg" height={40} width={40} /> <b>Routing</b>
+                                    </div>
+                                    <div className="feature-item-content">
+                                        Use Redux to take control of your application’s state and keep state mutations manageable.
+                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
+                                        you to see, play back, and change your action history!
+                                    </div>
                                 </div>
-                                <div>
-                                    <Icon img="postcss.svg" height={40} width={40} /> <b>Next Gen CSS</b>
+                                <div className="feature-item">
+                                    <div className="feature-item-header">
+                                        <Icon img="clear-formatting.svg" height={40} width={40} /> <b>Next Gen CSS</b>
+                                    </div>
+                                    <div className="feature-item-content">
+                                        Use Redux to take control of your application’s state and keep state mutations manageable.
+                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
+                                        you to see, play back, and change your action history!
+                                    </div>
                                 </div>
-                                <div>
-                                    <Icon img="webpack.svg" height={40} width={40} /> <b>Automation</b>
+                                <div className="feature-item">
+                                    <div className="feature-item-header">
+                                        <Icon img="cogs.svg" height={40} width={40} /> <b>Automation</b>
+                                    </div>
+                                    <div className="feature-item-content">
+                                        Use Redux to take control of your application’s state and keep state mutations manageable.
+                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
+                                        you to see, play back, and change your action history!
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <Login />
                 </section>
             </div>
         );
