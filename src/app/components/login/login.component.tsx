@@ -32,8 +32,10 @@ class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
     public render() {
         return (
             <div className="login-container">
-                <input className="arcing-input" type="text" placeholder="username" name="username" onChange={this.handleOnChange} />
-                <input className="arcing-input" type="password" placeholder="password" name="password" onChange={this.handleOnChange} />
+                <input ref="form" value={this.state.username} className="arcing-input" type="text" placeholder="username"
+                    name="username" onChange={this.handleOnChange} />
+                <input ref="form" value={this.state.password} className="arcing-input" type="password" placeholder="password"
+                    name="password" onChange={this.handleOnChange} />
                 <button className="arcing-btn" onClick={this.doLogin}> Login </button>
                 <p>
                     {this.state.msg}
@@ -45,9 +47,9 @@ class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
     private doLogin() {
         this.props.login(this.state.username, this.state.password);
         if (this.props.authentication.loggedIn) {
-            this.setState({msg: 'successful!'});
+            this.setState({username: '', password: '', msg: 'successful!'});
         } else if (!this.props.authentication.loggedIn) {
-            this.setState({msg: 'Invalid username or password.'});
+            this.setState({username: '', password: '', msg: 'Invalid username or password.'});
         }
     }
 }

@@ -53,3 +53,15 @@
 .demo-instructions{
     margin-top: 50px;
 }
+
+.user-profile{
+    margin-top: 30px;
+    height: 200px;
+    width: 170px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    lost-align: center;
+    lost-flex-container: row;
+    background: #007acc;
+    color: #eeeeee;
+}

@@ -18,7 +18,7 @@ export interface UserSetAction {
 }
 
 export const UserGet = (): UserGetAction => {
-    let username = 'Tom';
+    let username = 'Erlich Bachman';
     return {
         type: TypeKeys.USER_GET,
         username

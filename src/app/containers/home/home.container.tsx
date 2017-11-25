@@ -12,7 +12,11 @@ import { UserGet} from './../../services/actions';
 class HomeContainer extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
-        this.demo = this.demo.bind(this);
+
+        this.state = {
+            user_icon: 'user.svg',
+            user: 'Unknown'
+        };
     }
     public render() {
         return (
@@ -98,23 +102,25 @@ class HomeContainer extends React.Component<any, any> {
                             submit an action, determine if you are "authenticated", and set your user and loggedIn status.
                             The demo login credentials are username = <b>admin </b> and password = <b> password</b>.
                         </div>
+                        <div className="user-profile">
+                            <div className="icon-wrapper">
+                                <Icon img={this.state.user_icon} height={80} width={80} />
+                            </div>
+                            {this.state.user}
+                        </div>
                         <Login/>
-                        {this.demo()}
                     </div>
                 </section>
             </div>
         );
     }
 
-    private demo() {
-        if (this.props.authentication.loggedIn) {
-            const user: any = this.props.getUser().username;
-            return <span className=""> {user} </span>;
+    public componentWillReceiveProps(newProps: any) {
+        if (newProps.authentication.loggedIn) {
+            const username: any = this.props.getUser().username;
+            this.setState({user: username, user_icon: 'erlich.png'});
         }
-
-        return <span> Not logged in </span>;
     }
-
 }
 
 function mapStateToProps({ authentication }) {
