@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { Routes } from './app.router';
 import './app.css';
+/**
+ * Import some development tools for the application.
+ * Redux-DevTools
+ */
+
 
 /**
  * Main application container.
