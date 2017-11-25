@@ -2,7 +2,7 @@ import './login.component.css';
 import * as React from 'react';
 import { ILoginProps, ILoginState } from './login.interface';
 import { connect } from 'react-redux';
-import { Login as LoginService} from './../../services/authentication/authentication.action';
+import { Login as LoginService} from './../../services/actions';
 
 /**
  * Login Component
@@ -14,7 +14,8 @@ class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            msg: ''
         };
 
         this.doLogin = this.doLogin.bind(this);
@@ -33,14 +34,21 @@ class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
             <div className="login-container">
                 <input className="arcing-input" type="text" placeholder="username" name="username" onChange={this.handleOnChange} />
                 <input className="arcing-input" type="password" placeholder="password" name="password" onChange={this.handleOnChange} />
-                <button className="arcing-btn" onClick={this.doLogin}> login </button>
-                <h1> {String(this.props.authentication.loggedIn)} </h1>
+                <button className="arcing-btn" onClick={this.doLogin}> Login </button>
+                <p>
+                    {this.state.msg}
+                </p>
             </div>
         );
     }
 
     private doLogin() {
         this.props.login(this.state.username, this.state.password);
+        if (this.props.authentication.loggedIn) {
+            this.setState({msg: 'successful!'});
+        } else if (!this.props.authentication.loggedIn) {
+            this.setState({msg: 'Invalid username or password.'});
+        }
     }
 }
 
