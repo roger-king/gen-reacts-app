@@ -13,12 +13,12 @@ let configureStore = () => {
 };
 
 if (process.env.NODE_ENV !== 'production') {
-    const DevTools = require('./app.devtools').DevTools;
+    const ReduxDevTools = require('./services/redux.devtools').ReduxDevTools;
 
     configureStore = () => {
         enhancer = compose(
             applyMiddleware(thunk),
-            DevTools.instrument()
+            ReduxDevTools.instrument()
         );
 
         let store = createStore(

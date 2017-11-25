@@ -5,7 +5,6 @@ import './app.css';
  * Import some development tools for the application.
  * Redux-DevTools
  */
-import { DevTools } from './app.devtools';
 
 let AppContainer = () => {
     return (
@@ -14,10 +13,11 @@ let AppContainer = () => {
 };
 
 if (process.env.NODE_ENV !== 'production') {
+    const ReduxDevTools = require('./services/redux.devtools').ReduxDevTools;
     AppContainer = () => {
         return (
             <div>
-                <DevTools />
+                <ReduxDevTools />
                 <Routes />
             </div>
         );
