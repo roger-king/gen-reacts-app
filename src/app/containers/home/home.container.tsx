@@ -3,12 +3,17 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Login, Titletron } from './../../components';
 import { Icon } from './../../components/icon/icon.component';
+import { UserGet} from './../../services/actions';
 
 /**
  * HomeContainer
  */
 
 class HomeContainer extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        this.demo = this.demo.bind(this);
+    }
     public render() {
         return (
             <div id="home-page">
@@ -41,9 +46,8 @@ class HomeContainer extends React.Component<any, any> {
                                         <Icon img="lab.svg" height={40} width={40} /> <b>Unit Testing & Code Coverage</b>
                                     </div>
                                     <div className="feature-item-content">
-                                        Use Redux to take control of your application’s state and keep state mutations manageable.
-                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
-                                        you to see, play back, and change your action history!
+                                        Put some extra confidence in your awesome code and supply some unit tests!
+                                        Use Jest to simulate how your components should render in production.
                                     </div>
                                 </div>
                                 <div className="feature-item">
@@ -51,9 +55,7 @@ class HomeContainer extends React.Component<any, any> {
                                         <Icon img="wrench.svg" height={40} width={40} /> <b>Build</b>
                                     </div>
                                     <div className="feature-item-content">
-                                        Use Redux to take control of your application’s state and keep state mutations manageable.
-                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
-                                        you to see, play back, and change your action history!
+                                        Plugins, plugins, and more plugins. Leverage webpack to build and bundle your application.
                                     </div>
                                 </div>
                             </div>
@@ -63,9 +65,9 @@ class HomeContainer extends React.Component<any, any> {
                                         <Icon img="map.svg" height={40} width={40} /> <b>Routing</b>
                                     </div>
                                     <div className="feature-item-content">
-                                        Use Redux to take control of your application’s state and keep state mutations manageable.
-                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
-                                        you to see, play back, and change your action history!
+                                        "Declarative routing for react" with react-router. Routing made easy.
+                                        Create your container, assign to a path (e.g '/home'), and you're done! Build your containers
+                                        with your reusable components.
                                     </div>
                                 </div>
                                 <div className="feature-item">
@@ -73,9 +75,8 @@ class HomeContainer extends React.Component<any, any> {
                                         <Icon img="clear-formatting.svg" height={40} width={40} /> <b>Next Gen CSS</b>
                                     </div>
                                     <div className="feature-item-content">
-                                        Use Redux to take control of your application’s state and keep state mutations manageable.
-                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
-                                        you to see, play back, and change your action history!
+                                        Everyone wants to use the latest and greatest. Next Gen CSS allows us to use many tools
+                                        and functions that progress our UI to the next level.
                                     </div>
                                 </div>
                                 <div className="feature-item">
@@ -83,19 +84,49 @@ class HomeContainer extends React.Component<any, any> {
                                         <Icon img="cogs.svg" height={40} width={40} /> <b>Automation</b>
                                     </div>
                                     <div className="feature-item-content">
-                                        Use Redux to take control of your application’s state and keep state mutations manageable.
-                                        If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
-                                        you to see, play back, and change your action history!
+                                        Streamline your development with generation of your components and services.
+                                        Most importantly have consistent code styling and formatting.
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="demo">
+                        <span className="title"> Demo</span>
+                        <div className="demo-instructions">
+                            Let's demostrate with an everyday example. I created this very simple login module where it will:
+                            submit an action, determine if you are "authenticated", and set your user and loggedIn status.
+                            The demo login credentials are username = <b>admin </b> and password = <b> password</b>.
+                        </div>
+                        <Login/>
+                        {this.demo()}
                     </div>
                 </section>
             </div>
         );
     }
 
+    private demo() {
+        if (this.props.authentication.loggedIn) {
+            const user: any = this.props.getUser().username;
+            return <span className=""> {user} </span>;
+        }
+
+        return <span> Not logged in </span>;
+    }
+
 }
 
-export default HomeContainer;
+function mapStateToProps({ authentication }) {
+    return {
+        authentication
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        getUser: () => dispatch(UserGet())
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
