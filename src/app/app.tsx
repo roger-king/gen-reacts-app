@@ -5,7 +5,24 @@ import './app.css';
  * Import some development tools for the application.
  * Redux-DevTools
  */
+import { DevTools } from './app.devtools';
 
+let AppContainer = () => {
+    return (
+        <Routes />
+    );
+};
+
+if (process.env.NODE_ENV !== 'production') {
+    AppContainer = () => {
+        return (
+            <div>
+                <DevTools />
+                <Routes />
+            </div>
+        );
+    };
+}
 
 /**
  * Main application container.
@@ -20,7 +37,7 @@ export class App extends React.Component<{}, {}> {
 
     render() {
         return (
-            <Routes />
+            <AppContainer/>
         );
     }
 }

@@ -4,7 +4,6 @@ import thunk from 'redux-thunk';
 
 // Import application stores
 import DEFAULT_STATE from './services/states';
-import DevTools from './app.devtools';
 
 let enhancer: any = applyMiddleware(thunk);
 
@@ -14,6 +13,7 @@ let configureStore = () => {
 };
 
 if (process.env.NODE_ENV !== 'production') {
+    const DevTools = require('./app.devtools').DevTools;
 
     configureStore = () => {
         enhancer = compose(
