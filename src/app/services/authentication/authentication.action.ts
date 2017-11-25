@@ -20,11 +20,11 @@ export interface IsLoggedInAction {
 
 export const Login = (username: string, password: string): any => {
     const user: string = 'admin';
+    const pw: string = 'password';
 
     return (dispatch: any) => {
-        if (user === username) {
+        if (user === username && pw === password) {
             dispatch(UserSet(username));
-            console.log('Authenication pass');
             dispatch({
                 type: TypeKeys.AUTH_LOGIN,
                 loggedIn: true

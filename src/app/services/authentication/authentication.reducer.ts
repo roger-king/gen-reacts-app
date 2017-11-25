@@ -12,7 +12,6 @@ export default function (state: Authentication = INITIAL_STATE, action: ActionTy
             return { loggedIn: action.loggedIn};
         case TypeKeys.AUTH_LOGIN:
             state.loggedIn = action.loggedIn;
-            console.log('logged in', state.loggedIn);
             return { loggedIn: state.loggedIn };
         default:
           return state;
