@@ -1,10 +1,9 @@
 [![npm][npm]][npm-url]
 
 <div align="center">
-    <img width="200" height="200" src="public/images/react_modern_seed.png"/>
-    <h1>react.js lunchbox</h1>
+    <h1>React-Typescript-Kit</h1>
     <p>
-        React.js lunchbox is a frontend full suite solution. It aims to provide you a streamline process from development to production!
+        React-Typescript-Kit is a frontend full suite solution. It aims to provide you a streamline process from development to production!
     </p>
 </div>
 <h2 align="center">Introduction</h2>
@@ -25,13 +24,7 @@ React.js lunchbox is my approach to tackling a react.js application. The main go
 
 ```
 // Install node_modules
-npm install
-
-// Init Project space.
-npm run generate:init
-
-// Remove .git
-rm -rf .git
+yarn install
 
 // Run in development mode
 npm run start:dev
@@ -48,12 +41,11 @@ npm run start:dev
 |:--:| :----------:|
 |typescript| superset language for strict typing of our javascript|
 |webpack| bundling and compiling of our typescript|
-|mobx| state management|
-|ui-router| router|
-|ant design| css react framework|
+|redux| state management|
+|react-router| router|
+|postcss| css processor|
 |tslint| linting tool for typescript|
-|karma| test runner for mocha (test framework)|
-|mocha/chai/enzyme| test framework to do our testing of our components and services|
+|jest| component based unit testing|
 |plop| templated automation to get rid of the react boilerplates|
 
 <h2 align="center">Project Structure</h2>
@@ -85,7 +77,6 @@ npm run start:dev
 |   └── webpack
 |   |   └── webpack.dev.config.js - Development webpack bundling config.
 |   |   └── webpack.dist.config.js - Production webpack bundling config.
-└── .babelrc
 └── karma.conf.js - karma runner config.
 └── mocha.opts - mocha options.
 └── tslint.json - linting config.
@@ -125,13 +116,11 @@ I use gulp to kick start and speed up our development process by having "magic" 
 
 
 # Resources:
-- [Mobx](https://mobx.js.org/intro/overview.html)
+- [Redux](https://redux.js.org/)
 - [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
-- [UIRouter](https://ui-router.github.io/react/)
 - [Webpack](https://webpack.github.io/docs/)
-- [React-Bootstrap](https://react-bootstrap.github.io/)
-- [Ant Design](https://ant.design/docs/react/introduce)
-
+- [PostCSS](http://postcss.org/)
+- [lost grid](https://github.com/peterramsing/lost)
 - [Smart vs Dumb Container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 
 [npm]: https://img.shields.io/npm/v/npm.svg
