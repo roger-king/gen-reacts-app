@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { {{pascalCase name}} } from './../../src/app/components/{{camelCase name}}/{{camelCase name}}.component';
+import { {{pascalCase name}} } from './../../../src/app/containers/{{camelCase name}}/{{camelCase name}}.container';
 
 let tree;
 

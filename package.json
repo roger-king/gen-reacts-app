@@ -34,7 +34,10 @@
         "transform": {
             "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
-        "testRegex": "/src/.*\\.test.(ts|tsx|js)$"
+        "moduleNameMapper": {
+            "\\.css$": "identity-obj-proxy"
+        },
+        "testRegex": "/__test__/.*\\.test.(ts|tsx|js)$"
     },
     "author": "rking",
     "license": "ISC",
@@ -76,6 +79,7 @@
         "friendly-errors-webpack-plugin": "^1.6.1",
         "html-webpack-plugin": "^2.30.1",
         "html-webpack-template": "^6.0.2",
+        "identity-obj-proxy": "^3.0.0",
         "jest": "^21.2.1",
         "lost": "^8.2.0",
         "optimize-css-assets-webpack-plugin": "^3.2.0",
