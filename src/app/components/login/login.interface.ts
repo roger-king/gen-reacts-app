@@ -8,4 +8,5 @@ export interface ILoginProps {
 export interface ILoginState {
     username: string;
     password: string;
+    msg: string;
 }

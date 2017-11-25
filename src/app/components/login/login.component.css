@@ -2,6 +2,13 @@
     display: block;
     width: 100%;
     height: 100%;
+    padding: 40px;
     background-color: #eeeeee;
-    
+    lost-flex-container: column;
+    lost-align: center;
+    margin-top: 50px;
+}
+
+.login-container div{
+    lost-column: 1/2;
 }
