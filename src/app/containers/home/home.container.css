@@ -30,7 +30,7 @@
 }
 
 .feature-column{
-    lost-waffle: 1/2;
+    lost-waffle: 1/1;
 }
 
 .feature-item{
@@ -64,4 +64,11 @@
     lost-flex-container: row;
     background: #007acc;
     color: #eeeeee;
+}
+
+
+@media (min-width: 900px) {
+    .feature-column{
+        lost-waffle: 1/2;
+    }
 }
