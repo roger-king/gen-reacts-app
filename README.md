@@ -27,7 +27,7 @@ React.js lunchbox is my approach to tackling a react.js application. The main go
 yarn install
 
 // Run in development mode
-npm run start:dev
+yarn run start:dev
 
 ```
     
