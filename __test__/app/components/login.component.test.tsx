@@ -2,36 +2,45 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import renderer from 'react-test-renderer';
 import createMockStore from 'redux-mock-store';
-import { mount } from 'enzyme';
-import { Login, WrappedLogin } from './../../../src/app/components/login/login.component';
+import { shallow } from 'enzyme';
+import { Login, ConnectedLogin } from './../../../src/app/components/login/login.component';
 import { Login as LoginService } from './../../../src/app/services/actions';
 import { shallowWithStore } from './../../enzyme-setup';
 
-describe('<Login/>', function () {
-    const initialState = {
-        login: () => jest.fn,
-        authentication: {
-            loggedIn: false
-        }
-    };
+const props = {
+    login: () => jest.fn,
+    authentication: {
+        loggedIn: false
+    }
+};
 
-    const mockStore = createMockStore();
-    let store, container, wrapper;
+const mockStore = createMockStore();
+let store, container, wrapper;
 
-    beforeEach(function () {
-        store = mockStore(initialState);
-        wrapper = shallowWithStore(<Login/>, store);
+describe('<Login/> Snapshot', () => {
+    test('Capture snapshot', () => {
+        const component = renderer.create(<Login login={props.login} authentication={props.authentication} />);
+        expect(component).toMatchSnapshot();
+    });
+});
+
+describe('ConnectedLogin', () => {
+    beforeEach(() => {
+        store = mockStore(props);
+        container = shallow(<ConnectedLogin store={store}/>);
     });
 
-    test('it renders properly', () => {
-        expect(wrapper.length).toEqual(1);
+    test('it renders connect component', () => {
+        expect(container.length).toBe(1);
     });
 
-    test('check props match with initialState', () => {
-        expect(wrapper.find(WrappedLogin).prop('authentication.loggedIn')).toBeFalsy();
+    test('it will login successfully', () => {
+        store.dispatch({
+            type: 'AUTH_LOGIN',
+            loggedIn: true,
+        });
+        const actions = store.getActions();
+        console.log(actions);
     });
 
-    test('check action LOGIN is dispatching', () => {
-        console.log(wrapper.state('username'));
-    });
 });

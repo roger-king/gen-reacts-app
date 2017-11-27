@@ -8,7 +8,7 @@ import { Login as LoginService} from './../../services/actions';
  * Login Component
  */
 
-export class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
+export class Login extends React.PureComponent<ILoginProps, ILoginState> {
     constructor(props: ILoginProps) {
         super(props);
 
@@ -66,10 +66,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export const WrappedLogin = connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
-
-export const Login: React.SFC<any> = (props) => {
-    return(
-        <WrappedLogin/>
-    );
-};
+export const ConnectedLogin = connect(mapStateToProps, mapDispatchToProps)(Login);

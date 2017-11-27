@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login/> Snapshot Capture snapshot 1`] = `
+<form
+  className="login-container"
+  onSubmit={[Function]}
+>
+  <input
+    className="arcing-input"
+    name="username"
+    onChange={[Function]}
+    placeholder="username"
+    type="text"
+    value=""
+  />
+  <input
+    className="arcing-input"
+    name="password"
+    onChange={[Function]}
+    placeholder="password"
+    type="password"
+    value=""
+  />
+  <button
+    className="arcing-btn"
+    onClick={[Function]}
+  >
+     Login 
+  </button>
+  <p>
+    
+  </p>
+</form>
+`;
