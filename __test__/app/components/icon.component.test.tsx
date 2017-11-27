@@ -13,10 +13,13 @@ beforeEach(function () {
 describe('<Icon/>', function () {
     test('renders properly', () => {
         let component = tree.toJSON();
-        console.log(component);
         expect(component.type).toBe('img');
         expect(component.props.height).toBe(40);
         expect(component.props.width).toBe(40);
         expect(component.props.src).toBe('static/images/erlich.svg');
+    });
+
+    test('renders from snapshot', () => {
+        expect(tree).toMatchSnapshot();
     });
 });

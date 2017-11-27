@@ -8,7 +8,7 @@ import { Login as LoginService} from './../../services/actions';
  * Login Component
  */
 
-class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
+export class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
     constructor(props: ILoginProps) {
         super(props);
 
@@ -31,7 +31,7 @@ class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
 
     public render() {
         return (
-            <div className="login-container">
+            <form className="login-container" onSubmit={this.doLogin}>
                 <input ref="form" value={this.state.username} className="arcing-input" type="text" placeholder="username"
                     name="username" onChange={this.handleOnChange} />
                 <input ref="form" value={this.state.password} className="arcing-input" type="password" placeholder="password"
@@ -40,7 +40,7 @@ class LoginComponent extends React.PureComponent<ILoginProps, ILoginState> {
                 <p>
                     {this.state.msg}
                 </p>
-            </div>
+            </form>
         );
     }
 
@@ -66,7 +66,7 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-const WrappedLogin = connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
+export const WrappedLogin = connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
 
 export const Login: React.SFC<any> = (props) => {
     return(
