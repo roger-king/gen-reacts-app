@@ -29,7 +29,6 @@
         "build",
         "typings/main",
         "typings/main.d.ts",
-         "src/**/*.test.tsx",
-         "src/**/*.test.ts"
+         "__test__"
     ]
 }
