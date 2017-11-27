@@ -32,7 +32,7 @@ module.exports = (plop) => {
             },
             {
                 type: "add",
-                path: "./../../__test__/components/{{camelCase name}}/{{camelCase name}}.component.test.tsx",
+                path: "./../../__test__/app/components/{{camelCase name}}.component.test.tsx",
                 templateFile: "component/component.test.tsx.tpl"
             }
             ];
