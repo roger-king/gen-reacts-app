@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon/> renders from snapshot 1`] = `
+<section
+  className="titletron-container"
+>
+  <div
+    className="titletron-wrapper"
+  >
+    <img
+      className="icon-container"
+      height={100}
+      src="static/images/react-1.svg"
+      width={100}
+    />
+    <span
+      className="title titletron-title"
+    >
+       Typescript Gen
+    </span>
+  </div>
+  <div
+    className="icons-wrapper"
+  >
+    <img
+      className="icon-container"
+      height={40}
+      src="static/images/webpack.svg"
+      width={40}
+    />
+    <img
+      className="icon-container"
+      height={40}
+      src="static/images/redux.svg"
+      width={40}
+    />
+    <img
+      className="icon-container"
+      height={40}
+      src="static/images/react-router.svg"
+      width={40}
+    />
+    <img
+      className="icon-container"
+      height={40}
+      src="static/images/postcss.svg"
+      width={40}
+    />
+    <img
+      className="icon-container"
+      height={40}
+      src="static/images/jest.svg"
+      width={40}
+    />
+    <img
+      className="icon-container"
+      height={40}
+      src="static/images/cssnext.svg"
+      width={40}
+    />
+  </div>
+</section>
+`;

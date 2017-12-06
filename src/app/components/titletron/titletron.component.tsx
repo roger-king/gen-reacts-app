@@ -11,7 +11,7 @@ export const Titletron: React.SFC<any> = (props) => {
         <section className="titletron-container">
             <div className="titletron-wrapper">
                 <Icon img="react-1.svg" height={100} width={100} />
-                <span className="title titletron-title"> Typescript Kit</span>
+                <span className="title titletron-title"> Typescript Gen</span>
             </div>
             <div className="icons-wrapper">
                 <Icon img="webpack.svg" height={40} width={40} />
