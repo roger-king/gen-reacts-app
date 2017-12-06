@@ -40,7 +40,7 @@ describe('ConnectedLogin', () => {
             loggedIn: true,
         });
         const actions = store.getActions();
-        console.log(actions);
+        expect(actions[0].loggedIn).toBeTruthy();
     });
 
 });
