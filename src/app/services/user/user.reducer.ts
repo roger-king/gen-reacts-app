@@ -6,8 +6,6 @@ export const INITIAL_STATE: User = {
     username: ''
 };
 
-const users: any = ['roger', 'george', 'joe'];
-
 export default function (state: User = INITIAL_STATE, action: ActionTypes) {
     switch (action.type) {
         case TypeKeys.USER_GET:

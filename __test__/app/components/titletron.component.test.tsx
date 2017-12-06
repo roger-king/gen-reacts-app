@@ -13,7 +13,6 @@ beforeEach(function () {
 describe('<Icon/>', function () {
     test('renders properly', () => {
         let component = tree.toJSON();
-        console.log(component.children[1]);
         expect(component.type).toBe('section');
         expect(component.children[0].children[0].props.src).toEqual('static/images/react-1.svg');
         expect(component.children[0].children[1].children[0]).toEqual(' Typescript Gen');
