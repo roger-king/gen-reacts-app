@@ -2,14 +2,14 @@
 [![Dependencies][deps]][deps-url]
 
 <div align="center">
-    <h1>React-Typescript-Kit</h1>
+    <h1>React-Typescript-Gen</h1>
     <p>
-        React-Typescript-Kit is a frontend full suite solution. It aims to provide you a streamline process from development to production!
+        React-Typescript-Gen is a frontend full suite solution. It aims to provide you a streamline process from development to production!
     </p>
 </div>
 <h2 align="center">Introduction</h2>
 <p>
-React.js lunchbox is my approach to tackling a react.js application. The main goal of this project is to bring a structure to a very open platform for developing a react.js application. I use many modern day (to date) tools to help streamline develop processes.
+React-Typescript-Gen is my approach to tackling a react.js application. The main goal of this project is to bring a structure to a very open platform for developing a react.js application. I use many modern day (to date) tools to help streamline develop processes.
 </p>
 <ul>
     <li> Strict typing </li>
@@ -110,7 +110,6 @@ I use gulp to kick start and speed up our development process by having "magic" 
 |start:test| Start testing in watch mode|
 |build:dist| Create dist for production. This will run linting in parallel to consistent formatting|
 |gen| List all automated templates to create from|
-|gen:init| Initiates the project (should only be ran once at the start of the project)|
 |gen:component| Create a shared component|
 |gen:container| Create a new page or containter|
 |gen:service| Create a new service/state store|
