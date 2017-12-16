@@ -1,0 +1,19 @@
+/* Code */
+.codeline-container{
+    width: 100%;
+    margin: 10px;
+}
+
+.description{
+    padding-left: 50px;
+}
+
+.codeline {
+    margin-left: 50px;
+    padding-left: 50px;
+    width: 80%;
+    height: 40px;
+    background-color: #272727;
+    color: #fff;
+    lost-align: middle-left;
+}
