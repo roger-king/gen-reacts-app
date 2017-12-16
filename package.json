@@ -1,7 +1,7 @@
 {
-    "name": "reactjs-modern-seed",
+    "name": "react-typescript-gen",
     "version": "1.0.0",
-    "description": "reactjs-modern-seed",
+    "description": "A react.js typescript project generator.",
     "main": "index.js",
     "scripts": {
         "start:dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js --inline --progress",

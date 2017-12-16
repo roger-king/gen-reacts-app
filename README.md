@@ -66,25 +66,22 @@ yarn run start:dev
 |   |   |   └── index.ts - A single entry point for exporting your components for easy importing.
 |   |   └── containers - Entry points for each route. Containers are built from your components and access your mobx stores.
 |   |   |   └── index.ts - A single entry point for exporting your containers for easy importing.
-|   |   └── services - Service layer of the application containing reusable services and stores (mobx).
+|   |   └── services - Service layer of the application containing reusable services and stores (redux).
 |   |   |   └── index.ts - A single entry point for exporting your services for easy importing.
+|   |   └── utils - Utility folder.
 |   |   └── app.constants.ts - a single file for global application constants (i.e api url)
-|   |   └── app.scss - Sass file for global application styling.
+|   |   └── app.css - Sass file for global application styling.
 |   |   └── app.tsx - Main application tsx file (contains Authentication module)
-|   |   └── router.config.ts - A single file to contain all routes.
-|   └── index.html - base html file
+|   |   └── app.router.ts - A single file to contain all routes.
+|   |   └── app.store.ts - Create redux store.
 |   └── index.tsx - the entry point for the application (wrapper to call). Here we set the provider, base entry element, stores, and routing history.
-└── tools
-|   └── webpack
-|   |   └── webpack.dev.config.js - Development webpack bundling config.
-|   |   └── webpack.dist.config.js - Production webpack bundling config.
-└── karma.conf.js - karma runner config.
-└── mocha.opts - mocha options.
+└── build
+|   └── generator - plop generator scripts.
+|   └── webpack.dev.config.js - Development webpack bundling config.
+|   └── webpack.dist.config.js - Production webpack bundling config.
 └── tslint.json - linting config.
-└── gulpfile.js - gulp task runner file
-└── webpack.config.js - base webpack bundler.
 └── tsconfig.json - typescript config.
-└── package-lock.json - package management.
+└── yarn.lock - package management.
 └── package.json
 ```
 
@@ -107,7 +104,9 @@ I use gulp to kick start and speed up our development process by having "magic" 
 |Command|Action|
 |:-----:|:----:|
 |start:dev| Start development server|
-|start:test| Start testing in watch mode|
+|test| Run jest unit test|
+|test:watch| Start testing in watch mode|
+|test:coverage| Run test to generate coverage|
 |build:dist| Create dist for production. This will run linting in parallel to consistent formatting|
 |gen| List all automated templates to create from|
 |gen:component| Create a shared component|
