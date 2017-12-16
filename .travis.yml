@@ -12,7 +12,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  fqdn: https://reacts-gen.arcing.io
   on:
     branch: demo
 
