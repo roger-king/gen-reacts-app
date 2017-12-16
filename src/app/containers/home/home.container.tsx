@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Login, Titletron } from './../../components';
 import { Icon } from './../../components/icon/icon.component';
-import { UserGet} from './../../services/actions';
+import { UserGet } from './../../services/actions';
 
 /**
  * HomeContainer
@@ -15,6 +15,8 @@ class HomeContainer extends React.Component<any, any> {
 
         this.state = {
             user_icon: 'user.svg',
+            user_icon_height: 80,
+            user_icon_width: 80,
             user: 'Unknown'
         };
     }
@@ -105,11 +107,11 @@ class HomeContainer extends React.Component<any, any> {
                         </div>
                         <div className="user-profile">
                             <div className="icon-wrapper">
-                                <Icon img={this.state.user_icon} height={80} width={80} />
+                                <Icon img={this.state.user_icon} height={this.state.user_icon_height} width={this.state.user_icon_width} />
                             </div>
-                            {this.state.user}
                         </div>
-                        <Login/>
+                        {this.state.user}
+                        <Login />
                     </div>
                 </section>
             </div>
@@ -119,7 +121,7 @@ class HomeContainer extends React.Component<any, any> {
     public componentWillReceiveProps(newProps: any) {
         if (newProps.authentication.loggedIn) {
             const username: any = this.props.getUser().username;
-            this.setState({user: username, user_icon: 'erlich.png'});
+            this.setState({ user: username, user_icon: 'erlich.png', user_icon_height: 170, user_icon_width: 170 });
         }
     }
 }
