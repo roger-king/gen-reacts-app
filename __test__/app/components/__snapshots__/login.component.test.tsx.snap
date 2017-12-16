@@ -3,7 +3,6 @@
 exports[`<Login/> Snapshot Capture snapshot 1`] = `
 <form
   className="login-container"
-  onSubmit={[Function]}
 >
   <input
     className="arcing-input"
@@ -24,6 +23,7 @@ exports[`<Login/> Snapshot Capture snapshot 1`] = `
   <button
     className="arcing-btn"
     onClick={[Function]}
+    type="button"
   >
      Login 
   </button>
