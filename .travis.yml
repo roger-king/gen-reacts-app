@@ -6,7 +6,7 @@ node_js:
 
 scripts:
   - npm test
-  - npm build
+  - npm run build
   - mv dist docs
 
 deploy:
