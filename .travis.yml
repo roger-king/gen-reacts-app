@@ -4,7 +4,7 @@ dist: trusty
 node_js:
   - "8"
 
-scripts:
+script:
   - npm test
   - npm run build
   - mv dist docs
