@@ -4,6 +4,18 @@ node_js:
 
 scripts:
   - npm test
+  - npm build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  fqdn: https://reacts-gen.arcing.io
+  on:
+    branch: demo
 
 ignore:
   - *.md
+
+notifications:
+  email: false
