@@ -31,12 +31,12 @@ export class Login extends React.PureComponent<ILoginProps, ILoginState> {
 
     public render() {
         return (
-            <form className="login-container" onSubmit={this.doLogin}>
+            <form className="login-container">
                 <input ref="form" value={this.state.username} className="arcing-input" type="text" placeholder="username"
                     name="username" onChange={this.handleOnChange} />
                 <input ref="form" value={this.state.password} className="arcing-input" type="password" placeholder="password"
                     name="password" onChange={this.handleOnChange} />
-                <button className="arcing-btn" onClick={this.doLogin}> Login </button>
+                <button className="arcing-btn" type="button" onClick={this.doLogin}> Login </button>
                 <p>
                     {this.state.msg}
                 </p>
