@@ -10,19 +10,21 @@ beforeEach(function () {
     );
 });
 
-describe('<Icon/>', function () {
+describe('<TitleTron/>', function () {
     test('renders properly', () => {
         let component = tree.toJSON();
         expect(component.type).toBe('section');
         expect(component.children[0].children[0].props.src).toEqual('static/images/react-1.svg');
         expect(component.children[0].children[1].children[0]).toEqual(' Typescript Gen');
-        expect(component.children[1].children.length).toBe(6);
-        expect(component.children[1].children[0].props.src).toEqual('static/images/webpack.svg');
-        expect(component.children[1].children[1].props.src).toEqual('static/images/redux.svg');
-        expect(component.children[1].children[2].props.src).toEqual('static/images/react-router.svg');
-        expect(component.children[1].children[3].props.src).toEqual('static/images/postcss.svg');
-        expect(component.children[1].children[4].props.src).toEqual('static/images/jest.svg');
-        expect(component.children[1].children[5].props.src).toEqual('static/images/cssnext.svg');
+        expect(component.children[1].children[0])
+            .toEqual('Build, test, and deploy. A typed approach to building react applications');
+        expect(component.children[2].children.length).toBe(6);
+        expect(component.children[2].children[0].props.src).toEqual('static/images/webpack.svg');
+        expect(component.children[2].children[1].props.src).toEqual('static/images/redux.svg');
+        expect(component.children[2].children[2].props.src).toEqual('static/images/react-router.svg');
+        expect(component.children[2].children[3].props.src).toEqual('static/images/postcss.svg');
+        expect(component.children[2].children[4].props.src).toEqual('static/images/jest.svg');
+        expect(component.children[2].children[5].props.src).toEqual('static/images/cssnext.svg');
     });
 
     test('renders from snapshot', () => {

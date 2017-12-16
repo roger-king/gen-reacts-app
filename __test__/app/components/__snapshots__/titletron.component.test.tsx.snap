@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Icon/> renders from snapshot 1`] = `
+exports[`<TitleTron/> renders from snapshot 1`] = `
 <section
   className="titletron-container"
 >
@@ -18,6 +18,11 @@ exports[`<Icon/> renders from snapshot 1`] = `
     >
        Typescript Gen
     </span>
+  </div>
+  <div
+    className="content-font tagline"
+  >
+    Build, test, and deploy. A typed approach to building react applications
   </div>
   <div
     className="icons-wrapper"
