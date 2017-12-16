@@ -17,7 +17,7 @@
     "keywords": [
         "react",
         "reactjs",
-        "mobx"
+        "redux"
     ],
     "babel": {
         "plugins": [],
