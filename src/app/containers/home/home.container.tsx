@@ -1,8 +1,8 @@
 import './home.container.css';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Login, Titletron, Icon, Footer, Headline, Code } from './../../components';
-import { UserGet } from './../../services/actions';
+import { Login, Titletron, Icon, Footer, Headline, Code } from 'Components';
+import { UserGet } from 'Actions';
 
 /**
  * HomeContainer

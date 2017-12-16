@@ -4,6 +4,21 @@
         "paths": {
             "*": [
                 "src/app/*"
+            ],
+            "Components": [
+                "src/app/components"
+            ],
+            "Containers": [
+                "src/app/containers"
+            ],
+            "INITAL_STATE": [
+                "src/app/services/states"
+            ],
+            "Actions": [
+                "src/app/services/actions"
+            ],
+            "Reducers": [
+                "src/app/services/reducers"
             ]
         },
         "outDir": "./dist/",
@@ -13,7 +28,10 @@
         "inlineSourceMap": false,
         "inlineSources": false,
         "experimentalDecorators": true,
-        "lib": ["es2015", "dom"],
+        "lib": [
+            "es2015",
+            "dom"
+        ],
         "allowSyntheticDefaultImports": true,
         "suppressImplicitAnyIndexErrors": true,
         "forceConsistentCasingInFileNames": true,
@@ -29,6 +47,6 @@
         "build",
         "typings/main",
         "typings/main.d.ts",
-         "__test__"
+        "__test__"
     ]
 }

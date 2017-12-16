@@ -2,7 +2,7 @@ import './login.component.css';
 import * as React from 'react';
 import { ILoginProps, ILoginState } from './login.interface';
 import { connect } from 'react-redux';
-import { Login as LoginService} from './../../services/actions';
+import { Login as LoginService} from 'Actions';
 
 /**
  * Login Component

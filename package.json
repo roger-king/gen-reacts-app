@@ -39,7 +39,10 @@
             "\\.css$": "identity-obj-proxy"
         },
         "testRegex": "/__test__/.*\\.test.(ts|tsx|js)$",
-        "setupFiles": ["<rootDir>/__test__/shim.ts", "<rootDir>/__test__/enzyme-setup.ts"],
+        "setupFiles": [
+            "<rootDir>/__test__/shim.ts",
+            "<rootDir>/__test__/enzyme-setup.ts"
+        ],
         "coverageDirectory": "./dist/coverage"
     },
     "author": "rking",
