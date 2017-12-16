@@ -1,6 +1,6 @@
 [![npm][npm]][npm-url]
 [![Dependencies][deps]][deps-url]
-[![travis]]
+[travis]
 
 <div align="center">
     <h1>React-Typescript-Gen</h1>
