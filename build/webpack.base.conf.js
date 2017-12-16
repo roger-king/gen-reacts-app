@@ -47,7 +47,7 @@ module.exports = {
             INITAL_STATE$: path.resolve(__dirname, '../src/app/services/states'),
             Actions$: path.resolve(__dirname, '../src/app/services/actions'),
             Reducers$: path.resolve(__dirname, '../src/app/reducers'),
-            ReduxDevtoolsExtension$: (environment !== 'production' ?
+            ReduxDevtoolsExtension$: (process.env.NODE_ENV !== 'production' ?
                 'redux-devtools-extension' : path.resolve(__dirname, '../../src/utils/empty.js')),
         }
     },
