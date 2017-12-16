@@ -36,7 +36,12 @@
             "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
         "moduleNameMapper": {
-            "\\.css$": "identity-obj-proxy"
+            "\\.css$": "identity-obj-proxy",
+            "^Components$": "<rootDir>/src/app/components/",
+            "^Containers$": "<rootDir>/src/app/containers",
+            "^INITAL_STATE$": "<rootDir>/src/app/services/states",
+            "^Actions$": "<rootDir>/src/app/services/actions",
+            "^Reducers$": "<rootDir>/src/app/reducers"
         },
         "testRegex": "/__test__/.*\\.test.(ts|tsx|js)$",
         "setupFiles": [
