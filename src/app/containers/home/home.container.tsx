@@ -1,8 +1,7 @@
 import './home.container.css';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Login, Titletron } from './../../components';
-import { Icon } from './../../components/icon/icon.component';
+import { Login, Titletron, Icon, Footer, Headline, Code } from './../../components';
 import { UserGet } from './../../services/actions';
 
 /**
@@ -26,14 +25,8 @@ class HomeContainer extends React.Component<any, any> {
                 <Titletron />
 
                 <section className="page-content content-font">
-                    <div className="intro">
-                        <b>React-Typescript-Gen</b> is my approach to tackling a react.js application.
-                        The main goal of this project is to bring a structure to a very open platform
-                        for developing a react.js application.
-                        I try use many modern day (to date - 11/20/17) tools to help streamline development processes.
-                    </div>
                     <div className="features">
-                        <span className="title"> Features</span>
+                        <Headline title="Features" />
 
                         <div className="features-content-wrapper">
                             <div className="feature-column">
@@ -42,9 +35,10 @@ class HomeContainer extends React.Component<any, any> {
                                         <Icon img="tree.svg" height={40} width={40} /> <b>State management</b>
                                     </div>
                                     <div className="feature-item-content">
-                                        Use Redux to take control of your application’s state and keep state mutations manageable.
+                                        "Use Redux to take control of your application’s state and keep state mutations manageable.
                                         If you have it, the boilerplate works with the Chrome Redux DevTools extension to allow
-                                        you to see, play back, and change your action history!
+                                        you to see, play back, and change your action history!" -
+                                        <a href="https://www.reactboilerplate.com/" target="blank"> react-boilerplate </a>
                                     </div>
                                 </div>
                                 <div className="feature-item">
@@ -83,7 +77,7 @@ class HomeContainer extends React.Component<any, any> {
                                     </div>
                                     <div className="feature-item-content">
                                         Everyone wants to use the latest and greatest. Next Gen CSS allows us to use many tools
-                                        and functions that progress our UI to the next level.
+                                        and functions that brings our UI to the next level.
                                     </div>
                                 </div>
                                 <div className="feature-item">
@@ -99,7 +93,7 @@ class HomeContainer extends React.Component<any, any> {
                         </div>
                     </div>
                     <div className="demo">
-                        <span className="title"> Demo</span>
+                        <Headline title="Enough Talk..." />
                         <div className="demo-instructions">
                             Let's demostrate with an everyday example. I created this very simple login module where it will:
                             submit an action, determine if you are "authenticated", and set your user and loggedIn status.
@@ -113,7 +107,21 @@ class HomeContainer extends React.Component<any, any> {
                         {this.state.user}
                         <Login />
                     </div>
+
+                    <div className="get-started">
+                        <Headline title="Getting Started" />
+
+                        <div className="react-gen-container">
+                            <Code description="Install reacts.gen CLI tool" codeline="npm install -g reacts.gen" />
+                            <Code description="Run reacts.gen" codeline="reacts.gen [ app-title ]" />
+                            <Code description="Create a container" codeline="cd [ app-title ] && npm run gen:container " />
+                            <Code description="Start application in development" codeline="npm run start:dev" />
+
+                            App will be running on localhost:8000
+                        </div>
+                    </div>
                 </section>
+                <Footer />
             </div>
         );
     }

@@ -36,6 +36,7 @@
 .feature-item{
     lost-flex-container: column;
     lost-align: top-center;
+    min-height: 240px;
 }
 
 .feature-item-header{
@@ -52,6 +53,24 @@
 
 .demo-instructions{
     margin-top: 50px;
+}
+
+.get-started {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+    lost-flex-container: column;
+    lost-align: center;
+}
+
+.react-gen-container {
+    margin-top: 50px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #eeeeee;
+    lost-flex-container: column;
+    lost-align: center;
 }
 
 .user-profile{
