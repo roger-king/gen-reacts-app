@@ -1,6 +1,6 @@
 [![npm][npm]][npm-url]
 [![Dependencies][deps]][deps-url]
-[![travis][travis]]
+[![Build Status](https://travis-ci.org/roger-king/react-typescript-gen.svg?branch=demo)](https://travis-ci.org/roger-king/react-typescript-gen)
 
 <div align="center">
     <h1>React-Typescript-Gen</h1>
