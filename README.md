@@ -1,4 +1,5 @@
 [![npm][npm]][npm-url]
+[![Dependencies][deps]][deps-url]
 
 <div align="center">
     <h1>React-Typescript-Kit</h1>
@@ -125,3 +126,6 @@ I use gulp to kick start and speed up our development process by having "magic" 
 
 [npm]: https://img.shields.io/npm/v/npm.svg
 [npm-url]: https://nodejs.org/en/download/
+
+[deps]: https://david-dm.org/roger-king/react-typescript-gen.svg
+[deps-url]: https://david-dm.org/roger-king/react-typescript-gen
