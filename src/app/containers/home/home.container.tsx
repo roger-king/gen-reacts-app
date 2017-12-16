@@ -25,7 +25,7 @@ class HomeContainer extends React.Component<any, any> {
 
                 <section className="page-content content-font">
                     <div className="intro">
-                        <b>React-Typescript-Kit</b> is my approach to tackling a react.js application.
+                        <b>React-Typescript-Gen</b> is my approach to tackling a react.js application.
                         The main goal of this project is to bring a structure to a very open platform
                         for developing a react.js application.
                         I try use many modern day (to date - 11/20/17) tools to help streamline development processes.
@@ -56,10 +56,11 @@ class HomeContainer extends React.Component<any, any> {
                                 </div>
                                 <div className="feature-item">
                                     <div className="feature-item-header">
-                                        <Icon img="wrench.svg" height={40} width={40} /> <b>Build</b>
+                                        <Icon img="wrench.svg" height={40} width={40} /> <b>Bundle & Build</b>
                                     </div>
                                     <div className="feature-item-content">
-                                        Plugins, plugins, and more plugins. Leverage webpack to build and bundle your application.
+                                        Utilize the most popular build tool for frontend assets... Webpack! From development to production,
+                                        webpack will allow you to bundle your frontend assets.
                                     </div>
                                 </div>
                             </div>
