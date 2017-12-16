@@ -8,7 +8,7 @@ script:
   - npm run test:coverage
   - npm run build
   - rm -rf !(dist|*.md|deployed*)
-  - mv dist docs
+  - mv dist/* .
 
 deploy:
   provider: pages
