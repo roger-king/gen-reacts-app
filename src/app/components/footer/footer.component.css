@@ -1,0 +1,9 @@
+/* Footer */
+
+.footer-container {
+    height: 200px;
+    width: 100%;
+    background-color: #eeeeee;
+    lost-row: 1/1;
+    lost-align: center;
+}
