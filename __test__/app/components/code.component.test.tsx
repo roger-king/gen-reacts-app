@@ -23,4 +23,8 @@ describe('<Code/>', function () {
         expect(component.children[1].children[0]).toEqual('$ ');
         expect(component.children[1].children[1]).toEqual('pwd');
     });
+
+    test('renders from snapshot', () => {
+        expect(tree).toMatchSnapshot();
+    });
 });

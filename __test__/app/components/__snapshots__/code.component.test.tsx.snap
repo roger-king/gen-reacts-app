@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Code/> renders from snapshot 1`] = `
+<div
+  className="codeline-container"
+>
+  <span
+    className="description"
+  >
+     
+    present working directory
+     
+  </span>
+  <div
+    className="codeline"
+  >
+    $ 
+    pwd
+  </div>
+</div>
+`;

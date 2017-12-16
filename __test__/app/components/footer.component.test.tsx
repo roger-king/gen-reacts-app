@@ -21,4 +21,8 @@ describe('<Footer/>', function () {
         expect(component.children[0].children[0].props.width).toEqual(50);
         expect(component.children[0].children[0].props.height).toEqual(50);
     });
+
+    test('renders from snapshot', () => {
+        expect(tree).toMatchSnapshot();
+    });
 });

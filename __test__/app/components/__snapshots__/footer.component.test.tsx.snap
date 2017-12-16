@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/> renders from snapshot 1`] = `
+<div
+  className="footer-container"
+>
+  <a
+    href="https://github.com/roger-king/react-typescript-gen"
+    target="blank"
+  >
+    <img
+      className="icon-container"
+      height={50}
+      src="static/images/github.png"
+      width={50}
+    />
+  </a>
+</div>
+`;

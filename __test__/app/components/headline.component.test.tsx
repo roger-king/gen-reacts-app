@@ -15,4 +15,8 @@ describe('<Headline/>', function () {
         let component = tree.toJSON();
         expect(component.children[0]).toBe('React-Typescript-Gen');
     });
+
+    test('renders from snapshot', () => {
+        expect(tree).toMatchSnapshot();
+    });
 });
