@@ -1,32 +1,33 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import appReducers from './services/reducers';
-import thunk from 'redux-thunk';
+import { applyMiddleware, compose, createStore } from "redux";
+import thunk from "redux-thunk";
+import appReducers from "./services/reducers";
 
 // Import application stores
-import DEFAULT_STATE from './services/states';
+import DEFAULT_STATE from "./services/states";
 
 let enhancer: any = applyMiddleware(thunk);
 
 let configureStore = () => {
-    let store = createStore(appReducers, DEFAULT_STATE, enhancer);
-    return store;
+  const store = createStore(appReducers, DEFAULT_STATE, enhancer);
+  return store;
 };
 
-if (process.env.NODE_ENV !== 'production') {
-    const ReduxDevTools = require('./services/redux.devtools').ReduxDevTools;
+if (process.env.NODE_ENV !== "production") {
+  // tslint:disable-next-line
+  const ReduxDevTools = require("./services/redux.devtools").ReduxDevTools;
 
-    configureStore = () => {
-        enhancer = compose(
+  configureStore = () => {
+    enhancer = compose(
             applyMiddleware(thunk),
-            ReduxDevTools.instrument()
+            ReduxDevTools.instrument(),
         );
 
-        let store = createStore(
+    const store = createStore(
             appReducers,
             DEFAULT_STATE,
             enhancer);
-        return store;
-    };
+    return store;
+  };
 }
 
 export default configureStore;

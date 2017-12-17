@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Routes } from './app.router';
-// tslint:disable-next-line
 import './app.css';
+import { Routes } from './app.router';
 /**
  * Import some development tools for the application.
  * Redux-DevTools
@@ -14,10 +13,10 @@ let AppContainer = () => {
 };
 
 if (process.env.NODE_ENV !== 'production') {
-  // tslint:disable-next-line
-  const ReduxDevTools = require('./services/redux.devtools').ReduxDevTools;
-  AppContainer = () => {
-    return (
+    // tslint:disable-next-line
+    const ReduxDevTools = require("./services/redux.devtools").ReduxDevTools;
+    AppContainer = () => {
+        return (
             <div>
                 <ReduxDevTools />
                 <Routes />
@@ -37,9 +36,9 @@ export class App extends React.Component<{}, {}> {
     super(props);
   }
 
-  render() {
-    return (
-        <AppContainer/>
-    );
-  }
+    public render() {
+        return (
+            <AppContainer/>
+        );
+    }
 }
