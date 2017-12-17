@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Routes } from './app.router';
-import './app.css';
+import * as React from "react";
+import "./app.css";
+import { Routes } from "./app.router";
 /**
  * Import some development tools for the application.
  * Redux-DevTools
@@ -12,8 +12,9 @@ let AppContainer = () => {
     );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-    const ReduxDevTools = require('./services/redux.devtools').ReduxDevTools;
+if (process.env.NODE_ENV !== "production") {
+    // tslint:disable-next-line
+    const ReduxDevTools = require("./services/redux.devtools").ReduxDevTools;
     AppContainer = () => {
         return (
             <div>
@@ -35,7 +36,7 @@ export class App extends React.Component<{}, {}> {
         super(props);
     }
 
-    render() {
+    public render() {
         return (
             <AppContainer/>
         );

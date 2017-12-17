@@ -1,15 +1,14 @@
-import * as React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import routes from './containers';
+import * as React from "react";
+import { Redirect, Route } from "react-router-dom";
+import routes from "./containers";
 
 export class PublicRoute extends React.Component<any, any> {
 
-
-    render() {
+    public render() {
         const { route } = this.props;
         return (
             <Route exact={route.exact} path={route.path} render={
-                props => (
+                (props) => (
                     <route.component {...props} routes={route.routes} />
                 )} />
         );
@@ -18,7 +17,7 @@ export class PublicRoute extends React.Component<any, any> {
 
 export class Routes extends React.Component<any, any> {
 
-    render() {
+    public render() {
         return (
             <main>
                 {routes.map((route: any, i) => (
