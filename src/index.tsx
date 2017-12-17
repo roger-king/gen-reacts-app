@@ -1,11 +1,10 @@
-import "babel-polyfill";
-import { createBrowserHistory } from "history";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { App } from "./app/app";
-import configureStore from "./app/app.store";
+import 'babel-polyfill';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { App } from './app/app';
+import configureStore from './app/app.store';
 
 const store = configureStore();
 
@@ -15,5 +14,5 @@ ReactDOM.render(
             <App />
         </BrowserRouter>
     </Provider>,
-    document.getElementById("root"),
+    document.getElementById('root'),
 );

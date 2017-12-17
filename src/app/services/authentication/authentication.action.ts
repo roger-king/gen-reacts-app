@@ -8,7 +8,7 @@ import { UserSet } from './../user/user.action';
         - returns an object of the interface.
 */
 
-export interface LoginAction {
+export interface ILoginAction {
     type: TypeKeys.AUTH_LOGIN;
     loggedIn: boolean;
 }
@@ -19,20 +19,20 @@ export interface IsLoggedInAction {
 }
 
 export const Login = (username: string, password: string): any => {
-    const user: string = 'admin';
-    const pw: string = 'password';
+    const user = 'admin';
+    const pw = 'password';
 
     return (dispatch: any) => {
         if (user === username && pw === password) {
             dispatch(UserSet(username));
             dispatch({
                 type: TypeKeys.AUTH_LOGIN,
-                loggedIn: true
+                loggedIn: true,
             });
         } else {
             dispatch({
                 type: TypeKeys.AUTH_LOGIN,
-                loggedIn: false
+                loggedIn: false,
             });
         }
     };

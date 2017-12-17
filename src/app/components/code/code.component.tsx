@@ -11,12 +11,10 @@ interface ICode {
 }
 
 export const Code: React.SFC<any> = (props: ICode) => {
-    return(
+    return (
         <div className="codeline-container">
             <span className="description"> {props.description} </span>
-            <div className="codeline">
-                $ {props.codeline}
-            </div>
+            <div className="codeline">$ {props.codeline}</div>
         </div>
     );
 };

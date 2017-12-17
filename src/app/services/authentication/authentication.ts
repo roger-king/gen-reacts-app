@@ -1,3 +1,3 @@
-export interface Authentication {
+export interface IAuthentication {
     loggedIn: boolean;
 }

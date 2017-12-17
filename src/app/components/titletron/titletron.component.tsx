@@ -6,7 +6,7 @@ import { Icon } from './../';
  * Titletron Component
  */
 
-export const Titletron: React.SFC<any> = (props) => {
+export const Titletron: React.SFC<any> = props => {
     return (
         <section className="titletron-container">
             <div className="titletron-wrapper">
@@ -14,7 +14,8 @@ export const Titletron: React.SFC<any> = (props) => {
                 <span className="title titletron-title"> Typescript Gen</span>
             </div>
             <div className="content-font tagline">
-                Build, test, and deploy. A typed approach to building react applications
+                Build, test, and deploy. A typed approach to building react
+                applications
             </div>
             <div className="icons-wrapper">
                 <Icon img="webpack.svg" height={40} width={40} />

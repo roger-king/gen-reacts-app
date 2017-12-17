@@ -2,7 +2,7 @@ import './login.component.css';
 import * as React from 'react';
 import { ILoginProps, ILoginState } from './login.interface';
 import { connect } from 'react-redux';
-import { Login as LoginService} from 'Actions';
+import { Login as LoginService } from 'Actions';
 
 /**
  * Login Component
@@ -15,7 +15,7 @@ export class Login extends React.PureComponent<ILoginProps, ILoginState> {
         this.state = {
             username: '',
             password: '',
-            msg: ''
+            msg: '',
         };
 
         this.doLogin = this.doLogin.bind(this);
@@ -25,21 +25,39 @@ export class Login extends React.PureComponent<ILoginProps, ILoginState> {
     public handleOnChange(event: any): void {
         event.preventDefault();
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value,
         });
     }
 
     public render() {
         return (
             <form className="login-container">
-                <input ref="form" value={this.state.username} className="arcing-input" type="text" placeholder="username"
-                    name="username" onChange={this.handleOnChange} />
-                <input ref="form" value={this.state.password} className="arcing-input" type="password" placeholder="password"
-                    name="password" onChange={this.handleOnChange} />
-                <button className="arcing-btn" type="button" onClick={this.doLogin}> Login </button>
-                <p>
-                    {this.state.msg}
-                </p>
+                <input
+                    ref="form"
+                    value={this.state.username}
+                    className="arcing-input"
+                    type="text"
+                    placeholder="username"
+                    name="username"
+                    onChange={this.handleOnChange}
+                />
+                <input
+                    ref="form"
+                    value={this.state.password}
+                    className="arcing-input"
+                    type="password"
+                    placeholder="password"
+                    name="password"
+                    onChange={this.handleOnChange}
+                />
+                <button
+                    className="arcing-btn"
+                    type="button"
+                    onClick={this.doLogin}
+                >
+                    Login
+                </button>
+                <p>{this.state.msg}</p>
             </form>
         );
     }
@@ -47,23 +65,30 @@ export class Login extends React.PureComponent<ILoginProps, ILoginState> {
     private doLogin() {
         this.props.login(this.state.username, this.state.password);
         if (this.props.authentication.loggedIn) {
-            this.setState({username: '', password: '', msg: 'successful!'});
+            this.setState({ username: '', password: '', msg: 'successful!' });
         } else if (!this.props.authentication.loggedIn) {
-            this.setState({username: '', password: '', msg: 'Invalid username or password.'});
+            this.setState({
+                username: '',
+                password: '',
+                msg: 'Invalid username or password.',
+            });
         }
     }
 }
 
-function mapStateToProps({ authentication }) {
+function mapStateToProps({ authentication }: any) {
     return {
-        authentication
+        authentication,
     };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch: any) {
     return {
-        login: (username: string, password: string) => dispatch(LoginService(username, password))
+        login: (username: string, password: string) =>
+            dispatch(LoginService(username, password)),
     };
 }
 
-export const ConnectedLogin = connect(mapStateToProps, mapDispatchToProps)(Login);
+export const ConnectedLogin = connect(mapStateToProps, mapDispatchToProps)(
+    Login,
+);

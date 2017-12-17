@@ -1,14 +1,17 @@
-import {TypeKeys} from './typeKeys';
-import { UserGetAction, UserSetAction } from 'services/user/user.action';
-import { LoginAction, IsLoggedInAction } from 'services/authentication/authentication.action';
+import { TypeKeys } from './typeKeys';
+import { IUserGetAction, IUserSetAction } from './user/user.action';
+import {
+    ILoginAction,
+    IsLoggedInAction
+} from './authentication/authentication.action';
 
 export type ActionTypes =
-    | UserGetAction
-    | UserSetAction
-    | LoginAction
+    | IUserGetAction
+    | IUserSetAction
+    | ILoginAction
     | IsLoggedInAction
-    | OtherAction;
+    | IOtherAction;
 
-interface OtherAction {
+interface IOtherAction {
     type: TypeKeys.OTHER_ACTION;
 }

@@ -7,9 +7,7 @@ import { Routes } from './app.router';
  */
 
 let AppContainer = () => {
-  return (
-        <Routes />
-  );
+    return <Routes />;
 };
 
 if (process.env.NODE_ENV !== 'production') {
@@ -21,8 +19,8 @@ if (process.env.NODE_ENV !== 'production') {
                 <ReduxDevTools />
                 <Routes />
             </div>
-    );
-  };
+        );
+    };
 }
 
 /**
@@ -32,13 +30,11 @@ if (process.env.NODE_ENV !== 'production') {
  * @preferred
  */
 export class App extends React.Component<{}, {}> {
-  constructor(props: any) {
-    super(props);
-  }
+    constructor(props: any) {
+        super(props);
+    }
 
     public render() {
-        return (
-            <AppContainer/>
-        );
+        return <AppContainer />;
     }
 }

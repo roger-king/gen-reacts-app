@@ -3,5 +3,5 @@ import Home from './home.container';
 export const HomeRoute = {
     exact: true,
     path: '/',
-    component: Home
+    component: Home,
 };

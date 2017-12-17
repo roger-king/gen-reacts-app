@@ -1,4 +1,4 @@
-import {TypeKeys} from './../typeKeys';
+import { TypeKeys } from './../typeKeys';
 
 /*
     Create your actions here.
@@ -7,27 +7,27 @@ import {TypeKeys} from './../typeKeys';
         - returns an object of the interface.
 */
 
-export interface UserGetAction {
+export interface IUserGetAction {
     type: TypeKeys.USER_GET;
     username: string;
 }
 
-export interface UserSetAction {
+export interface IUserSetAction {
     type: TypeKeys.USER_SET;
     username: string;
 }
 
-export const UserGet = (): UserGetAction => {
-    let username = 'Erlich Bachman';
+export const UserGet = (): IUserGetAction => {
+    const username = 'Erlich Bachman';
     return {
         type: TypeKeys.USER_GET,
-        username
+        username,
     };
 };
 
-export const UserSet = (username: string): UserSetAction => {
+export const UserSet = (username: string): IUserSetAction => {
     return {
         type: TypeKeys.USER_SET,
-        username: username
+        username: username,
     };
 };

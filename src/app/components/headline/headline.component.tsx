@@ -9,9 +9,5 @@ interface IHeadline {
 }
 
 export const Headline: React.SFC<any> = (props: IHeadline) => {
-    return (
-        <span className="headline">
-            {props.title}
-        </span>
-    );
+    return <span className="headline">{props.title}</span>;
 };
