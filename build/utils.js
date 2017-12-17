@@ -8,16 +8,16 @@ const pageContainers = fs.readdirSync(path.join(__dirname, '../src/app/container
 const appModule = pageComponents.concat(pageContainers);
 const Lost = require('lost');
 const CSSNext = require('postcss-cssnext');
-const PostCSSImport= require('postcss-import');
+const PostCSSImport = require('postcss-import');
 const PostCssNested = require('postcss-nested');
 const PostCssMixins = require('postcss-mixins');
 
 exports.assetsPath = (_path) => {
-    const assetsSubDirectory = process.env.NODE_ENV === 'production'
-      ? config.build.assetsSubDirectory
-      : config.dev.assetsSubDirectory
-    return path.posix.join(assetsSubDirectory, _path)
-  }
+  const assetsSubDirectory = process.env.NODE_ENV === 'production'
+    ? config.build.assetsSubDirectory
+    : config.dev.assetsSubDirectory
+  return path.posix.join(assetsSubDirectory, _path)
+}
 
 /**
  * componentExists
@@ -33,12 +33,11 @@ exports.appModuleExists = (comp) => {
  * PostCSS Plugins
  */
 exports.postCSSPlugins = loader => [
-    Lost(),
-    PostCSSImport(),
-    CSSNext({
-        browsers: ['last 2 versions', '> 5%'],
-    }),
-    PostCssMixins()
-  ];
+  Lost(),
+  PostCSSImport(),
+  CSSNext({
+    browsers: ['last 2 versions', '> 5%'],
+  }),
+  PostCssMixins()
+];
 
- 
