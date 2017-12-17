@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Routes } from './app.router';
+// tslint:disable-next-line
 import './app.css';
 /**
  * Import some development tools for the application.
@@ -7,21 +8,22 @@ import './app.css';
  */
 
 let AppContainer = () => {
-    return (
+  return (
         <Routes />
-    );
+  );
 };
 
 if (process.env.NODE_ENV !== 'production') {
-    const ReduxDevTools = require('./services/redux.devtools').ReduxDevTools;
-    AppContainer = () => {
-        return (
+  // tslint:disable-next-line
+  const ReduxDevTools = require('./services/redux.devtools').ReduxDevTools;
+  AppContainer = () => {
+    return (
             <div>
                 <ReduxDevTools />
                 <Routes />
             </div>
-        );
-    };
+    );
+  };
 }
 
 /**
@@ -31,13 +33,13 @@ if (process.env.NODE_ENV !== 'production') {
  * @preferred
  */
 export class App extends React.Component<{}, {}> {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props: any) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <AppContainer/>
-        );
-    }
+  render() {
+    return (
+        <AppContainer/>
+    );
+  }
 }

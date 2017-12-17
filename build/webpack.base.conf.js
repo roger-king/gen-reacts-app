@@ -60,6 +60,14 @@ module.exports = {
                 loader: "awesome-typescript-loader"
             },
             {
+                test: /\.tsx?$/,
+                enforce: 'pre',
+                loader: 'tslint-loader',
+                options: {
+                    emitErrors: true,
+                }
+            },
+            {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({

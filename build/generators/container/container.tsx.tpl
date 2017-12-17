@@ -1,3 +1,4 @@
+// tslint:disable-next-line
 import './{{camelCase name}}.container.css';
 import * as React from 'react';
 
