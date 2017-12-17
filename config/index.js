@@ -3,11 +3,11 @@ const path = require('path')
 
 module.exports = {
   build: {
-    projectTitle: "React-Typescript-Boilerplate",
+    projectTitle: "React-Typescript-Gen",
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'react-typescript-gen/static',
+    assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
