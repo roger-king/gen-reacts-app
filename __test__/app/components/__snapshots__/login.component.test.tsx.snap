@@ -25,7 +25,7 @@ exports[`<Login/> Snapshot Capture snapshot 1`] = `
     onClick={[Function]}
     type="button"
   >
-     Login 
+    Login
   </button>
   <p>
     
