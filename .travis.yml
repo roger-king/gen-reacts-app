@@ -8,7 +8,6 @@ script:
   - npm run test:coverage
   - NODE_ENV=production npm run build
   - rm -rf !(dist|*.md|deployed*)
-  - mv dist/* .
 
 deploy:
   provider: pages
