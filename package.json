@@ -126,5 +126,13 @@
         "webpack-cleanup-plugin": "^0.5.1",
         "webpack-dev-server": "^2.9.4",
         "webpack-merge": "^4.1.1"
-    }
+    },
+    "gh-pages-deploy": {
+        "staticpath": "dist",
+        "cname": "arcing.io",
+        "prep": [
+          "build"
+        ],
+        "noprompt": false
+      }
 }
