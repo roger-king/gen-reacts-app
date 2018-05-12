@@ -4,16 +4,33 @@
     "description": "reactjs typescript starter kit",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
+        "test:cov": "jest --coverage",
         "build": "webpack --config ./config/webpack.prod.conf.js",
         "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js"
     },
-    "keywords": [
-        "reactjs",
-        "typescript",
-        "webpack",
-        "plop"
-    ],
+    "keywords": ["reactjs", "typescript", "webpack", "plop"],
+    "babel": {
+        "plugins": [],
+        "presets": ["react", "es2015"]
+    },
+    "jest": {
+        "moduleFileExtensions": ["ts", "tsx", "js"],
+        "transform": {
+            "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "moduleNameMapper": {
+            "\\.css$": "identity-obj-proxy",
+            "^Components$": "<rootDir>/src/app/components/",
+            "^Containers$": "<rootDir>/src/app/containers",
+            "^INITAL_STATE$": "<rootDir>/src/app/services/states",
+            "^Actions$": "<rootDir>/src/app/services/actions",
+            "^Reducers$": "<rootDir>/src/app/reducers"
+        },
+        "testRegex": "/__test__/.*\\.test.(ts|tsx|js)$",
+        "setupFiles": ["<rootDir>/__test__/shim.ts", "<rootDir>/__test__/enzyme-setup.ts"],
+        "coverageDirectory": "./dist/coverage"
+    },
     "author": "Roger King <rogr.king@gmail.com>",
     "license": "ISC",
     "dependencies": {
