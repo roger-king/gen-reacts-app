@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * {{pascalCase name}} Component
+ * {{pascalCase name}} Pure Component
  */
 
 interface I{{pascalCase name}}Props {
@@ -10,7 +10,7 @@ interface I{{pascalCase name}}Props {
 
 interface I{{pascalCase name}}State {}
 
-export class {{pascalCase name}} extends React.Component <I{{pascalCase name}}Props, I{{pascalCase name}}State> {
+export class {{pascalCase name}} extends React.PureComponent<I{{pascalCase name}}Props, I{{pascalCase name}}State> {
     constructor(props: any) {
         super(props);
 
@@ -18,6 +18,6 @@ export class {{pascalCase name}} extends React.Component <I{{pascalCase name}}Pr
     }
 
     render() {
-        return <h1>{this.props.name}</h1>;
+        return <h1>{{pascalCase name}}</h1>;
     }
 }
