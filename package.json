@@ -27,7 +27,7 @@
             "^Actions$": "<rootDir>/src/app/services/actions",
             "^Reducers$": "<rootDir>/src/app/reducers"
         },
-        "testRegex": "/__test__/.*\\.test.(ts|tsx|js)$",
+        "testRegex": "/src/.*\\.test.(ts|tsx|js)$",
         "setupFiles": ["<rootDir>/__test__/shim.ts", "<rootDir>/__test__/enzyme-setup.ts"],
         "coverageDirectory": "./dist/coverage"
     },
