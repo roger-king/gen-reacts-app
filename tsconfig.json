@@ -1,0 +1,52 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "src/app/*"
+            ],
+            "Components": [
+                "src/app/components"
+            ],
+            "Containers": [
+                "src/app/containers"
+            ],
+            "INITAL_STATE": [
+                "src/app/services/states"
+            ],
+            "Actions": [
+                "src/app/services/actions"
+            ],
+            "Reducers": [
+                "src/app/services/reducers"
+            ]
+        },
+        "outDir": "./dist/",
+        "module": "commonjs",
+        "target": "es5",
+        "moduleResolution": "node",
+        "inlineSourceMap": false,
+        "inlineSources": false,
+        "experimentalDecorators": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "allowSyntheticDefaultImports": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "forceConsistentCasingInFileNames": true,
+        "sourceMap": true,
+        "declaration": false,
+        "jsx": "react"
+    },
+    "awesomeTypescriptLoaderOptions": {
+        "useCache": true
+    },
+    "exclude": [
+        "node_modules",
+        "build",
+        "typings/main",
+        "typings/main.d.ts",
+        "__test__"
+    ]
+}
