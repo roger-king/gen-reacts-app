@@ -1,6 +1,6 @@
 var component = require('./component/component.generator');
-var container = require('./container/container.generator');
-var service = require('./service/service.generator');
+var page = require('./page/page.generator');
+var hoc = require('./hoc/service.generator');
 
 
 module.exports = (plop) => {
@@ -32,6 +32,6 @@ module.exports = (plop) => {
         ]
     });
     component(plop);
-    container(plop);
-    service(plop);
+    page(plop);
+    hoc(plop);
 }
