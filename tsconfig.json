@@ -2,24 +2,12 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "*": [
-                "src/app/*"
-            ],
-            "Components": [
-                "src/app/components"
-            ],
-            "Containers": [
-                "src/app/containers"
-            ],
-            "INITAL_STATE": [
-                "src/app/services/states"
-            ],
-            "Actions": [
-                "src/app/services/actions"
-            ],
-            "Reducers": [
-                "src/app/services/reducers"
-            ]
+            "*": ["src/app/*"],
+            "Components": ["src/app/components"],
+            "Containers": ["src/app/containers"],
+            "INITAL_STATE": ["src/app/services/states"],
+            "Actions": ["src/app/services/actions"],
+            "Reducers": ["src/app/services/reducers"]
         },
         "outDir": "./dist/",
         "module": "commonjs",
@@ -28,10 +16,7 @@
         "inlineSourceMap": false,
         "inlineSources": false,
         "experimentalDecorators": true,
-        "lib": [
-            "es2015",
-            "dom"
-        ],
+        "lib": ["es2015", "dom"],
         "allowSyntheticDefaultImports": true,
         "suppressImplicitAnyIndexErrors": true,
         "forceConsistentCasingInFileNames": true,
@@ -42,11 +27,5 @@
     "awesomeTypescriptLoaderOptions": {
         "useCache": true
     },
-    "exclude": [
-        "node_modules",
-        "build",
-        "typings/main",
-        "typings/main.d.ts",
-        "__test__"
-    ]
+    "exclude": ["node_modules", "build", "typings/main", "typings/main.d.ts", "src/app/*/__tests__"]
 }
