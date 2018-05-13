@@ -1,11 +1,7 @@
 import * as React from 'react';
 
-export default class HomePage extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-    }
+const HomePage: React.SFC = props => {
+    return <h1> Home Page </h1>;
+};
 
-    public render() {
-        return <h1> Home Page </h1>;
-    }
-}
+export default HomePage;
