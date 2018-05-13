@@ -2,7 +2,7 @@ var appModuleExists = require('./../../utils').appModuleExists;
 
 module.exports = plop => {
     plop.setGenerator('component', {
-        description: 'Create new shared component.',
+        description: 'Create new Page',
         prompts: [
             {
                 type: 'input',
@@ -21,13 +21,13 @@ module.exports = plop => {
             var actions = [
                 {
                     type: 'add',
-                    path: './../../src/app/pages/__tests__/{{camelCase name}}.component.test.tsx',
-                    templateFile: 'pages/page.test.tsx.tpl',
+                    path: './../../src/app/pages/__tests__/{{camelCase name}}.test.tsx',
+                    templateFile: 'page/page.test.tsx.tpl',
                 },
                 {
                     type: 'add',
                     path: './../../src/app/pages/{{camelCase name}}.tsx',
-                    templateFile: 'pages/pageComponent.tsx.tpl',
+                    templateFile: 'pagee/pageComponent.tsx.tpl',
                 },
             ];
 
