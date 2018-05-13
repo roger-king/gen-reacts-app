@@ -7,7 +7,10 @@
         "test": "jest",
         "test:cov": "jest --coverage",
         "build": "webpack --config ./config/webpack.prod.conf.js",
-        "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js"
+        "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js",
+        "gen": "plop --plopfile config/generators/plopfile.js",
+        "gen:init": "plop --plopfile config/generators/plopfile.js init",
+        "gen:component": "plop --plopfile config/generators/plopfile.js component"
     },
     "keywords": ["reactjs", "typescript", "webpack", "plop"],
     "babel": {
