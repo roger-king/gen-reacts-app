@@ -28,7 +28,7 @@ module.exports = plop => {
             var actions = [
                 {
                     type: 'add',
-                    path: './../../__test__/app/components/{{camelCase name}}.component.test.tsx',
+                    path: './../../src/app/components/__tests__/{{camelCase name}}.test.tsx',
                     templateFile: 'component/component.test.tsx.tpl',
                 },
             ];
@@ -38,7 +38,7 @@ module.exports = plop => {
                     var component = {
                         type: 'add',
                         path: './../../src/app/components/{{camelCase name}}.tsx',
-                        templateFile: 'component/sfcComponent.tsx',
+                        templateFile: 'component/sfcComponent.tsx.tpl',
                     };
                     actions = actions.concat(component);
                     break;
@@ -46,7 +46,7 @@ module.exports = plop => {
                     var component = {
                         type: 'add',
                         path: './../../src/app/components/{{camelCase name}}.tsx',
-                        templateFile: 'component/pureComponent.tsx',
+                        templateFile: 'component/pureComponent.tsx.tpl',
                     };
                     actions = actions.concat(component);
                     break;
@@ -54,7 +54,7 @@ module.exports = plop => {
                     var component = {
                         type: 'add',
                         path: './../../src/app/components/{{camelCase name}}.tsx',
-                        templateFile: 'component/component.tsx',
+                        templateFile: 'component/component.tsx.tpl',
                     };
                     actions = actions.concat(component);
                     break;
