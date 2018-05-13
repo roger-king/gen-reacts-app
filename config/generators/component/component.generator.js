@@ -9,7 +9,7 @@ module.exports = plop => {
                 name: 'type',
                 default: 'Stateless',
                 message: 'Select the type of component?',
-                choices: () => ['Stateless', 'React.PureComponent', 'React.Component'],
+                choices: () => ['Stateless', 'React.PureComponent', 'React.Component', 'Styled.Component'],
             },
             {
                 type: 'input',
@@ -56,6 +56,15 @@ module.exports = plop => {
                         path: './../../src/app/components/{{camelCase name}}.tsx',
                         templateFile: 'component/component.tsx.tpl',
                     };
+                    actions = actions.concat(component);
+                    break;
+                case 'Styled.Component':
+                    var component = {
+                        type: 'add',
+                        path: './../../src/app/components/{{camelCase name}}.tsx',
+                        templateFile: 'component/styledComponent.tsx.tpl',
+                    };
+
                     actions = actions.concat(component);
                     break;
                 default:
