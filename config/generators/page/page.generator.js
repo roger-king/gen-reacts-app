@@ -1,7 +1,7 @@
 var appModuleExists = require('./../../utils').appModuleExists;
 
 module.exports = plop => {
-    plop.setGenerator('component', {
+    plop.setGenerator('page', {
         description: 'Create new Page',
         prompts: [
             {
@@ -27,9 +27,25 @@ module.exports = plop => {
                 {
                     type: 'add',
                     path: './../../src/app/pages/{{camelCase name}}.tsx',
-                    templateFile: 'pagee/pageComponent.tsx.tpl',
+                    templateFile: 'page/pageComponent.tsx.tpl',
                 },
             ];
+
+            actions = actions.concat([
+                {
+                    type: 'modify',
+                    path: './../../src/app/pages/index.tsx',
+                    pattern: "import * as Loadable from 'react-loadable';",
+                    template:
+                        "import * as Loadable from 'react-loadable';\n\n" +
+                        'export const Loadable{{pascalCase name}} = Loadable({\n' +
+                        "    loader: () => import('./{{camelCase name}}'),\n" +
+                        '    loading() {\n' +
+                        '        return <div> loading... </div>;\n' +
+                        '    },\n' +
+                        '});\n',
+                },
+            ]);
 
             return actions;
         },
