@@ -10,7 +10,8 @@
         "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js",
         "gen": "plop --plopfile config/generators/plopfile.js",
         "gen:init": "plop --plopfile config/generators/plopfile.js init",
-        "gen:component": "plop --plopfile config/generators/plopfile.js component"
+        "gen:component": "plop --plopfile config/generators/plopfile.js component",
+        "gen:page": "plop --plopfile config/generators/plopfile.js page"
     },
     "keywords": ["reactjs", "typescript", "webpack", "plop"],
     "babel": {
