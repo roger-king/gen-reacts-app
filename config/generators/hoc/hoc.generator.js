@@ -22,12 +22,12 @@ module.exports = plop => {
                 {
                     type: 'add',
                     path: './../../src/app/hocs/__tests__/with{{pascalCase name}}.test.tsx',
-                    templateFile: 'hocs/hoc.test.tsx.tpl',
+                    templateFile: 'hoc/hoc.test.tsx.tpl',
                 },
                 {
                     type: 'add',
                     path: './../../src/app/hocs/with{{pascalCase name}}.tsx',
-                    templateFile: 'hocs/hoc.tsx.tpl',
+                    templateFile: 'hoc/hoc.tsx.tpl',
                 },
             ];
 
