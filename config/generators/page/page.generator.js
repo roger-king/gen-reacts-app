@@ -1,7 +1,7 @@
 var appModuleExists = require('./../../utils').appModuleExists;
 var fs = require('fs');
 var path = require('path');
-var readLine = require('readline');
+var readLine = require('n-readlines');
 
 module.exports = plop => {
     plop.setGenerator('page', {
@@ -22,11 +22,11 @@ module.exports = plop => {
             {
                 type: 'input',
                 name: 'uri',
-                message: 'URI',
+                message: 'URI (include /)',
+                default: '/',
             },
         ],
         actions: function(data) {
-            var actions = [];
             var actions = [
                 {
                     type: 'add',
@@ -62,15 +62,16 @@ module.exports = plop => {
                     pattern: '        <Switch>',
                     template:
                         '        <Switch>\n' +
-                        '            <Route path="{{uri}}" component={ Loadable{{pascalCase name}} } />\n',
+                        '            <Route path="{{uri}}" component={ Loadable{{pascalCase name}} } />',
                 },
             ]);
 
-            const lineReader = readLine.createInterface({
-                input: fs.createReadStream(path.resolve(__dirname, '../../../src/app/app.router.tsx')),
-            });
-            lineReader.on('line', line => {
-                if (line.includes("} from './pages';")) {
+            const routerFile = new readLine(path.resolve(__dirname, '../../../src/app/app.router.tsx'));
+            let foundLine = false;
+            let line;
+
+            while ((line = routerFile.next())) {
+                if (line.toString('ascii').includes("} from './pages';")) {
                     actions = actions.concat([
                         {
                             type: 'modify',
@@ -79,18 +80,21 @@ module.exports = plop => {
                             template: ", Loadable{{pascalCase name}} } from './pages';",
                         },
                     ]);
-                } else {
-                    actions = actions.concat([
-                        {
-                            type: 'modify',
-                            path: './../../src/app/app.router.tsx',
-                            pattern: "import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';",
-                            template:
-                                "import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\nimport { Loadable{{pascalCase name}} } from './pages';",
-                        },
-                    ]);
+                    foundLine = true;
                 }
-            });
+            }
+
+            if (!foundLine) {
+                actions = actions.concat([
+                    {
+                        type: 'modify',
+                        path: './../../src/app/app.router.tsx',
+                        pattern: "import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';",
+                        template:
+                            "import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\nimport { Loadable{{pascalCase name}} } from './pages';",
+                    },
+                ]);
+            }
 
             return actions;
         },
