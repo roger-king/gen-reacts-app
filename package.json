@@ -10,6 +10,7 @@
         "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js",
         "gen": "plop --plopfile config/generators/plopfile.js",
         "gen:init": "plop --plopfile config/generators/plopfile.js init",
+        "gen:common": "plop --plopfile config/generators/plopfile.js common",
         "gen:component": "plop --plopfile config/generators/plopfile.js component",
         "gen:page": "plop --plopfile config/generators/plopfile.js page",
         "gen:hoc": "plop --plopfile config/generators/plopfile.js hoc"
