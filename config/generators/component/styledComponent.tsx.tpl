@@ -5,7 +5,7 @@ interface I{{pascalCase name}}Props {
     className?: string;
 }
 
-const {{pascalCase name}}: React.SFC<I{{pascalCaseName name}}Props> = props => {
+const {{pascalCase name}}: React.SFC<I{{pascalCase name}}Props> = props => {
     return (
         <div className={this.props.className}>
             Styled Component
