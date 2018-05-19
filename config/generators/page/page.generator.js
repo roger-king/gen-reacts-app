@@ -30,12 +30,12 @@ module.exports = plop => {
             var actions = [
                 {
                     type: 'add',
-                    path: './../../src/app/pages/__tests__/{{camelCase name}}.test.tsx',
+                    path: './../../src/app/pages/__tests__/{{pascalCase name}}Page.test.tsx',
                     templateFile: 'page/page.test.tsx.tpl',
                 },
                 {
                     type: 'add',
-                    path: './../../src/app/pages/{{camelCase name}}Page.tsx',
+                    path: './../../src/app/pages/{{pascalCase name}}Page.tsx',
                     templateFile: 'page/pageComponent.tsx.tpl',
                 },
             ];
@@ -47,8 +47,8 @@ module.exports = plop => {
                     pattern: "import * as Loadable from 'react-loadable';",
                     template:
                         "import * as Loadable from 'react-loadable';\n\n" +
-                        'export const Loadable{{pascalCase name}} = Loadable({\n' +
-                        "    loader: () => import('./{{camelCase name}}Page'),\n" +
+                        'export const Loadable{{pascalCase name}}Page = Loadable({\n' +
+                        "    loader: () => import('./{{pascalCase name}}Page'),\n" +
                         '    loading() {\n' +
                         '        return <div> loading... </div>;\n' +
                         '    },\n' +
@@ -77,7 +77,7 @@ module.exports = plop => {
                             type: 'modify',
                             path: './../../src/app/app.router.tsx',
                             pattern: "} from './pages';",
-                            template: ", Loadable{{pascalCase name}} } from './pages';",
+                            template: ", Loadable{{pascalCase name}}Page } from './pages';",
                         },
                     ]);
                     foundLine = true;
@@ -91,7 +91,7 @@ module.exports = plop => {
                         path: './../../src/app/app.router.tsx',
                         pattern: "import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';",
                         template:
-                            "import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\nimport { Loadable{{pascalCase name}} } from './pages';",
+                            "import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\nimport { Loadable{{pascalCase name}}Page } from './pages';",
                     },
                 ]);
             }
