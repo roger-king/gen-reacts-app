@@ -10,7 +10,7 @@
 </div>
 <h2 align="center">Introduction</h2>
 <p>
-React-Typescript-Gen is my approach to tackling a react.js application. The main goal of this project is to bring a structure to a very open platform for developing a react.js application. I use many modern day (to date) tools to help streamline develop processes.
+React-Typescript-Gen is my approach to tackling a react.js SPA. The main goal of this project is to bring a structure to a very open platform for developing a react.js application. I use many modern day (to date) tools to help streamline develop processes.
 </p>
 <ul>
     <li> Strict typing </li>
@@ -29,26 +29,25 @@ React-Typescript-Gen is my approach to tackling a react.js application. The main
 yarn install
 
 // Run in development mode
-yarn run start:dev
-
+yarn dev
 ```
-    
+
 <h2 align="center">Concepts</h2>
 
 <p>
     I provide a full toolbox of technologies for you to use. This would hopefully help you develop faster and better code.
 </p>
 
-|Name|Description|
-|:--:| :----------:|
-|typescript| superset language for strict typing of our javascript|
-|webpack| bundling and compiling of our typescript|
-|redux| state management|
-|react-router| router|
-|postcss| css processor|
-|tslint| linting tool for typescript|
-|jest| component based unit testing|
-|plop| templated automation to get rid of the react boilerplates|
+|       Name        |                        Description                        |
+| :---------------: | :-------------------------------------------------------: |
+|    typescript     |   superset language for strict typing of our javascript   |
+|     webpack 4     |         bundling and compiling of our typescript          |
+|   react-router    |                          router                           |
+| styled-components |                     styled component!                     |
+|      postcss      |                       css processor                       |
+|      tslint       |                linting tool for typescript                |
+|       jest        |               component based unit testing                |
+|       plop        | templated automation to get rid of the react boilerplates |
 
 <h2 align="center">Project Structure</h2>
 <p>
@@ -59,15 +58,18 @@ yarn run start:dev
 ```
 .
 └── config
-|   └── default.json - development configuration
+|   └── generator - plop generator scripts.
+|   └── webpack.base.conf.js - Base webpack bundling config.
+|   └── webpack.dev.conf.js - Development webpack bundling config.
+|   └── webpack.prod.conf.js - Production webpack bundling config.
 |
 └── src
 |   └── app - application code.
 |   |   └── components - Commonly used modules throughout your application.
 |   |   |   └── index.ts - A single entry point for exporting your components for easy importing.
-|   |   └── containers - Entry points for each route. Containers are built from your components and access your mobx stores.
+|   |   └── pages - Entry points for each route. Containers are built from your components and access your mobx stores.
 |   |   |   └── index.ts - A single entry point for exporting your containers for easy importing.
-|   |   └── services - Service layer of the application containing reusable services and stores (redux).
+|   |   └── hocs - Service layer of the application containing reusable services and stores (redux).
 |   |   |   └── index.ts - A single entry point for exporting your services for easy importing.
 |   |   └── utils - Utility folder.
 |   |   └── app.constants.ts - a single file for global application constants (i.e api url)
@@ -76,10 +78,6 @@ yarn run start:dev
 |   |   └── app.router.ts - A single file to contain all routes.
 |   |   └── app.store.ts - Create redux store.
 |   └── index.tsx - the entry point for the application (wrapper to call). Here we set the provider, base entry element, stores, and routing history.
-└── build
-|   └── generator - plop generator scripts.
-|   └── webpack.dev.config.js - Development webpack bundling config.
-|   └── webpack.dist.config.js - Production webpack bundling config.
 └── tslint.json - linting config.
 └── tsconfig.json - typescript config.
 └── yarn.lock - package management.
@@ -87,14 +85,12 @@ yarn run start:dev
 ```
 
 ### Workflow:
+
 I try to keep the methodology of reactjs, which is reusable components.
 
 All of my reusable components would be contained in `src/app/components/<component>`. This allows me to keep my focus on that single component and cleaner importing.
 
-Pages or views are kept inside `src/app/containers/<container>`. Containers are basically what react would consider a "Route's Component". It's what the route endpoint is looking to render. The idea here is that all containers are built by components.
-
-### Workflow Bonuses:
-I use gulp to kick start and speed up our development process by having "magic" keyboards or commands that would help us do things like generate components and containers (templated).
+Pages or views are kept inside `src/app/pages/<page>`. Pages are basically what react would consider a "Route's Component". It's what the route endpoint is looking to render. The idea here is that all containers are built by components.
 
 <h2 align="center"> Commands </h2>
 <p>
@@ -102,31 +98,29 @@ I use gulp to kick start and speed up our development process by having "magic" 
     Here is a list of commands you can run:
 </p>
 
-|Command|Action|
-|:-----:|:----:|
-|start:dev| Start development server|
-|test| Run jest unit test|
-|test:watch| Start testing in watch mode|
-|test:coverage| Run test to generate coverage|
-|build:dist| Create dist for production. This will run linting in parallel to consistent formatting|
-|gen| List all automated templates to create from|
-|gen:component| Create a shared component|
-|gen:container| Create a new page or containter|
-|gen:service| Create a new service/state store|
-
+|    Command    |                                         Action                                         |
+| :-----------: | :------------------------------------------------------------------------------------: |
+|      dev      |                                Start development server                                |
+|     test      |                                   Run jest unit test                                   |
+|  test:watch   |                              Start testing in watch mode                               |
+| test:coverage |                             Run test to generate coverage                              |
+|  build:dist   | Create dist for production. This will run linting in parallel to consistent formatting |
+|      gen      |                      List all automated templates to create from                       |
+| gen:component |                               Create a shared component                                |
+|   gen:page    |                            Create a new page or containter                             |
+|    gen:hoc    |                                    Create a new HOC                                    |
 
 # Resources:
-- [Redux](https://redux.js.org/)
-- [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
-- [Webpack](https://webpack.github.io/docs/)
-- [PostCSS](http://postcss.org/)
-- [lost grid](https://github.com/peterramsing/lost)
-- [Smart vs Dumb Container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+
+*   [Redux](https://redux.js.org/)
+*   [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
+*   [Webpack](https://webpack.github.io/docs/)
+*   [PostCSS](http://postcss.org/)
+*   [Smart vs Dumb Container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+*   [Typed HOC](https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb)
 
 [npm]: https://img.shields.io/npm/v/npm.svg
 [npm-url]: https://nodejs.org/en/download/
-
 [deps]: https://david-dm.org/roger-king/react-typescript-gen.svg
 [deps-url]: https://david-dm.org/roger-king/react-typescript-gen
-
 [travis]: https://travis-ci.org/roger-king/react-typescript-gen.svg?branch=demo
