@@ -1,0 +1,88 @@
+{
+    "name": "react-typescript-gen",
+    "version": "1.0.0",
+    "description": "reactjs typescript starter kit",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "test:cov": "jest --coverage",
+        "build": "webpack --config ./config/webpack.prod.conf.js",
+        "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js",
+        "gen": "plop --plopfile config/generators/plopfile.js",
+        "gen:init": "plop --plopfile config/generators/plopfile.js init",
+        "gen:common": "plop --plopfile config/generators/plopfile.js common",
+        "gen:component": "plop --plopfile config/generators/plopfile.js component",
+        "gen:page": "plop --plopfile config/generators/plopfile.js page",
+        "gen:hoc": "plop --plopfile config/generators/plopfile.js hoc"
+    },
+    "keywords": ["reactjs", "typescript", "webpack", "plop"],
+    "babel": {
+        "plugins": [],
+        "presets": ["react", "es2015"]
+    },
+    "jest": {
+        "moduleFileExtensions": ["ts", "tsx", "js"],
+        "transform": {
+            "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "moduleNameMapper": {
+            "\\.css$": "identity-obj-proxy",
+            "^Components$": "<rootDir>/src/app/components/",
+            "^Hocs$": "<rootDir>/src/app/hocs/",
+            "^Pages$": "<rootDir>/src/app/pages/"
+        },
+        "testRegex": "/__tests__/.*\\.test.(ts|tsx|js)$",
+        "coverageDirectory": "./dist/coverage"
+    },
+    "author": "Roger King <rogr.king@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2",
+        "react-loadable": "^5.4.0",
+        "react-router": "^4.2.0",
+        "react-router-dom": "^4.2.2",
+        "styled-components": "^3.2.6"
+    },
+    "devDependencies": {
+        "@types/jest": "^22.2.3",
+        "@types/react": "^16.3.14",
+        "@types/react-dom": "^16.0.5",
+        "@types/react-loadable": "^5.3.4",
+        "@types/react-router": "^4.0.25",
+        "@types/react-router-dom": "^4.2.6",
+        "@types/react-test-renderer": "^16.0.1",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
+        "babel-polyfill": "^6.26.0",
+        "copy-webpack-plugin": "^4.5.1",
+        "css-loader": "^0.28.11",
+        "friendly-errors-webpack-plugin": "^1.7.0",
+        "html-webpack-plugin": "^3.2.0",
+        "html-webpack-template": "^6.2.0",
+        "jest": "^22.4.3",
+        "mini-css-extract-plugin": "^0.4.0",
+        "n-readlines": "^1.0.0",
+        "plop": "^2.0.0",
+        "postcss": "^6.0.22",
+        "postcss-cssnext": "^3.1.0",
+        "postcss-import": "^11.1.0",
+        "postcss-loader": "^2.1.5",
+        "react-devtools": "^3.2.1",
+        "react-test-renderer": "^16.3.2",
+        "source-map-loader": "^0.2.3",
+        "style-loader": "^0.21.0",
+        "ts-jest": "^22.4.6",
+        "ts-loader": "^4.3.0",
+        "tslint": "^5.10.0",
+        "tslint-loader": "^3.6.0",
+        "tslint-react": "^3.6.0",
+        "typescript": "^2.8.3",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.8.2",
+        "webpack-cleanup-plugin": "^0.5.1",
+        "webpack-cli": "^2.1.3",
+        "webpack-dev-server": "^3.1.4",
+        "webpack-merge": "^4.1.2"
+    }
+}
