@@ -1,9 +1,11 @@
-var utils = require('./../../utils');
-var appModuleExists = utils.appModuleExists;
-var componentModuleExists = utils.componentModuleExists;
+var fs = require('fs');
+var path = require('path');
+var appModuleExists = require('./../../utils').appModuleExists;
 var removeGitkeep = require('./../../utils').removeGitkeep;
 
 module.exports = plop => {
+    removeGitkeep('components');
+    
     plop.setGenerator('component', {
         description: 'Create new shared component.',
         prompts: [
@@ -15,9 +17,18 @@ module.exports = plop => {
                 choices: () => ['Stateless', 'React.PureComponent', 'React.Component', 'Styled.Component'],
             },
             {
-                type: 'input',
+                type: 'list',
                 name: 'parent',
-                message: 'Parent folder (leave blank if none):'
+                message: 'Parent folder:',
+                default: 'New Component',
+                choices: function() {
+                    const choices = ['New Component'].concat(fs.readdirSync(path.join(__dirname, '../../../src/app/components')));
+                    const testIndex = choices.indexOf('__tests__');
+
+                    if(testIndex > -1) choices.splice(testIndex, 1);
+                    
+                    return choices;
+                }
             },
             {
                 type: 'input',
@@ -34,7 +45,7 @@ module.exports = plop => {
             },
         ],
         actions: function(data) {
-            var folderPath = './../../src/app/components/{{pascalCase name}}';
+            var folderPath = data.parent === 'New Component' ? './../../src/app/components/{{pascalCase name}}' : './../../src/app/components/{{parent}}/{{pascalCase name}}';
             const componentPath = folderPath + '{{pascalCase name}}.tsx';
 
             var actions = [
@@ -83,7 +94,6 @@ module.exports = plop => {
                     break;
             }
 
-            removeGitkeep('components');
             return actions;
         },
     });
