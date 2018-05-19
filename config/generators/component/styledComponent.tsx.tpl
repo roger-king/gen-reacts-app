@@ -7,10 +7,10 @@ interface I{{pascalCase name}}Props {
 
 const {{pascalCase name}}: React.SFC<I{{pascalCase name}}Props> = props => {
     return (
-        <div className={this.props.className}>
+        <div className={props.className}>
             Styled Component
         </div>
     );
-}
+};
 
 export default styled({{pascalCase name}})``;
