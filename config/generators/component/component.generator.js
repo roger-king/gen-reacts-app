@@ -28,7 +28,7 @@ module.exports = plop => {
             var actions = [
                 {
                     type: 'add',
-                    path: './../../src/app/components/__tests__/{{camelCase name}}.test.tsx',
+                    path: './../../src/app/components/__tests__/{{pascalCase name}}.test.tsx',
                     templateFile: 'component/component.test.tsx.tpl',
                 },
             ];
@@ -37,7 +37,7 @@ module.exports = plop => {
                 case 'Stateless':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{camelCase name}}.tsx',
+                        path: './../../src/app/components/{{pascalCase name}}.tsx',
                         templateFile: 'component/sfcComponent.tsx.tpl',
                     };
                     actions = actions.concat(component);
@@ -45,7 +45,7 @@ module.exports = plop => {
                 case 'React.PureComponent':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{camelCase name}}.tsx',
+                        path: './../../src/app/components/{{pascalCase name}}.tsx',
                         templateFile: 'component/pureComponent.tsx.tpl',
                     };
                     actions = actions.concat(component);
@@ -53,7 +53,7 @@ module.exports = plop => {
                 case 'React.Component':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{camelCase name}}.tsx',
+                        path: './../../src/app/components/{{pascalCase name}}.tsx',
                         templateFile: 'component/component.tsx.tpl',
                     };
                     actions = actions.concat(component);
@@ -61,7 +61,7 @@ module.exports = plop => {
                 case 'Styled.Component':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{camelCase name}}.tsx',
+                        path: './../../src/app/components/{{pascalCase name}}.tsx',
                         templateFile: 'component/styledComponent.tsx.tpl',
                     };
 
