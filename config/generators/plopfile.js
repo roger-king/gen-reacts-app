@@ -1,4 +1,5 @@
 var component = require('./component/component.generator');
+var common = require('./common/common.generator');
 var page = require('./page/page.generator');
 var hoc = require('./hoc/hoc.generator');
 
@@ -33,6 +34,7 @@ module.exports = plop => {
             },
         ],
     });
+    common(plop);
     component(plop);
     page(plop);
     hoc(plop);
