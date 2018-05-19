@@ -26,7 +26,9 @@
         },
         "moduleNameMapper": {
             "\\.css$": "identity-obj-proxy",
-            "^Components$": "<rootDir>/src/app/components/"
+            "^Components$": "<rootDir>/src/app/components/",
+            "^Hocs$": "<rootDir>/src/app/hocs/",
+            "^Pages$": "<rootDir>/src/app/pages/"
         },
         "testRegex": "/__tests__/.*\\.test.(ts|tsx|js)$",
         "coverageDirectory": "./dist/coverage"

@@ -4,10 +4,8 @@
         "paths": {
             "*": ["src/app/*"],
             "Components": ["src/app/components"],
-            "Containers": ["src/app/containers"],
-            "INITAL_STATE": ["src/app/services/states"],
-            "Actions": ["src/app/services/actions"],
-            "Reducers": ["src/app/services/reducers"]
+            "Hocs": ["src/app/hocs"],
+            "Pages": ["src/app/pages"]
         },
         "outDir": "./dist/",
         "module": "commonjs",
