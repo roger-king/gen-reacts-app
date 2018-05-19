@@ -18,9 +18,17 @@ exports.assetsPath = _path => {
  * Check whether the given component exist in either the components or containers directory
  */
 
-exports.appModuleExists = comp => {
+exports.appModuleExists = (comp, excludeComponents = false) => {
+    if(excludeComponents) {
+        appModule = pagePages.concat(pageHocs);
+    }
     return appModule.indexOf(comp) >= 0;
 };
+
+exports.componentModuleExists = comp => {
+    return pageComponents.indexOf(comp) >= 0;
+};
+
 
 /**
  * PostCSS Plugins

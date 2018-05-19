@@ -1,4 +1,6 @@
-var appModuleExists = require('./../../utils').appModuleExists;
+var utils = require('./../../utils');
+var appModuleExists = utils.appModuleExists;
+var componentModuleExists = utils.componentModuleExists;
 var removeGitkeep = require('./../../utils').removeGitkeep;
 
 module.exports = plop => {
@@ -18,7 +20,8 @@ module.exports = plop => {
                 message: 'Component name',
                 validate: value => {
                     if (/.+/.test(value)) {
-                        return appModuleExists(value) ? 'A component or container with this name already exists' : true;
+                        console.log(value);
+                        return appModuleExists(value, true) ? 'A component with this name already exists' : true;
                     }
 
                     return 'The name is required';
@@ -26,6 +29,9 @@ module.exports = plop => {
             },
         ],
         actions: function(data) {
+            var folderPath = componentModuleExists(data.name) ? './../../src/app/components/{{pascalCase name}}': './../../src/app/components/';
+            const componentPath = folderPath + '{{pascalCase name}}.tsx';
+
             var actions = [
                 {
                     type: 'add',
@@ -38,7 +44,7 @@ module.exports = plop => {
                 case 'Stateless':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{pascalCase name}}.tsx',
+                        path: componentPath,
                         templateFile: 'component/sfcComponent.tsx.tpl',
                     };
                     actions = actions.concat(component);
@@ -46,7 +52,7 @@ module.exports = plop => {
                 case 'React.PureComponent':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{pascalCase name}}.tsx',
+                        path: componentPath,
                         templateFile: 'component/pureComponent.tsx.tpl',
                     };
                     actions = actions.concat(component);
@@ -54,7 +60,7 @@ module.exports = plop => {
                 case 'React.Component':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{pascalCase name}}.tsx',
+                        path: componentPath,
                         templateFile: 'component/component.tsx.tpl',
                     };
                     actions = actions.concat(component);
@@ -62,7 +68,7 @@ module.exports = plop => {
                 case 'Styled.Component':
                     var component = {
                         type: 'add',
-                        path: './../../src/app/components/{{pascalCase name}}.tsx',
+                        path: componentPath,
                         templateFile: 'component/styledComponent.tsx.tpl',
                     };
 
@@ -72,7 +78,7 @@ module.exports = plop => {
                     break;
             }
 
-            removeGitkeep('components')
+            removeGitkeep('components');
             return actions;
         },
     });
