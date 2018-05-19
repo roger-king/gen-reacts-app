@@ -94,6 +94,10 @@ module.exports = plop => {
                     break;
             }
 
+<<<<<<< HEAD
+=======
+            removeGitkeep('components');
+>>>>>>> 841c3e812fec9c0d8150121e1fef59941b62cd9e
             return actions;
         },
     });
