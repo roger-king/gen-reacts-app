@@ -1,15 +1,15 @@
 {
-  "bracketSpacing": true,
-  "jsxBracketSameLine": false,
-  "useTabs": false,
-  "printWidth": 120,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "overrides": [
-    {
-      "files": [".prettierrc", ".babelrc", ".eslintrc"],
-      "options": { "parser": "json" }
-    }
-  ]
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "useTabs": false,
+    "printWidth": 120,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "overrides": [
+        {
+            "files": [".prettierrc", ".babelrc", ".eslintrc"],
+            "options": { "parser": "json" }
+        }
+    ]
 }
