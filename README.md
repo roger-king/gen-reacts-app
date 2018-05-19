@@ -66,11 +66,9 @@ yarn dev
 └── src
 |   └── app - application code.
 |   |   └── components - Commonly used modules throughout your application.
-|   |   |   └── index.ts - A single entry point for exporting your components for easy importing.
 |   |   └── pages - Entry points for each route. Containers are built from your components and access your mobx stores.
 |   |   |   └── index.ts - A single entry point for exporting your containers for easy importing.
 |   |   └── hocs - Service layer of the application containing reusable services and stores (redux).
-|   |   |   └── index.ts - A single entry point for exporting your services for easy importing.
 |   |   └── utils - Utility folder.
 |   |   └── app.constants.ts - a single file for global application constants (i.e api url)
 |   |   └── app.css - Sass file for global application styling.
