@@ -4,8 +4,6 @@ var appModuleExists = require('./../../utils').appModuleExists;
 var removeGitkeep = require('./../../utils').removeGitkeep;
 
 module.exports = plop => {
-    removeGitkeep('components');
-    
     plop.setGenerator('component', {
         description: 'Create new shared component.',
         prompts: [
@@ -22,13 +20,17 @@ module.exports = plop => {
                 message: 'Parent folder:',
                 default: 'New Component',
                 choices: function() {
-                    const choices = ['New Component'].concat(fs.readdirSync(path.join(__dirname, '../../../src/app/components')));
+                    const choices = ['New Component'].concat(
+                        fs.readdirSync(path.join(__dirname, '../../../src/app/components')),
+                    );
                     const testIndex = choices.indexOf('__tests__');
+                    const gitkeepIndex = choices.indexOf('.gitkeep');
 
-                    if(testIndex > -1) choices.splice(testIndex, 1);
-                    
+                    if (testIndex > -1) choices.splice(testIndex, 1);
+                    if (gitkeepIndex > -1) choices.splice(gitkeepIndex, 1);
+
                     return choices;
-                }
+                },
             },
             {
                 type: 'input',
@@ -45,7 +47,10 @@ module.exports = plop => {
             },
         ],
         actions: function(data) {
-            var folderPath = data.parent === 'New Component' ? './../../src/app/components/{{pascalCase name}}' : './../../src/app/components/{{parent}}/{{pascalCase name}}';
+            var folderPath =
+                data.parent === 'New Component'
+                    ? './../../src/app/components/{{pascalCase name}}'
+                    : './../../src/app/components/{{parent}}/{{pascalCase name}}';
             const componentPath = folderPath + '{{pascalCase name}}.tsx';
 
             var actions = [
@@ -94,10 +99,8 @@ module.exports = plop => {
                     break;
             }
 
-<<<<<<< HEAD
-=======
             removeGitkeep('components');
->>>>>>> 841c3e812fec9c0d8150121e1fef59941b62cd9e
+
             return actions;
         },
     });
