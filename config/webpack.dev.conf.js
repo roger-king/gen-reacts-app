@@ -29,6 +29,7 @@ const webpackDevConfig = merge(baseConfig, {
         port: 8000,
         host: 'localhost',
         historyApiFallback: true,
+        open: true
     },
 });
 
