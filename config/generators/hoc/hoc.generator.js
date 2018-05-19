@@ -1,7 +1,7 @@
 var appModuleExists = require('./../../utils').appModuleExists;
 
 module.exports = plop => {
-    plop.setGenerator('component', {
+    plop.setGenerator('hoc', {
         description: 'Create new HOC',
         prompts: [
             {
