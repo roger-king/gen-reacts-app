@@ -11,7 +11,8 @@
         "gen": "plop --plopfile config/generators/plopfile.js",
         "gen:init": "plop --plopfile config/generators/plopfile.js init",
         "gen:component": "plop --plopfile config/generators/plopfile.js component",
-        "gen:page": "plop --plopfile config/generators/plopfile.js page"
+        "gen:page": "plop --plopfile config/generators/plopfile.js page",
+        "gen:hoc": "plop --plopfile config/generators/plopfile.js hoc"
     },
     "keywords": ["reactjs", "typescript", "webpack", "plop"],
     "babel": {
