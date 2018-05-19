@@ -1,4 +1,5 @@
 var appModuleExists = require('./../../utils').appModuleExists;
+var removeGitkeep = require('./../../utils').removeGitkeep;
 
 module.exports = plop => {
     plop.setGenerator('hoc', {
@@ -31,6 +32,7 @@ module.exports = plop => {
                 },
             ];
 
+            removeGitkeep('hocs');
             return actions;
         },
     });

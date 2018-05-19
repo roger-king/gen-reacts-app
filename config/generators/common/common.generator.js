@@ -1,6 +1,9 @@
 var appModuleExists = require('./../../utils').appModuleExists;
+var removeGitkeep = require('./../../utils').removeGitkeep;
+var fs = require('fs');
 
 module.exports = plop => {
+
     plop.setGenerator('common', {
         description: 'Create new shared common component.',
         prompts: [
@@ -57,6 +60,8 @@ module.exports = plop => {
             };
 
             actions = actions.concat(component);
+
+            removeGitkeep('commons');
 
             return actions;
         },

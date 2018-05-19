@@ -1,4 +1,5 @@
 var appModuleExists = require('./../../utils').appModuleExists;
+var removeGitkeep = require('./../../utils').removeGitkeep;
 var fs = require('fs');
 var path = require('path');
 var readLine = require('n-readlines');
@@ -96,6 +97,7 @@ module.exports = plop => {
                 ]);
             }
 
+            removeGitkeep('pages');
             return actions;
         },
     });

@@ -6,11 +6,6 @@ const pageComponents = fs.readdirSync(path.join(__dirname, '../src/app/component
 const pagePages = fs.readdirSync(path.join(__dirname, '../src/app/pages'));
 const pageHocs = fs.readdirSync(path.join(__dirname, '../src/app/hocs'));
 const appModule = pageComponents.concat(pagePages, pageHocs);
-// const Lost = require('lost');
-// const CSSNext = require('postcss-cssnext');
-// const PostCSSImport= require('postcss-import');
-// const PostCssNested = require('postcss-nested');
-// const PostCssMixins = require('postcss-mixins');
 
 exports.assetsPath = _path => {
     const assetsSubDirectory = 'static';
@@ -38,3 +33,15 @@ exports.postCSSPlugins = loader => [
     }),
     PostCssMixins(),
 ];
+
+/**
+ * Remove .GitKeep
+ */
+
+exports.removeGitkeep = dir => {
+    const gitkeepPath = path.resolve(__dirname, '../src/app', dir, '.gitkeep');
+
+    if(fs.existsSync(gitkeepPath)){
+        fs.unlinkSync(gitkeepPath);
+    }
+}

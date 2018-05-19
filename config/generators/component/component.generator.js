@@ -1,4 +1,5 @@
 var appModuleExists = require('./../../utils').appModuleExists;
+var removeGitkeep = require('./../../utils').removeGitkeep;
 
 module.exports = plop => {
     plop.setGenerator('component', {
@@ -71,6 +72,7 @@ module.exports = plop => {
                     break;
             }
 
+            removeGitkeep('components')
             return actions;
         },
     });
