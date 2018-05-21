@@ -123,6 +123,7 @@ Temporary Items
 nbproject/private/
 nbbuild/
 dist/
+lib/
 nbdist/
 nbactions.xml
 .nb-gradle/

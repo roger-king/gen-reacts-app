@@ -9,7 +9,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "compile": "tsc --p ./tsconfig.json",
+        "compile": "tsc --p ./tsconfig.json && cp -r base lib",
         "dev": "npm run compile && gen-reacts-app"
     },
     "repository": {

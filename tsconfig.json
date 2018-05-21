@@ -15,5 +15,5 @@
         "sourceMap": true,
         "declaration": false
     },
-    "exclude": ["node_modules", "src/base", "lib"]
+    "exclude": ["node_modules", "base", "lib"]
 }
