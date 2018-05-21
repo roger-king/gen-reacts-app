@@ -1,11 +1,40 @@
 {
-    "private": true,
-    "workspaces": ["packages/*"],
+    "name": "react-typescript-gen",
+    "version": "1.0.0",
+    "description": "A cli tool to generate react typescript application",
+    "main": "index.js",
+    "preferGlobal": true,
+    "bin": {
+        "gen-reacts-app": "./lib/index.js"
+    },
     "scripts": {
-        "bootstrap": "lerna bootstrap"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "compile": "tsc --p ./tsconfig.json",
+        "dev": "npm run compile && gen-reacts-app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/roger-king/react-typescript-gen.git"
+    },
+    "keywords": ["webpack", "reactjs", "typescript", "cli", "plop"],
+    "author": "Roger King <rogr.king@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/roger-king/react-typescript-gen/issues"
+    },
+    "homepage": "https://github.com/roger-king/react-typescript-gen#readme",
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "commander": "^2.15.1",
+        "fs": "^0.0.1-security",
+        "inquirer": "^5.2.0"
     },
     "devDependencies": {
-        "lerna": "^2.11.0",
+        "@types/chalk": "^2.2.0",
+        "@types/commander": "^2.12.2",
+        "@types/inquirer": "^0.0.41",
+        "@types/node": "^10.1.2",
+        "ts-node": "^6.0.3",
         "typescript": "^2.8.3"
     }
 }
