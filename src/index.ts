@@ -53,6 +53,7 @@ program
         });
     });
 
+// TODO: Re-Prompt if answer for projectTile is null
 if (!process.argv.slice(2).length) {
     prompt(questions).then((answers: ICreateProjectOptions) => {
         if (fs.existsSync(path.resolve(answers.targetPath, answers.projectTitle))) {
