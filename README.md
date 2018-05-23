@@ -1,3 +1,7 @@
+<center>
+<img src="media/gen-reacts-app.png"/>
+</center>
+
 # gen-reacts-app
 
 Inspired by create-react-app, this small tool generates a production ready react with typescript web application.
