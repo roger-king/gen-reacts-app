@@ -22,3 +22,5 @@ This base application contains tools like typescript, webpack 4, react-router, p
 ```bash
     gen-reacts-app <title>
 ```
+
+You can view the base react application [here](base/BASE.md)
