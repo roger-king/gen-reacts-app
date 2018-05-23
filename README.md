@@ -23,4 +23,4 @@ This base application contains tools like typescript, webpack 4, react-router, p
     gen-reacts-app <title>
 ```
 
-You can view the base react application [here](base/BASE.md)
+You can view the base react application [here](https://github.com/roger-king/gen-reacts-app/tree/master/base)
