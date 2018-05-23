@@ -1,7 +1,7 @@
 {
-    "name": "react-typescript-gen",
+    "name": "",
     "version": "1.0.0",
-    "description": "reactjs typescript starter kit",
+    "description": "",
     "main": "index.js",
     "scripts": {
         "test": "jest",
@@ -34,7 +34,7 @@
         "testRegex": "/__tests__/.*\\.test.(ts|tsx|js)$",
         "coverageDirectory": "./dist/coverage"
     },
-    "author": "Roger King <rogr.king@gmail.com>",
+    "author": "",
     "license": "ISC",
     "dependencies": {
         "react": "^16.3.2",
