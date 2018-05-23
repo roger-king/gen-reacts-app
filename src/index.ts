@@ -35,27 +35,33 @@ const questions: IQuestions[] = [
 program
     .version('1.0.0')
     .description('generate reacts (typescript) application')
-    .option('<app-title>', 'title of application')
-    .option('-p, --path', 'path to generate project');
+    .option('<app-title>', 'title of application');
 
-program
-    .command('*')
-    .option('-p, --path', 'path to generate project')
-    .action((title, targetPath) => {
-        prompt(questions[1]).then((answers: Partial<ICreateProjectOptions>) => {
-            if (fs.existsSync(path.resolve(answers.targetPath, title))) {
-                console.log(chalk.red('Already exists'));
-                program.outputHelp();
-                process.exit(1);
-            }
+program.command('*').action(title => {
+    prompt(questions[1]).then((answers: Partial<ICreateProjectOptions>) => {
+        const destination =
+            answers.targetPath.charAt(0) === '/'
+                ? path.resolve(answers.targetPath, title)
+                : path.resolve(process.cwd(), answers.targetPath);
 
-            createProject(title, answers.targetPath);
-        });
+        if (fs.existsSync(path.resolve(destination, title))) {
+            console.log(chalk.red('Already exists'));
+            program.outputHelp();
+            process.exit(1);
+        }
+
+        createProject(title, destination);
     });
+});
 
 // TODO: Re-Prompt if answer for projectTile is null
 if (!process.argv.slice(2).length) {
     prompt(questions).then((answers: ICreateProjectOptions) => {
+        const destination =
+            answers.targetPath.charAt(0) === '/'
+                ? path.resolve(answers.targetPath, answers.projectTitle)
+                : path.resolve(process.cwd(), answers.targetPath);
+
         if (fs.existsSync(path.resolve(answers.targetPath, answers.projectTitle))) {
             console.log(chalk.red('Already exists'));
             program.outputHelp();
