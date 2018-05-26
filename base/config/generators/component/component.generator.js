@@ -51,7 +51,7 @@ module.exports = plop => {
                 data.parent === 'New Component'
                     ? './../../src/app/components/{{pascalCase name}}'
                     : './../../src/app/components/{{parent}}/{{pascalCase name}}';
-            const componentPath = folderPath + '{{pascalCase name}}.tsx';
+            const componentPath = folderPath + '/{{pascalCase name}}.tsx';
 
             var actions = [
                 {
