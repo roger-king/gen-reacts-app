@@ -3,3 +3,5 @@ src
 .gitignore
 tsconfig.json
 tslint.json
+base
+!lib/base
