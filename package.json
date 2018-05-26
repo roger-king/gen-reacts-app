@@ -1,6 +1,6 @@
 {
     "name": "gen-reacts-app",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "A cli tool to generate react typescript application",
     "main": "index.js",
     "preferGlobal": true,
@@ -16,7 +16,13 @@
         "type": "git",
         "url": "git+https://github.com/roger-king/react-typescript-gen.git"
     },
-    "keywords": ["webpack", "reactjs", "typescript", "cli", "plop"],
+    "keywords": [
+        "webpack",
+        "reactjs",
+        "typescript",
+        "cli",
+        "plop"
+    ],
     "author": "Roger King <rogr.king@gmail.com>",
     "license": "ISC",
     "bugs": {
