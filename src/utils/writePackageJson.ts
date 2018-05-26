@@ -2,32 +2,50 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { homedir } from 'os';
 
-export const writePackageJson = (pathToPackageJson: string) => {
+export const writePackageJson = async (pathToPackageJson: string) => {
     const arrayOfPath = pathToPackageJson.split('/');
     const projectTitle = arrayOfPath[arrayOfPath.length - 1];
     const basePackageJson = require(path.join(path.resolve(pathToPackageJson), 'package.json'));
 
     const gitConfigPath = path.resolve(homedir(), '.gitconfig');
-    let credentials: { name: string | null; email: string | null } = {
-        name: null,
-        email: null,
-    };
-
-    if (fs.existsSync(gitConfigPath)) {
-        const gitConfig = fs.readFileSync(gitConfigPath).toString();
-        const gitCredentials = gitConfig.split('name = ')[1].split('email = ');
-        credentials['name'] = gitCredentials[0].trim();
-        credentials['email'] = gitCredentials[1].trim();
-    }
+    const hasGitCredentials = fs.existsSync(gitConfigPath);
 
     basePackageJson.name = projectTitle;
     basePackageJson.description = `${projectTitle} - ReactJS Typescript Single Page Application`;
-    basePackageJson.author = credentials.name ? `${credentials.name}` : '';
-    basePackageJson.author = credentials.email ? `${basePackageJson.author} <${credentials.email}>` : '';
 
-    fs.writeFileSync(
-        path.join(path.resolve(pathToPackageJson), 'package.json'),
-        JSON.stringify(basePackageJson),
-        'utf8',
-    );
+    if (hasGitCredentials) {
+        const gitConfig = fs.readFileSync(gitConfigPath).toString();
+        let author = '';
+        var lineReader = require('readline').createInterface({
+            input: require('fs').createReadStream(gitConfigPath),
+        });
+
+        lineReader.on('line', function(line) {
+            console.log('reading');
+            if (line.indexOf('name =') > -1) {
+                author += line.split('=')[1].trim();
+            }
+
+            if (line.indexOf('email =') > -1) {
+                author += ` <${line.split('=')[1].trim()}>`;
+            }
+        });
+
+        lineReader.on('close', () => {
+            basePackageJson.author = author;
+            fs.writeFileSync(
+                path.join(path.resolve(pathToPackageJson), 'package.json'),
+                JSON.stringify(basePackageJson),
+                'utf8',
+            );
+        });
+    } else {
+        basePackageJson.author = '';
+
+        fs.writeFileSync(
+            path.join(path.resolve(pathToPackageJson), 'package.json'),
+            JSON.stringify(basePackageJson),
+            'utf8',
+        );
+    }
 };
