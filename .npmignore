@@ -1,4 +1,4 @@
 src
-!lib/src
+!lib/base/src
 node_modules
 media
