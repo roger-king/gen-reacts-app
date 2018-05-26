@@ -21,7 +21,6 @@ export const writePackageJson = async (pathToPackageJson: string) => {
         });
 
         lineReader.on('line', function(line) {
-            console.log('reading');
             if (line.indexOf('name =') > -1) {
                 author += line.split('=')[1].trim();
             }
