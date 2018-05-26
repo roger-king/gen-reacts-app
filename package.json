@@ -1,6 +1,6 @@
 {
     "name": "react-typescript-gen",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A cli tool to generate react typescript application",
     "main": "index.js",
     "preferGlobal": true,
