@@ -15,13 +15,25 @@
         "gen:page": "plop --plopfile config/generators/plopfile.js page",
         "gen:hoc": "plop --plopfile config/generators/plopfile.js hoc"
     },
-    "keywords": ["reactjs", "typescript", "webpack", "plop"],
+    "keywords": [
+        "reactjs",
+        "typescript",
+        "webpack",
+        "plop"
+    ],
     "babel": {
         "plugins": [],
-        "presets": ["react", "es2015"]
+        "presets": [
+            "react",
+            "es2015"
+        ]
     },
     "jest": {
-        "moduleFileExtensions": ["ts", "tsx", "js"],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
         "transform": {
             "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
@@ -39,6 +51,7 @@
     "dependencies": {
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
+        "react-helmet": "^5.2.0",
         "react-loadable": "^5.4.0",
         "react-router": "^4.2.0",
         "react-router-dom": "^4.2.2",
@@ -48,6 +61,7 @@
         "@types/jest": "^22.2.3",
         "@types/react": "^16.3.14",
         "@types/react-dom": "^16.0.5",
+        "@types/react-helmet": "^5.0.6",
         "@types/react-loadable": "^5.3.4",
         "@types/react-router": "^4.0.25",
         "@types/react-router-dom": "^4.2.6",
