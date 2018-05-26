@@ -1,7 +1,4 @@
-media
 src
-.gitignore
-tsconfig.json
-tslint.json
-base
-!lib/base
+!lib/src
+node_modules
+media
