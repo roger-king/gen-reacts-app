@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from './../app.theme';
+import styled from './../../app.theme';
 
 interface I{{pascalCase name}}Props {
     className?: string;
