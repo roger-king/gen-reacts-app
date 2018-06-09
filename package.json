@@ -8,6 +8,7 @@
         "gen-reacts-app": "./lib/index.js"
     },
     "scripts": {
+        "beforepublish": "yarn compile",
         "test": "echo \"Error: no test specified\" && exit 1",
         "compile": "tsc --p ./tsconfig.json && cp -r base lib",
         "dev": "npm run compile && gen-reacts-app"
