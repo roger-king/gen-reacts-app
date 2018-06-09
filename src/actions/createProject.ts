@@ -6,10 +6,10 @@ import { writeReadme } from './../utils/writeReadme';
 
 export const baseProjectPath = path.resolve(__dirname, '../base');
 
-export const createProject = (projectTitle: string, targetPath: string) => {
+export const createProject = async (projectTitle: string, targetPath: string) => {
     child.execSync(`cp -r ${baseProjectPath} ${targetPath}`);
 
-    writePackageJson(targetPath);
+    await writePackageJson(targetPath);
     writeReadme(targetPath);
 
     console.log(chalk.greenBright(`Your application can be found here: ${targetPath}`));
