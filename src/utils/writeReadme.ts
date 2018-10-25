@@ -10,5 +10,5 @@ export const writeReadme = (pathToApp: string) => {
         `mv ${path.join(path.resolve(pathToApp), 'README.md')} ${path.join(path.resolve(pathToApp), 'BASE.md')}`,
     );
 
-    fs.writeFileSync(path.join(path.resolve(pathToApp), 'README.md'), `#${projectTitle}`, 'utf8');
+    fs.writeFileSync(path.join(path.resolve(pathToApp), 'README.md'), `# ${projectTitle}`, 'utf8');
 };
