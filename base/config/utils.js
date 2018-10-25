@@ -19,7 +19,16 @@ exports.assetsPath = _path => {
  */
 
 exports.appModuleExists = comp => {
-    return appModule.indexOf(comp) >= 0;
+    switch (type) {
+        case 'page':
+            return pagePages.indexOf(comp) >= 0;
+        case 'component':
+            return pageComponents.indexOf(comp) >= 0;
+        case 'hoc':
+            return pageHocs.indexOf(comp) >= 0;
+        default:
+            return appModule.indexOf(comp) >= 0;
+    }
 };
 
 /**
@@ -41,7 +50,7 @@ exports.postCSSPlugins = loader => [
 exports.removeGitkeep = dir => {
     const gitkeepPath = path.resolve(__dirname, '../src/app', dir, '.gitkeep');
 
-    if(fs.existsSync(gitkeepPath)){
+    if (fs.existsSync(gitkeepPath)) {
         fs.unlinkSync(gitkeepPath);
     }
-}
+};
