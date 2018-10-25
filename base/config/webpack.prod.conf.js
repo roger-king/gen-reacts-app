@@ -50,7 +50,7 @@ const webpackProdConfig = merge(baseConfig, {
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, '../static'),
-                to: 'dist/assets',
+                to: 'static',
                 ignore: ['.*'],
             },
         ]),
