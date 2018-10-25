@@ -63,7 +63,7 @@ module.exports = plop => {
                     pattern: '        <Switch>',
                     template:
                         '        <Switch>\n' +
-                        '            <Route path="{{uri}}" component={ Loadable{{pascalCase name}} } />',
+                        '            <Route path="{{uri}}" component={ Loadable{{pascalCase name}}Page } />',
                 },
             ]);
 
