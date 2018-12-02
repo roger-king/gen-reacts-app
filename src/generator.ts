@@ -42,14 +42,17 @@ export class Generator implements IGenerator {
         process.chdir(fullPathToProject);
 
         // 3. write readme and change project name
-        // await writePackageJson(fullPathToProject);
-        // writeReadme(fullPathToProject);
+        await writePackageJson(fullPathToProject);
+        writeReadme(fullPathToProject);
 
-        // 3. Initialize Git Repository
+        // 4. Initialize Git Repository
         child.execSync(`git init`);
 
         // 5. Install dependencies
         this.install();
+
+        // 6. End
+        this.writeEndingMsg();
     }
 
     private install(isDev: boolean = false) {
@@ -78,5 +81,20 @@ export class Generator implements IGenerator {
         }
 
         child.spawnSync(command, args, { stdio: 'inherit' });
+    }
+
+    private writeEndingMsg() {
+        console.log();
+        console.log(`${chalk.greenBright('gen-reacTS-app')} complete!`);
+        console.log();
+
+        console.log(`${chalk.greenBright('cd')} ${this.title}`);
+        console.log();
+
+        console.log(`${chalk.greenBright('yarn')} start`);
+        console.log();
+
+        console.log(`happy ${chalk.greenBright('hacking')}!`);
+        console.log();
     }
 }
