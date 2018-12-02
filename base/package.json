@@ -7,7 +7,7 @@
         "test": "jest",
         "test:cov": "jest --coverage",
         "build": "webpack --config ./config/webpack.prod.conf.js",
-        "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js",
+        "start": "webpack-dev-server --config ./config/webpack.dev.conf.js",
         "gen": "plop --plopfile config/generators/plopfile.js",
         "gen:init": "plop --plopfile config/generators/plopfile.js init",
         "gen:common": "plop --plopfile config/generators/plopfile.js common",
@@ -22,11 +22,37 @@
         "plop"
     ],
     "babel": {
-        "plugins": [],
         "presets": [
-            "react",
-            "es2015"
-        ]
+            "@babel/react",
+            "@babel/typescript",
+            [
+                "@babel/env",
+                {
+                    "modules": false
+                }
+            ]
+        ],
+        "plugins": [
+            "react-hot-loader/babel",
+            "@babel/proposal-class-properties",
+            "@babel/proposal-object-rest-spread"
+        ],
+        "env": {
+            "test": {
+                "presets": [
+                    "react",
+                    [
+                        "env",
+                        {
+                            "modules": "commonjs"
+                        }
+                    ]
+                ],
+                "plugins": [
+                    "transform-es2015-modules-commonjs"
+                ]
+            }
+        }
     },
     "jest": {
         "moduleFileExtensions": [
