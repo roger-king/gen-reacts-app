@@ -48,7 +48,9 @@ program.command('*').action(title => {
 
 // TODO: Re-Prompt if answer for projectTile is null
 if (!process.argv.slice(2).length) {
+    console.log();
     console.log(chalk.red('Already exists'));
+    console.log();
     program.outputHelp();
     process.exit(1);
 }

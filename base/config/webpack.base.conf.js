@@ -45,7 +45,7 @@ module.exports = {
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
                 test: /\.(ts|tsx)$/,
-                loader: require.resolve('babel-loader'),
+                loader: 'babel-loader',
                 options: {
                     presets: ['@babel/react', '@babel/typescript', ['@babel/env', { modules: false }]],
                     plugins: ['@babel/proposal-class-properties', '@babel/proposal-object-rest-spread'],

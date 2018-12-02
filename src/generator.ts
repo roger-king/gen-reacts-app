@@ -2,7 +2,7 @@ import * as child from 'child_process';
 import * as path from 'path';
 import * as fs from 'fs';
 import chalk from 'chalk';
-import { dependencies } from './constants';
+import { dependencies, devDependencies } from './constants';
 import { writeReadme } from './actions/writeReadme';
 
 export interface IGenerator {
@@ -50,13 +50,14 @@ export class Generator implements IGenerator {
         child.execSync(`npm init -y`);
 
         // 5. Install dependencies
-        this.install();
+        this.install(dependencies);
+        this.install(devDependencies, true);
 
         // 6. End
         this.writeEndingMsg();
     }
 
-    private install(isDev: boolean = false) {
+    private install(deps: string[], isDev: boolean = false) {
         let { useNpm } = this.options;
         let command: 'yarn' | 'npm';
         let args: string[];
@@ -75,12 +76,10 @@ export class Generator implements IGenerator {
         if (useNpm) {
             command = 'npm';
             const saveCmd = isDev ? '--save-dev' : '--save';
-            args = ['install', saveCmd, '--save-exact', '--loglevel', 'error'].concat(dependencies);
+            args = ['install', saveCmd, '--save-exact', '--loglevel', 'error'].concat(deps);
         } else {
             command = 'yarn';
-            args = isDev
-                ? ['add', '--exact', '--dev'].concat(dependencies)
-                : ['add', '--exact', '--save'].concat(dependencies);
+            args = isDev ? ['add', '--exact', '--dev'].concat(deps) : ['add', '--exact', '--save'].concat(deps);
         }
 
         child.spawnSync(command, args, { stdio: 'inherit' });
