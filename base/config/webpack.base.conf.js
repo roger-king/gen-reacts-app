@@ -66,6 +66,13 @@ module.exports = {
                             importLoaders: 1,
                         },
                     },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: postCSSPlugins,
+                        },
+                    },
                 ],
             },
             {
