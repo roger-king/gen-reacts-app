@@ -36,7 +36,7 @@ export class Generator implements IGenerator {
         console.log();
         console.log(`${chalk.greenBright('Moving')} base project`);
         console.log();
-        child.execSync(`cp -r ${path.resolve(process.cwd(), 'base')} ${fullPathToProject}`);
+        child.execSync(`cp -r ${path.resolve(__dirname, 'base')} ${fullPathToProject}`);
 
         // 2. Move into project directory
         process.chdir(fullPathToProject);
@@ -47,6 +47,9 @@ export class Generator implements IGenerator {
 
         // 4. Initialize Git Repository
         child.execSync(`git init`);
+
+        // 5. Initialize NPM project
+        child.execSync(`npm init -y`);
 
         // 5. Install dependencies
         this.install();
