@@ -44,8 +44,12 @@ module.exports = {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             {
-                test: /\.tsx?$/,
-                loader: 'ts-loader',
+                test: /\.(ts|tsx)$/,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/react', '@babel/typescript', ['@babel/env', { modules: false }]],
+                    plugins: ['@babel/proposal-class-properties', '@babel/proposal-object-rest-spread'],
+                },
             },
             {
                 test: /\.tsx?$/,
@@ -64,6 +68,22 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
+                        },
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            // Necessary for external CSS imports to work
+                            ident: 'postcss',
+                            plugins: () => [
+                                require('postcss-flexbugs-fixes'),
+                                require('postcss-preset-env')({
+                                    autoprefixer: {
+                                        flexbox: 'no-2009',
+                                    },
+                                    stage: 3,
+                                }),
+                            ],
                         },
                     },
                 ],

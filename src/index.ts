@@ -4,8 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as program from 'commander';
 import { prompt } from 'inquirer';
-import { createProject } from './actions';
-import { create } from 'domain';
+import { Generator } from './generator';
 interface IQuestions {
     type: string;
     name: string;
@@ -35,41 +34,25 @@ const questions: IQuestions[] = [
 program
     .version('1.0.0')
     .description('generate reacts (typescript) application')
-    .option('<app-title>', 'title of application');
+    .option('<app-title>', 'title of application')
+    .option('--use-npm', 'use npm over yarn');
 
 program.command('*').action(title => {
-    prompt(questions[1]).then((answers: Partial<ICreateProjectOptions>) => {
-        const destination =
-            answers.targetPath.charAt(0) === '/'
-                ? path.resolve(answers.targetPath, title)
-                : path.resolve(process.cwd(), answers.targetPath);
-
-        if (fs.existsSync(path.resolve(destination, title))) {
-            console.log(chalk.red('Already exists'));
-            program.outputHelp();
-            process.exit(1);
-        }
-
-        createProject(title, destination);
-    });
+    if (fs.existsSync(path.resolve(process.cwd(), title))) {
+        console.log(chalk.red('Already exists'));
+        program.outputHelp();
+        process.exit(1);
+    }
+    new Generator(title, { useNpm: false }).start();
 });
 
 // TODO: Re-Prompt if answer for projectTile is null
 if (!process.argv.slice(2).length) {
-    prompt(questions).then((answers: ICreateProjectOptions) => {
-        const destination =
-            answers.targetPath.charAt(0) === '/'
-                ? path.resolve(answers.targetPath, answers.projectTitle)
-                : path.resolve(process.cwd(), answers.targetPath);
-
-        if (fs.existsSync(path.resolve(answers.targetPath, answers.projectTitle))) {
-            console.log(chalk.red('Already exists'));
-            program.outputHelp();
-            process.exit(1);
-        }
-
-        createProject(answers.projectTitle, answers.targetPath);
-    });
+    console.log();
+    console.log(chalk.red('Already exists'));
+    console.log();
+    program.outputHelp();
+    process.exit(1);
 }
 
 program.parse(process.argv);
