@@ -16,6 +16,7 @@ React-Typescript-Gen is my approach to tackling a react.js SPA. The main goal of
     <li> Strict typing </li>
     <li> Automation with templates to remove the need for rewriting react boilerplate </li>
     <li> Frontend unit testing </li>
+    <li> E2E testing with Cypress </li>
     <li> Linting! </li>
     <li> Modular bundling </li>
 </ul>
@@ -47,6 +48,7 @@ yarn dev
 |      postcss      |                       css processor                       |
 |      tslint       |                linting tool for typescript                |
 |       jest        |               component based unit testing                |
+|      cypress      |                  E2E integration testing                  |
 |       plop        | templated automation to get rid of the react boilerplates |
 
 <h2 align="center">Project Structure</h2>
@@ -98,7 +100,8 @@ Pages or views are kept inside `src/app/pages/<page>`. Pages are basically what 
 
 |    Command    |                                         Action                                         |
 | :-----------: | :------------------------------------------------------------------------------------: |
-|      dev      |                                Start development server                                |
+|     start     |                                Start development server                                |
+| cypress:open  |                              Start running cypress tests                               |
 |     test      |                                   Run jest unit test                                   |
 |  test:watch   |                              Start testing in watch mode                               |
 | test:coverage |                             Run test to generate coverage                              |
@@ -110,12 +113,13 @@ Pages or views are kept inside `src/app/pages/<page>`. Pages are basically what 
 
 # Resources:
 
-*   [Redux](https://redux.js.org/)
-*   [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
-*   [Webpack](https://webpack.github.io/docs/)
-*   [PostCSS](http://postcss.org/)
-*   [Smart vs Dumb Container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
-*   [Typed HOC](https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb)
+-   [Redux](https://redux.js.org/)
+-   [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
+-   [Webpack](https://webpack.github.io/docs/)
+-   [PostCSS](http://postcss.org/)
+-   [Cypress](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Cypress-Is-Simple)
+-   [Smart vs Dumb Container](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+-   [Typed HOC](https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb)
 
 [npm]: https://img.shields.io/npm/v/npm.svg
 [npm-url]: https://nodejs.org/en/download/
