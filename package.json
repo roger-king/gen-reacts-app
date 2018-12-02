@@ -32,18 +32,16 @@
     "homepage": "https://github.com/roger-king/react-typescript-gen#readme",
     "dependencies": {
         "chalk": "^2.4.1",
-        "commander": "^2.15.1",
+        "commander": "^2.19.0",
         "fs": "^0.0.1-security",
-        "inquirer": "^5.2.0"
+        "inquirer": "^6.2.1"
     },
     "devDependencies": {
         "@types/chalk": "^2.2.0",
         "@types/commander": "^2.12.2",
-        "@types/inquirer": "^0.0.41",
-        "@types/node": "^10.1.2",
-        "browser-sync": "^2.26.3",
-        "browser-sync-webpack-plugin": "^2.2.2",
-        "ts-node": "^6.0.3",
-        "typescript": "^2.8.3"
+        "@types/inquirer": "^0.0.43",
+        "@types/node": "^10.12.11",
+        "ts-node": "^7.0.1",
+        "typescript": "^3.2.1"
     }
 }
