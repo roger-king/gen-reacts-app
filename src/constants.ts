@@ -38,6 +38,7 @@ export const devDependencies = [
     'html-webpack-plugin',
     'html-webpack-template',
     'jest',
+    'n-readlines',
     'mini-css-extract-plugin',
     'postcss',
     'postcss-flexbugs-fixes',

@@ -19,7 +19,7 @@ exports.assetsPath = _path => {
  */
 
 exports.appModuleExists = comp => {
-    switch (type) {
+    switch (comp) {
         case 'page':
             return pagePages.indexOf(comp) >= 0;
         case 'component':
