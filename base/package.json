@@ -4,16 +4,17 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "jest",
-        "test:cov": "jest --coverage",
         "build": "webpack --config ./config/webpack.prod.conf.js",
-        "start": "webpack-dev-server --config ./config/webpack.dev.conf.js",
+        "cypress:open": "cypress open",
         "gen": "plop --plopfile config/generators/plopfile.js",
         "gen:init": "plop --plopfile config/generators/plopfile.js init",
         "gen:common": "plop --plopfile config/generators/plopfile.js common",
         "gen:component": "plop --plopfile config/generators/plopfile.js component",
         "gen:page": "plop --plopfile config/generators/plopfile.js page",
-        "gen:hoc": "plop --plopfile config/generators/plopfile.js hoc"
+        "gen:hoc": "plop --plopfile config/generators/plopfile.js hoc",
+        "start": "webpack-dev-server --config ./config/webpack.dev.conf.js",
+        "test": "jest",
+        "test:cov": "jest --coverage"
     },
     "keywords": [
         "reactjs",

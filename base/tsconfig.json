@@ -23,7 +23,8 @@
         "declaration": true,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "types": ["cypress"]
     },
     "exclude": ["node_modules", "build", "typings/main", "typings/main.d.ts", "src/app/*/__tests__"]
 }

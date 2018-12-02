@@ -31,6 +31,7 @@ export const devDependencies = [
     'babel-polyfill',
     'browser-sync',
     'browser-sync-webpack-plugin',
+    'cypress',
     'css-loader',
     'fork-ts-checker-webpack-plugin',
     'friendly-errors-webpack-plugin',

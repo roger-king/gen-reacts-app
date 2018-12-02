@@ -45,6 +45,7 @@ export class Generator implements IGenerator {
 
         // 4. Initialize Git Repository
         child.execSync(`git init`);
+        child.execSync(`cp -r ${path.resolve(__dirname, 'base/.gitignore')} ${fullPathToProject}/.gitignore`);
 
         // 5. Initialize NPM project
         child.execSync(`npm init -y`);
