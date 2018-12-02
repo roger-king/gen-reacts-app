@@ -3,7 +3,6 @@ import * as path from 'path';
 import * as fs from 'fs';
 import chalk from 'chalk';
 import { dependencies } from './constants';
-import { writePackageJson } from './actions/writePackageJson';
 import { writeReadme } from './actions/writeReadme';
 
 export interface IGenerator {
@@ -41,8 +40,7 @@ export class Generator implements IGenerator {
         // 2. Move into project directory
         process.chdir(fullPathToProject);
 
-        // 3. write readme and change project name
-        await writePackageJson(fullPathToProject);
+        // 3. write readme
         writeReadme(fullPathToProject);
 
         // 4. Initialize Git Repository
@@ -80,7 +78,9 @@ export class Generator implements IGenerator {
             args = ['install', saveCmd, '--save-exact', '--loglevel', 'error'].concat(dependencies);
         } else {
             command = 'yarn';
-            args = isDev ? ['add', '--exact', '--dev'].concat(dependencies) : ['add', '--exact'].concat(dependencies);
+            args = isDev
+                ? ['add', '--exact', '--dev'].concat(dependencies)
+                : ['add', '--exact', '--save'].concat(dependencies);
         }
 
         child.spawnSync(command, args, { stdio: 'inherit' });

@@ -73,8 +73,17 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
+                            // Necessary for external CSS imports to work
                             ident: 'postcss',
-                            plugins: postCSSPlugins,
+                            plugins: () => [
+                                require('postcss-flexbugs-fixes'),
+                                require('postcss-preset-env')({
+                                    autoprefixer: {
+                                        flexbox: 'no-2009',
+                                    },
+                                    stage: 3,
+                                }),
+                            ],
                         },
                     },
                 ],
