@@ -14,7 +14,6 @@ export interface IGenerator {
 
 interface IOptions {
     useNpm: boolean;
-    withReactRouter: boolean;
 }
 
 export class Generator implements IGenerator {
@@ -23,7 +22,7 @@ export class Generator implements IGenerator {
     title: string;
     options: IOptions;
 
-    constructor(title: string, options: IOptions) {
+    constructor(title: string, options?: IOptions) {
         this.destination = path.resolve(process.cwd());
 
         this.title = title;
@@ -37,14 +36,14 @@ export class Generator implements IGenerator {
         console.log();
         console.log(`${chalk.greenBright('Moving')} base project`);
         console.log();
-        fs.copyFileSync(path.join(__dirname, '../base'), `${fullPathToProject}`);
+        child.execSync(`cp -r ${path.resolve(process.cwd(), 'base')} ${fullPathToProject}`);
 
         // 2. Move into project directory
         process.chdir(fullPathToProject);
 
         // 3. write readme and change project name
-        await writePackageJson(fullPathToProject);
-        writeReadme(fullPathToProject);
+        // await writePackageJson(fullPathToProject);
+        // writeReadme(fullPathToProject);
 
         // 3. Initialize Git Repository
         child.execSync(`git init`);
@@ -54,22 +53,11 @@ export class Generator implements IGenerator {
     }
 
     private install(isDev: boolean = false) {
-        let { useNpm, withReactRouter } = this.options;
+        let { useNpm } = this.options;
         let command: 'yarn' | 'npm';
         let args: string[];
 
         console.log(`Installing dependencies... This can take a while.`);
-
-        if (withReactRouter) {
-            dependencies.concat([
-                'react-router',
-                'react-router-dom',
-                'react-loadable',
-                '@types/react-router',
-                '@types/react-router-dom',
-                '@types/react-loadable',
-            ]);
-        }
 
         if (!useNpm) {
             // TODO: There may be a bug with yarn not being installed
