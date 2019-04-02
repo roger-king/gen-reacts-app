@@ -1,4 +1,4 @@
-# ARCHIEVED:
+# ARCHIVED:
 
 Just use create-react-app (as it supports typescript): Keep an eye out for a repurpose of this library's plop templates. I am looking to create a template generator tool for react components that will speed up your development.
 
